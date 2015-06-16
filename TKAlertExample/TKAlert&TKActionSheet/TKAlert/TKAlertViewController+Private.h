@@ -9,7 +9,7 @@
 #import "TKAlertViewController.h"
 
 #define kAlertViewBorder         15
-#define kAlertViewBounce         30
+#define kAlertViewBounce         20
 #define kAlertButtonHeight       44
 #define kAlertButtonLineWidth       (1.0/[UIScreen mainScreen].scale)
 
@@ -51,7 +51,7 @@
 @property (nonatomic, strong) NSMutableDictionary *titleColorDic;
 @property (nonatomic, strong) UIColor *windowBackgroundColor;
 
-@property (nonatomic, strong) UIView *warpperView;
+@property (nonatomic, strong) UIView *wapperView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UILabel *titleView;
@@ -59,6 +59,7 @@
 @property (nonatomic, strong) UIView *buttonContainerView;
 
 @property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, assign) BOOL enabledParallaxEffect;
 
 @end
 
@@ -79,5 +80,9 @@
 - (void)temporarilyHideAnimated:(BOOL)animated;
 
 - (void)showOverlayWindowAniamted;
+
+
+- (void)addParallaxEffect;
+- (void)removeParallaxEffect;
 
 @end

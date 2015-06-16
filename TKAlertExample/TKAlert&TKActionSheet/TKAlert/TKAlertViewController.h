@@ -13,9 +13,12 @@
 
 //Will support more animation in future
 typedef enum {
-    TKAlertViewAnimationPop,    //default
-    TKAlertViewAnimationBack,
-    TKAlertViewAnimationPath NS_ENUM_AVAILABLE_IOS(7_0),
+    TKAlertViewAnimationBounce,    //default
+    TKAlertViewAnimationFromTop,
+    TKAlertViewAnimationFromBottom,
+    TKAlertViewAnimationFade,
+    TKAlertViewAnimationDropDown,
+    TKAlertViewAnimationPathStyle,   //模仿path效果
 } TKAlertViewAnimation;
 
 @protocol TKAlertViewControllerDelegate;
@@ -23,7 +26,6 @@ typedef enum {
 @interface TKAlertViewController : UIViewController
 
 @property (nonatomic, readonly, strong) UIView *customView;
-@property (nonatomic, readonly, assign) UIInterfaceOrientation orientation;
 
 //默认为毛玻璃效果, 优先使用backgroundView作为背景，其次为backgroundColor，都不设置默认为毛玻璃， 必须在show之前设置。
 @property (nonatomic, strong) UIColor *backgroundColor;

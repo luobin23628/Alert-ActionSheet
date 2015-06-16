@@ -38,7 +38,7 @@
     self.customView.frame = frame;
     height += frame.size.height + 10;
     
-    self.scrollView.contentSize = CGSizeMake(self.warpperView.bounds.size.width, height);
+    self.scrollView.contentSize = CGSizeMake(self.wapperView.bounds.size.width, height);
     
     CGFloat y = height;
     CGFloat buttonContainerViewHeight = 0;
@@ -118,9 +118,9 @@
     
     self.buttonContainerView.hidden = !buttonContainerViewHeight;
     
-    CGFloat x = floorf((self.warpperView.bounds.size.width - kAlertViewWidth) * 0.5) - (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.vertical:self.offset.horizontal);
-    y = floorf((self.warpperView.bounds.size.height - height) * 0.5) + (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.horizontal:self.offset.vertical);
-    NSLog(@"%@", NSStringFromCGRect(self.warpperView.bounds));
+    CGFloat x = floorf((self.wapperView.bounds.size.width - kAlertViewWidth) * 0.5) - (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.vertical:self.offset.horizontal);
+    y = floorf((self.wapperView.bounds.size.height - height) * 0.5) + (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.horizontal:self.offset.vertical);
+    NSLog(@"%@", NSStringFromCGRect(self.wapperView.bounds));
     frame = CGRectMake(x, y, kAlertViewWidth, height);
     self.containerView.frame = frame;
 }
@@ -203,6 +203,8 @@
     void (^completion)(BOOL) = ^(BOOL finished) {
         selfObj.isAnimating = NO;
         
+        [self addParallaxEffect];
+        
         if ([selfObj.delegate respondsToSelector:@selector(didPresentAlertView:)]) {
             [selfObj.delegate didPresentAlertView:selfObj];
         }
@@ -222,15 +224,36 @@
         [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     };
     
-    if (animationType == TKAlertViewAnimationPop) {
-        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-        [self popinAlertWithCompletion:completion];
-    } else if (animationType == TKAlertViewAnimationBack) {
-        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-        [self backinAlertWithCompletion:completion];
-    } else if (animationType == TKAlertViewAnimationPath) {
-        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-        [self showPathStyleWithCompletion:completion];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    
+    switch (self.animationType) {
+        case TKAlertViewAnimationBounce:
+            [self showAlertWithBounce:completion];
+            break;
+        case TKAlertViewAnimationFromTop:
+            [self showAlertWithFromTop:completion];
+            break;
+            
+        case TKAlertViewAnimationFromBottom:
+            [self showAlertWithFromBottom:completion];
+            break;
+            
+        case TKAlertViewAnimationFade:
+            [self showAlertWithFade:completion];
+            break;
+            
+        case TKAlertViewAnimationDropDown:
+            [self showAlertWithDropDown:completion];
+            break;
+            
+        case TKAlertViewAnimationPathStyle:
+            [self showAlertWithPathStyle:completion];
+            break;
+            
+        default:
+            [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+            NSAssert(NO, @"Unkown animate type.");
+            break;
     }
 }
 
@@ -258,15 +281,37 @@
         }
         [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     };
-    if (self.animationType == TKAlertViewAnimationPop) {
-        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-        [self popoutAlertWithCompletion:completion];
-    } else if (self.animationType == TKAlertViewAnimationBack) {
-        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-        [self backoutAlertWithCompletion:completion];
-    } else if (self.animationType == TKAlertViewAnimationPath) {
-        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-        [self hiddenPathStyleWithCompletion:completion];
+    
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    
+    switch (self.animationType) {
+        case TKAlertViewAnimationBounce:
+            [self hiddenAlertWithBounce:completion];
+            break;
+        case TKAlertViewAnimationFromTop:
+            [self hiddenAlertWithFromTop:completion];
+            break;
+            
+        case TKAlertViewAnimationFromBottom:
+            [self hiddenAlertWithFromBottom:completion];
+            break;
+            
+        case TKAlertViewAnimationFade:
+            [self hiddenAlertWithFade:completion];
+            break;
+            
+        case TKAlertViewAnimationDropDown:
+            [self hiddenAlertWithDropDown:completion];
+            break;
+            
+        case TKAlertViewAnimationPathStyle:
+            [self hiddenAlertWithPathStyle:completion];
+            break;
+
+        default:
+            [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+            NSAssert(NO, @"Unkown animate type.");
+            break;
     }
 }
 
@@ -317,6 +362,7 @@
     if (animated){
         __block TKAlertViewController *selfObj = self;
         void (^completion)(BOOL) = ^(BOOL finished) {
+            [self removeParallaxEffect];
             [[TKAlertOverlayWindow defaultWindow] revertKeyWindowAndHidden];
             [TKAlertOverlayWindow defaultWindow].rootViewController = nil;
             selfObj.visible = NO;
@@ -363,6 +409,17 @@
     }
 }
 
+- (void)showOverlayWindowAniamted {
+    [TKAlertOverlayWindow defaultWindow].backgroundView.alpha = .0f;
+    
+    [UIView animateWithDuration:0.4
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [TKAlertOverlayWindow defaultWindow].backgroundView.alpha = 1.0f;
+                     }
+                     completion:nil];
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Action
@@ -377,6 +434,7 @@
     [self dismissWithClickedButtonIndex:buttonIndex animated:YES completion:nil noteDelegate:YES];
 }
 
+
 #pragma mark - CAAnimation Delegate
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
@@ -386,25 +444,9 @@
     }
 }
 
-#pragma mark - Pop
+#pragma mark - Bounce
 
-- (void)popoutAlertWithCompletion:(void (^)(BOOL finished))completion {
-    [UIView animateWithDuration:0.2
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         self.containerView.alpha = 0;
-                         [TKAlertOverlayWindow defaultWindow].backgroundView.alpha = .0f;
-                     }
-                     completion:^(BOOL finished) {
-                         self.containerView.alpha = 1;
-                         if (completion) {
-                             completion(finished);
-                         }
-                     }];
-}
-
-- (void)popinAlertWithCompletion:(void (^)(BOOL finished))completion {
+- (void)showAlertWithBounce:(void (^)(BOOL finished))completion {
     
     [self showOverlayWindowAniamted];
     
@@ -427,11 +469,79 @@
     [self.containerView.layer addAnimation:animation forKey:nil];
 }
 
-#pragma mark - Back
+- (void)hiddenAlertWithBounce:(void (^)(BOOL finished))completion {
+    [UIView animateWithDuration:0.2
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.containerView.alpha = 0;
+                         [TKAlertOverlayWindow defaultWindow].backgroundView.alpha = .0f;
+                     }
+                     completion:^(BOOL finished) {
+                         self.containerView.alpha = 1;
+                         if (completion) {
+                             completion(finished);
+                         }
+                     }];
+}
 
-- (void)backinAlertWithCompletion:(void (^)(BOOL finished))completion {
+#pragma mark - FromTop
+
+- (void)showAlertWithFromTop:(void (^)(BOOL finished))completion {
     __block CGPoint center = self.containerView.center;
-    CGFloat yPositionOutOfBounds = self.warpperView.height/2 + self.containerView.height/2;
+    CGFloat yPositionOutOfBounds = self.wapperView.height/2 + self.containerView.height/2;
+    center.y -= yPositionOutOfBounds;
+    self.containerView.center = center;
+    __block TKAlertViewController *selfObj = self;
+    [UIView animateWithDuration:0.4
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [TKAlertOverlayWindow defaultWindow].backgroundView.alpha = 1.0f;
+                         center.y += kAlertViewBounce + yPositionOutOfBounds;
+                         selfObj.containerView.center = center;
+                     }
+                     completion:^(BOOL finished) {
+                         [UIView animateWithDuration:0.1
+                                               delay:0.0
+                                             options:0
+                                          animations:^{
+                                              center.y -= kAlertViewBounce;
+                                              selfObj.containerView.center = center;
+                                          }
+                                          completion:completion];
+                     }];
+}
+
+- (void)hiddenAlertWithFromTop:(void (^)(BOOL finished))completion {
+    __block TKAlertViewController *selfObj = self;
+    [UIView animateWithDuration:0.1
+                          delay:0.0
+                        options:0
+                     animations:^{
+                         CGPoint center = self.containerView.center;
+                         center.y += kAlertViewBounce;
+                         selfObj.containerView.center = center;
+                     }
+                     completion:^(BOOL finished) {
+                         [UIView animateWithDuration:0.4
+                                               delay:0.0
+                                             options:UIViewAnimationOptionCurveEaseOut
+                                          animations:^{
+                                              CGPoint center = selfObj.containerView.center;
+                                              center.y = - selfObj.containerView.height/2;
+                                              selfObj.containerView.center = center;
+                                              [[TKAlertOverlayWindow defaultWindow] reduceAlphaIfEmpty];
+                                          }
+                                          completion:completion];
+                     }];
+}
+
+#pragma mark - FromBottom
+
+- (void)showAlertWithFromBottom:(void (^)(BOOL finished))completion {
+    __block CGPoint center = self.containerView.center;
+    CGFloat yPositionOutOfBounds = self.wapperView.height/2 + self.containerView.height/2;
     center.y += yPositionOutOfBounds;
     self.containerView.center = center;
     __block TKAlertViewController *selfObj = self;
@@ -455,14 +565,14 @@
                      }];
 }
 
-- (void)backoutAlertWithCompletion:(void (^)(BOOL finished))completion {
+- (void)hiddenAlertWithFromBottom:(void (^)(BOOL finished))completion {
     __block TKAlertViewController *selfObj = self;
     [UIView animateWithDuration:0.1
                           delay:0.0
                         options:0
                      animations:^{
                          CGPoint center = self.containerView.center;
-                         center.y += 20;
+                         center.y -= kAlertViewBounce;
                          selfObj.containerView.center = center;
                      }
                      completion:^(BOOL finished) {
@@ -471,7 +581,7 @@
                                              options:UIViewAnimationOptionCurveEaseOut
                                           animations:^{
                                               CGPoint center = selfObj.containerView.center;
-                                              center.y = - selfObj.containerView.height/2;
+                                              center.y = selfObj.containerView.height/2 + self.wapperView.height;
                                               selfObj.containerView.center = center;
                                               [[TKAlertOverlayWindow defaultWindow] reduceAlphaIfEmpty];
                                           }
@@ -479,91 +589,153 @@
                      }];
 }
 
-- (void)showOverlayWindowAniamted {
-    [TKAlertOverlayWindow defaultWindow].backgroundView.alpha = .0f;
-    
+
+#pragma mark - Fade
+
+- (void)showAlertWithFade:(void (^)(BOOL finished))completion {
+    self.containerView.alpha = 0;
     [UIView animateWithDuration:0.4
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          [TKAlertOverlayWindow defaultWindow].backgroundView.alpha = 1.0f;
+                         self.containerView.alpha = 1;
                      }
-                     completion:nil];
+                     completion:completion];
+}
+
+- (void)hiddenAlertWithFade:(void (^)(BOOL finished))completion {
+    [UIView animateWithDuration:0.4
+                          delay:0.0
+                        options:0
+                     animations:^{
+                         self.containerView.alpha = 0;
+                         [[TKAlertOverlayWindow defaultWindow] reduceAlphaIfEmpty];
+                     }
+                     completion:completion];
+}
+
+#pragma mark - DropDown
+
+- (void)showAlertWithDropDown:(void (^)(BOOL finished))completion {
+    __block CGPoint center = self.containerView.center;
+    center.y = -self.containerView.height/2;
+    self.containerView.center = center;
+    __block TKAlertViewController *selfObj = self;
+    [UIView animateWithDuration:0.4
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [TKAlertOverlayWindow defaultWindow].backgroundView.alpha = 1.0f;
+                         center.y += kAlertViewBounce + self.containerView.height/2 + self.wapperView.height/2;
+                         selfObj.containerView.center = center;
+                     }
+                     completion:^(BOOL finished) {
+                         [UIView animateWithDuration:0.1
+                                               delay:0.0
+                                             options:0
+                                          animations:^{
+                                              center.y -= kAlertViewBounce;
+                                              selfObj.containerView.center = center;
+                                          }
+                                          completion:completion];
+                     }];
+}
+
+- (void)hiddenAlertWithDropDown:(void (^)(BOOL finished))completion {
+    __block TKAlertViewController *selfObj = self;
+    [UIView animateWithDuration:0.4
+                          delay:0.0
+                        options:0
+                     animations:^{
+                         CGPoint center = selfObj.containerView.center;
+                         center.y = selfObj.containerView.height/2 + self.wapperView.height;
+                         selfObj.containerView.center = center;
+                         [[TKAlertOverlayWindow defaultWindow] reduceAlphaIfEmpty];
+                     }
+                     completion:completion];
 }
 
 #pragma mark － Path Style
 
 - (UIDynamicAnimator *)createAnimatorIfNeed {
     if (!self.animator) {
-        self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.warpperView];
+        self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.wapperView];
     }
     return self.animator;
 }
 
-- (void)showPathStyleWithCompletion:(void (^)(BOOL finished))completion {
-    self.dismissBySwipe = YES;
+- (void)showAlertWithPathStyle:(void (^)(BOOL finished))completion {
     [self showOverlayWindowAniamted];
     
-    __block CGPoint center = self.containerView.center;
-    CGFloat yPositionOutOfBounds = self.warpperView.height/2 + self.containerView.height/2;
-    center.y -= yPositionOutOfBounds;
-    self.containerView.center = center;
-    
-    center.y += kAlertViewBounce + yPositionOutOfBounds;
-    
-    [self createAnimatorIfNeed];
-    [self.animator removeAllBehaviors];
-    CGFloat showMagnitude = 200.0f;
-    
-    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.containerView] mode:UIPushBehaviorModeInstantaneous];
-    [push setTargetOffsetFromCenter:UIOffsetMake(-1.0, 0) forItem:self.containerView];
-    push.pushDirection = CGVectorMake(0, 1.0);
-    push.magnitude = showMagnitude;
-    __weak TKAlertViewController *selfObj = self;;
-    [push setAction:^{
-        if (selfObj.containerView.center.y >= center.y) {
-            [selfObj.animator removeAllBehaviors];
-            [selfObj fixOnCenterWithCompletion:completion];
-        }
-    }];
-    [self.animator addBehavior:push];
+    if (NSClassFromString(@"UIPushBehavior")) {
+        self.dismissBySwipe = YES;
+        __block CGPoint center = self.containerView.center;
+        CGFloat yPositionOutOfBounds = self.wapperView.height/2 + self.containerView.height/2;
+        center.y -= yPositionOutOfBounds;
+        self.containerView.center = center;
+        
+        center.y += kAlertViewBounce + yPositionOutOfBounds;
+        
+        [self createAnimatorIfNeed];
+        [self.animator removeAllBehaviors];
+        CGFloat showMagnitude = 200.0f;
+        
+        UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.containerView] mode:UIPushBehaviorModeInstantaneous];
+        [push setTargetOffsetFromCenter:UIOffsetMake(-1.0, 0) forItem:self.containerView];
+        push.pushDirection = CGVectorMake(0, 1.0);
+        push.magnitude = showMagnitude;
+        __weak TKAlertViewController *selfObj = self;;
+        [push setAction:^{
+            if (selfObj.containerView.center.y >= center.y) {
+                [selfObj.animator removeAllBehaviors];
+                [selfObj fixOnCenterWithCompletion:completion];
+            }
+        }];
+        [self.animator addBehavior:push];
+    } else {
+        [self showAlertWithDropDown:completion];
+    }
 }
 
-- (void)hiddenPathStyleWithCompletion:(void (^)(BOOL finished))completion {
+- (void)hiddenAlertWithPathStyle:(void (^)(BOOL finished))completion {
     
-    [self createAnimatorIfNeed];
-    [self.animator removeAllBehaviors];
-    
-    CGFloat closeMagnitude = 150.0f;;
-    
-    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.containerView] mode:UIPushBehaviorModeInstantaneous];
-    [push setTargetOffsetFromCenter:UIOffsetMake(-2.0, 0) forItem:self.containerView];
-    push.pushDirection = CGVectorMake(0, 1.0);
-    push.magnitude = closeMagnitude;
-    
-    [self.animator addBehavior:push];
-    
-    [UIView animateWithDuration:0.4
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         [[TKAlertOverlayWindow defaultWindow] reduceAlphaIfEmpty];
-                     }
-                     completion:^(BOOL finished) {
-                         [self.animator removeAllBehaviors];
-                         self.animator = nil;
-                         
-                         if (completion) {
-                             completion(finished);
+    if (NSClassFromString(@"UIPushBehavior")) {
+        [self createAnimatorIfNeed];
+        [self.animator removeAllBehaviors];
+        
+        CGFloat closeMagnitude = 150.0f;;
+        
+        UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.containerView] mode:UIPushBehaviorModeInstantaneous];
+        [push setTargetOffsetFromCenter:UIOffsetMake(-2.0, 0) forItem:self.containerView];
+        push.pushDirection = CGVectorMake(0, 1.0);
+        push.magnitude = closeMagnitude;
+        
+        [self.animator addBehavior:push];
+        
+        [UIView animateWithDuration:0.4
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             [[TKAlertOverlayWindow defaultWindow] reduceAlphaIfEmpty];
                          }
-                     }];
-    
+                         completion:^(BOOL finished) {
+                             [self.animator removeAllBehaviors];
+                             self.animator = nil;
+                             
+                             if (completion) {
+                                 completion(finished);
+                             }
+                         }];
+    } else {
+        [self hiddenAlertWithDropDown:completion];
+    }
 }
 
 - (void)fixOnCenterWithCompletion:(void (^)(BOOL finished))completion {
     [UIView animateWithDuration:0.08 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         CGPoint center = self.containerView.center;
-        center.y = self.warpperView.height/2 + kAlertViewBounce;
+        center.y = self.wapperView.height/2 + kAlertViewBounce;
         self.containerView.center = center;
         self.containerView.transform = CGAffineTransformMakeRotation(M_PI / 90.0);
         
@@ -571,7 +743,7 @@
         [UIView animateWithDuration:0.12 delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut animations:^{
             
             CGPoint center = self.containerView.center;
-            center.y = self.warpperView.height/2;
+            center.y = self.wapperView.height/2;
             self.containerView.center = center;
             self.containerView.transform = CGAffineTransformIdentity;
             
@@ -586,7 +758,7 @@
 
 - (CGFloat)tapPointXPercentage:(CGFloat)pointX {
     /* return |-1 0 1| */
-    CGFloat width = CGRectGetWidth(self.warpperView.bounds);
+    CGFloat width = CGRectGetWidth(self.wapperView.bounds);
     if (pointX >= width / 2.0) {
         return (2.0 - width / pointX);
     } else {
@@ -611,7 +783,7 @@
         CGFloat alpha = 0;
         [self.windowBackgroundColor getWhite:nil alpha:&alpha];
         
-        UIView *warpperView = self.warpperView;
+        UIView *warpperView = self.wapperView;
         TKAlertOverlayWindow *window = [TKAlertOverlayWindow defaultWindow];
         
         CGPoint location = [gestureRecognizer locationInView:warpperView];
@@ -625,7 +797,7 @@
         switch (gestureRecognizer.state) {
             case UIGestureRecognizerStateChanged:
                 self.containerView.transform = CGAffineTransformMakeRotation(isDownGesuture ? angle : 0);
-                CGPoint center = self.warpperView.center;
+                CGPoint center = self.wapperView.center;
                 center.y = warpperView.height/2 + (isDownGesuture ? translation.y : translation.y / 10.0);
                 self.containerView.center = center;
                 window.backgroundView.backgroundColor = [window.backgroundView.backgroundColor colorWithAlphaComponent:(isDownGesuture ? alpha * (1 - panYAmountOnBackground) : alpha)];
@@ -634,7 +806,7 @@
                 
             case UIGestureRecognizerStateCancelled:
             case UIGestureRecognizerStateEnded:
-                if (self.containerView.center.y >= CGRectGetHeight(self.warpperView.bounds)
+                if (self.containerView.center.y >= CGRectGetHeight(self.wapperView.bounds)
                     || velocityY >= 500.0) {
                     [self dismissWithClickedButtonIndex:-1 animated:YES completion:nil noteDelegate:YES];
                 } else {
@@ -642,7 +814,7 @@
                     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseOut animations:^{
                         self.containerView.transform = CGAffineTransformIdentity;
                         CGPoint center = self.containerView.center;
-                        center.y = self.warpperView.height/2;
+                        center.y = self.wapperView.height/2;
                         self.containerView.center = center;
                         self.containerView.transform = CGAffineTransformIdentity;
                         window.backgroundView.backgroundColor = self.windowBackgroundColor;
@@ -660,5 +832,32 @@
     return ![touch.view isDescendantOfView:self.containerView];
 }
 
+
+#pragma mark - Parallax effect
+
+- (void)addParallaxEffect
+{
+    if (self.enabledParallaxEffect && NSClassFromString(@"UIInterpolatingMotionEffect"))
+    {
+        UIInterpolatingMotionEffect *effectHorizontal = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"position.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+        UIInterpolatingMotionEffect *effectVertical = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"position.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+        [effectHorizontal setMaximumRelativeValue:@(10.0f)];
+        [effectHorizontal setMinimumRelativeValue:@(-10.0f)];
+        [effectVertical setMaximumRelativeValue:@(15.0f)];
+        [effectVertical setMinimumRelativeValue:@(-15.0f)];
+        [self.containerView addMotionEffect:effectHorizontal];
+        [self.containerView addMotionEffect:effectVertical];
+    }
+}
+
+- (void)removeParallaxEffect
+{
+    if (self.enabledParallaxEffect && NSClassFromString(@"UIInterpolatingMotionEffect"))
+    {
+        [self.containerView.motionEffects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [self.containerView removeMotionEffect:obj];
+        }];
+    }
+}
 
 @end

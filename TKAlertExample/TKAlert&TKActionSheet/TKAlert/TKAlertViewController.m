@@ -91,7 +91,8 @@ static UIFont *buttonFont = nil;
         self.actions = [NSMutableArray array];
         self.title = title;
         self.customView = customView;
-        self.animationType = TKAlertViewAnimationPop;
+        self.animationType = TKAlertViewAnimationBounce;
+        self.enabledParallaxEffect = YES;
         
 //        [[self.class appearance] applyInvocationTo:self];
     }
@@ -129,17 +130,17 @@ static UIFont *buttonFont = nil;
     self.view.backgroundColor = [UIColor clearColor];
     
     //ios7或以下，旋转屏幕会给self.view做transform，导致frame和bounds不一致，因此增加warpperView
-    self.warpperView = [[UIView alloc] initWithFrame:self.view.bounds];
-    self.warpperView.backgroundColor = [UIColor clearColor];
-    self.warpperView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:self.warpperView];
+    self.wapperView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.wapperView.backgroundColor = [UIColor clearColor];
+    self.wapperView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:self.wapperView];
     
     self.containerView = [[UIView alloc] initWithFrame:CGRectMake(([TKAlertOverlayWindow defaultWindow].bounds.size.width - kAlertViewWidth)/2, 0, kAlertViewWidth, kAlertViewMinHeigh)];
     self.containerView.backgroundColor = [UIColor clearColor];
     self.containerView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     self.containerView.layer.cornerRadius = 6.f;
     self.containerView.clipsToBounds = YES;
-    [self.warpperView addSubview:self.containerView];
+    [self.wapperView addSubview:self.containerView];
     
     UIWindow *parentView = [TKAlertOverlayWindow defaultWindow];
     CGRect frame = parentView.bounds;

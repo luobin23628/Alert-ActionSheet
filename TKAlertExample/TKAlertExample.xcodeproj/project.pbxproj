@@ -32,6 +32,9 @@
 		EC2EE8F61B300BD9004A6E84 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE8F51B300BD9004A6E84 /* UIViewAdditions.m */; };
 		EC2EE8FB1B300BFC004A6E84 /* UIDeviceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE8F81B300BFC004A6E84 /* UIDeviceAdditions.m */; };
 		EC2EE8FC1B300BFC004A6E84 /* UIImageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE8FA1B300BFC004A6E84 /* UIImageExtend.m */; };
+		EC2EE9001B301AE3004A6E84 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8FD1B301AE3004A6E84 /* Default-568h@2x.png */; };
+		EC2EE9011B301AE3004A6E84 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8FE1B301AE3004A6E84 /* Default.png */; };
+		EC2EE9021B301AE3004A6E84 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8FF1B301AE3004A6E84 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,9 @@
 		EC2EE8F81B300BFC004A6E84 /* UIDeviceAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceAdditions.m; sourceTree = "<group>"; };
 		EC2EE8F91B300BFC004A6E84 /* UIImageExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtend.h; sourceTree = "<group>"; };
 		EC2EE8FA1B300BFC004A6E84 /* UIImageExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtend.m; sourceTree = "<group>"; };
+		EC2EE8FD1B301AE3004A6E84 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EC2EE8FE1B301AE3004A6E84 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		EC2EE8FF1B301AE3004A6E84 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,9 @@
 				EC2EE8A21B300A59004A6E84 /* ViewController.h */,
 				EC2EE8A31B300A59004A6E84 /* ViewController.m */,
 				EC2EE8A51B300A59004A6E84 /* Main.storyboard */,
+				EC2EE8FD1B301AE3004A6E84 /* Default-568h@2x.png */,
+				EC2EE8FE1B301AE3004A6E84 /* Default.png */,
+				EC2EE8FF1B301AE3004A6E84 /* Default@2x.png */,
 				EC2EE8A81B300A59004A6E84 /* Images.xcassets */,
 				EC2EE8AA1B300A59004A6E84 /* LaunchScreen.xib */,
 				EC2EE89B1B300A59004A6E84 /* Supporting Files */,
@@ -194,10 +203,10 @@
 				EC2EE8DD1B300B10004A6E84 /* TKAlertOverlayWindow.m */,
 				EC2EE8DE1B300B10004A6E84 /* TKAlertViewAction.h */,
 				EC2EE8DF1B300B10004A6E84 /* TKAlertViewAction.m */,
-				EC2EE8E01B300B10004A6E84 /* TKAlertViewController+Private.h */,
-				EC2EE8E11B300B10004A6E84 /* TKAlertViewController+Private.m */,
 				EC2EE8E21B300B10004A6E84 /* TKAlertViewController.h */,
 				EC2EE8E31B300B10004A6E84 /* TKAlertViewController.m */,
+				EC2EE8E01B300B10004A6E84 /* TKAlertViewController+Private.h */,
+				EC2EE8E11B300B10004A6E84 /* TKAlertViewController+Private.m */,
 				EC2EE8C81B300B0F004A6E84 /* TKTextFieldAlertViewController.h */,
 				EC2EE8C91B300B0F004A6E84 /* TKTextFieldAlertViewController.m */,
 			);
@@ -262,8 +271,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC2EE8A71B300A59004A6E84 /* Main.storyboard in Resources */,
+				EC2EE9011B301AE3004A6E84 /* Default.png in Resources */,
 				EC2EE8AC1B300A59004A6E84 /* LaunchScreen.xib in Resources */,
 				EC2EE8EB1B300B10004A6E84 /* LICENSE in Resources */,
+				EC2EE9001B301AE3004A6E84 /* Default-568h@2x.png in Resources */,
+				EC2EE9021B301AE3004A6E84 /* Default@2x.png in Resources */,
 				EC2EE8A91B300A59004A6E84 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -395,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

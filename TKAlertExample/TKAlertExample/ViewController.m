@@ -98,7 +98,7 @@
     [alert2 addButtonWithTitle:@"ok2" handler:nil];
     [alert2 addButtonWithTitle:@"ok2" handler:nil];
     [alert2 addButtonWithTitle:@"ok2" handler:nil];
-    [alert2 showWithAnimationType:TKAlertViewAnimationPath];
+    [alert2 showWithAnimationType:TKAlertViewAnimationDropDown];
     alert2.dismissWhenTapWindow = YES;
 //    [self performSelector:@selector(cancelAllAlerts) withObject:nil afterDelay:5];
 }

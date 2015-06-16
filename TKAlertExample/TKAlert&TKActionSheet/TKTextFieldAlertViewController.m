@@ -10,6 +10,7 @@
 #import "TKAlertViewController+Private.h"
 #import "TKAlertOverlayWindow.h"
 #import "UIDeviceAdditions.h"
+#import "UIViewAdditions.h"
 
 @interface _TKTextFieldAlertView_TextFiled : UITextField
 
@@ -30,7 +31,8 @@
 
 @interface TKTextFieldAlertViewController()
 
-@property (nonatomic, readwrite, retain) UITextField *textField;
+@property (nonatomic, readwrite, strong) UITextField *textField;
+@property (nonatomic, readwrite, assign) CGFloat keyboardBoundHeight;
 
 @end
 
@@ -106,16 +108,21 @@
     NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
     
-	CGPoint center = self.view.center;
-    if (self.orientation == UIInterfaceOrientationPortrait) {
-        center.y = [TKAlertOverlayWindow defaultWindow].bounds.size.height - (keyboardBounds.size.height + self.view.frame.size.height/2+ 5);
-    } else if (self.orientation == UIDeviceOrientationPortraitUpsideDown) {
-        center.y = (keyboardBounds.size.height + self.view.frame.size.height/2)+ 5;
-    } else if (UIInterfaceOrientationLandscapeRight == self.orientation) {
-        center.x = (keyboardBounds.size.width + self.view.frame.size.width/2)+ 5;
-    } else if (UIInterfaceOrientationLandscapeLeft == self.orientation) {
-        center.x = [TKAlertOverlayWindow defaultWindow].bounds.size.width - (keyboardBounds.size.width + self.view.frame.size.width/2 + 5);
+	CGPoint center = self.containerView.center;
+    
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    
+    if([[UIScreen mainScreen] respondsToSelector:@selector(fixedCoordinateSpace)]) {
+        keyboardBounds = [[[UIScreen mainScreen] fixedCoordinateSpace] convertRect:keyboardBounds fromCoordinateSpace:[[UIScreen mainScreen] coordinateSpace]];
     }
+    
+    if (UIInterfaceOrientationIsPortrait(orientation)) {
+        self.keyboardBoundHeight = keyboardBounds.size.height;
+    } else if (UIInterfaceOrientationIsLandscape(orientation)) {
+        self.keyboardBoundHeight = keyboardBounds.size.width;
+    }
+    
+    center.y = self.wapperView.height - (self.keyboardBoundHeight + self.containerView.height/2+ 2);
     
 	// animations settings
 	[UIView beginAnimations:nil context:NULL];
@@ -125,22 +132,49 @@
     [UIView setAnimationDelegate:self];
 	
 	// set views with new info
-	self.view.center = center;
+	self.containerView.center = center;
 	
 	// commit animations
 	[UIView commitAnimations];
+}
+
+#if __IPHONE_8_0
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        if ([self.textField isFirstResponder]) {
+            CGPoint center = self.containerView.center;
+            center.y = self.wapperView.height - (self.keyboardBoundHeight + self.containerView.height/2+ 2);
+            self.containerView.center = center;
+        }
+    } completion:nil];
+}
+#endif
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+
+    if ([self.textField isFirstResponder]) {
+        CGPoint center = self.containerView.center;
+        center.y = self.wapperView.height - (self.keyboardBoundHeight + self.containerView.height/2+ 2);
+        self.containerView.center = center;
+    }
 }
 
 -(void) keyboardWillHide:(NSNotification *)note{
     if (![self.textField isFirstResponder]) {
         return;
     }
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    
     NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
 	
-	// get a rect for the textView frame
-	CGRect frame = self.view.frame;
-    frame.origin.y = [TKAlertOverlayWindow defaultWindow].bounds.size.height - frame.size.height;
+    CGRect frame = self.containerView.frame;
+    
+    frame.origin.x = floorf((self.wapperView.bounds.size.width - frame.size.width) * 0.5) - (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.vertical:self.offset.horizontal);
+    frame.origin.y = floorf((self.wapperView.height - frame.size.height) * 0.5) + (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.horizontal:self.offset.vertical);
     
 	// animations settings
 	[UIView beginAnimations:nil context:NULL];
@@ -149,8 +183,8 @@
     [UIView setAnimationCurve:[curve intValue]];
     
 	// set views with new info
-	self.view.frame = frame;
-	
+    self.containerView.frame = frame;
+    
 	// commit animations
 	[UIView commitAnimations];
 }
