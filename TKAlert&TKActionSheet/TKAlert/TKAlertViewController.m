@@ -1,16 +1,16 @@
 //
-//  BJAlertViewController.m
+//  TKAlertViewController.m
 //  
 //
 //  Created by luobin on 13-3-16.
 //  Copyright (c) 2013年 luobin. All rights reserved.
 //
 
-#import "BJAlertViewController.h"
-#import "BJAlertViewController+Private.h"
-#import "BJAlertOverlayWindow.h"
-#import "BJAlertManager.h"
-#import "BJBlurView.h"
+#import "TKAlertViewController.h"
+#import "TKAlertViewController+Private.h"
+#import "TKAlertOverlayWindow.h"
+#import "TKAlertManager.h"
+#import "TKBlurView.h"
 #import "UIImageExtend.h"
 #import "UIWindow+Alert.h"
 #import "UIScreen+Size.h"
@@ -19,7 +19,7 @@
 
 typedef void (^FinishedCallback)(BOOL finished);
 
-@implementation BJAlertViewController
+@implementation TKAlertViewController
 
 static UIFont *titleFont = nil;
 static UIFont *messageFont = nil;
@@ -28,7 +28,7 @@ static UIFont *buttonFont = nil;
 #pragma mark - init
 
 + (void)initialize {
-    if (self == [BJAlertViewController class]) {
+    if (self == [TKAlertViewController class]) {
         titleFont = kAlertViewTitleFont;
         messageFont = kAlertViewMessageFont;
         buttonFont = kAlertViewButtonFont;
@@ -36,11 +36,11 @@ static UIFont *buttonFont = nil;
 }
 
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message {
-    return [[BJAlertViewController alloc] initWithTitle:title message:message];
+    return [[TKAlertViewController alloc] initWithTitle:title message:message];
 }
 
 + (instancetype)alertWithTitle:(NSString *)title customView:(UIView *)customView {
-    return [[BJAlertViewController alloc] initWithTitle:title customView:customView];
+    return [[TKAlertViewController alloc] initWithTitle:title customView:customView];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -83,15 +83,16 @@ static UIFont *buttonFont = nil;
     if ((self = [super init])) {
         
         self.titleColorDic = [[NSMutableDictionary alloc] init];
-        [self setTitleColor:kAlertViewButtonTextColor forButton:BJAlertViewButtonTypeCancel];
-        [self setTitleColor:kAlertViewButtonTextColor forButton:BJAlertViewButtonTypeDefault];
-        [self setTitleColor:[UIColor redColor] forButton:BJAlertViewButtonTypeDestructive];
+        [self setTitleColor:kAlertViewButtonTextColor forButton:TKAlertViewButtonTypeCancel];
+        [self setTitleColor:kAlertViewButtonTextColor forButton:TKAlertViewButtonTypeDefault];
+        [self setTitleColor:[UIColor redColor] forButton:TKAlertViewButtonTypeDestructive];
         
         self.windowBackgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
         self.actions = [NSMutableArray array];
         self.title = title;
         self.customView = customView;
-        self.animationType = BJAlertViewAnimationPop;
+        self.animationType = TKAlertViewAnimationBounce;
+        self.enabledParallaxEffect = YES;
         
 //        [[self.class appearance] applyInvocationTo:self];
     }
@@ -107,7 +108,7 @@ static UIFont *buttonFont = nil;
 }
 
 + (instancetype)alertWithTitle:(NSString *)title viewController:(UIViewController *)viewController {
-    return [[BJAlertViewController alloc] initWithTitle:title viewController:viewController];
+    return [[TKAlertViewController alloc] initWithTitle:title viewController:viewController];
 }
 
 - (void)dealloc {
@@ -129,19 +130,19 @@ static UIFont *buttonFont = nil;
     self.view.backgroundColor = [UIColor clearColor];
     
     //ios7或以下，旋转屏幕会给self.view做transform，导致frame和bounds不一致，因此增加warpperView
-    self.warpperView = [[UIView alloc] initWithFrame:self.view.bounds];
-    self.warpperView.backgroundColor = [UIColor clearColor];
-    self.warpperView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:self.warpperView];
+    self.wapperView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.wapperView.backgroundColor = [UIColor clearColor];
+    self.wapperView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:self.wapperView];
     
-    self.containerView = [[UIView alloc] initWithFrame:CGRectMake(([BJAlertOverlayWindow defaultWindow].bounds.size.width - kAlertViewWidth)/2, 0, kAlertViewWidth, kAlertViewMinHeigh)];
+    self.containerView = [[UIView alloc] initWithFrame:CGRectMake(([TKAlertOverlayWindow defaultWindow].bounds.size.width - kAlertViewWidth)/2, 0, kAlertViewWidth, kAlertViewMinHeigh)];
     self.containerView.backgroundColor = [UIColor clearColor];
     self.containerView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     self.containerView.layer.cornerRadius = 6.f;
     self.containerView.clipsToBounds = YES;
-    [self.warpperView addSubview:self.containerView];
+    [self.wapperView addSubview:self.containerView];
     
-    UIWindow *parentView = [BJAlertOverlayWindow defaultWindow];
+    UIWindow *parentView = [TKAlertOverlayWindow defaultWindow];
     CGRect frame = parentView.bounds;
     frame.origin.x = floorf((frame.size.width - kAlertViewWidth) * 0.5);
     frame.size.width = kAlertViewWidth;
@@ -188,29 +189,29 @@ static UIFont *buttonFont = nil;
 
 #pragma mark - Public
 
-- (void)setTitleColor:(UIColor *)color forButton:(BJAlertViewButtonType)type {
+- (void)setTitleColor:(UIColor *)color forButton:(TKAlertViewButtonType)type {
     [self.titleColorDic setObject:color forKey:@(type)];
 }
 
-- (UIColor *)titleColorForButton:(BJAlertViewButtonType)type {
+- (UIColor *)titleColorForButton:(TKAlertViewButtonType)type {
     return [self.titleColorDic objectForKey:@(type)]?:kAlertViewButtonTextColor;
 }
 
-- (void)addButtonWithTitle:(NSString *)title type:(BJAlertViewButtonType)type handler:(void (^)())handler atIndex:(NSInteger)index {
-    BJAlertViewAction *action = [BJAlertViewAction actionWithTitle:title type:type handler:handler];
+- (void)addButtonWithTitle:(NSString *)title type:(TKAlertViewButtonType)type handler:(void (^)())handler atIndex:(NSInteger)index {
+    TKAlertViewAction *action = [TKAlertViewAction actionWithTitle:title type:type handler:handler];
     [self.actions addObject:action];
 }
 
 - (void)addButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addButtonWithTitle:title type:BJAlertViewButtonTypeDefault handler:handler atIndex:-1];
+    [self addButtonWithTitle:title type:TKAlertViewButtonTypeDefault handler:handler atIndex:-1];
 }
 
 - (void)addCancelButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addButtonWithTitle:title type:BJAlertViewButtonTypeCancel handler:handler atIndex:-1];
+    [self addButtonWithTitle:title type:TKAlertViewButtonTypeCancel handler:handler atIndex:-1];
 }
 
 - (void)addDestructiveButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addButtonWithTitle:title type:BJAlertViewButtonTypeDestructive handler:handler atIndex:-1];
+    [self addButtonWithTitle:title type:TKAlertViewButtonTypeDestructive handler:handler atIndex:-1];
 }
 
 - (void)setDismissWhenTapWindow:(BOOL)dismissWhenTapWindow {
@@ -238,15 +239,15 @@ static UIFont *buttonFont = nil;
     self.offset = offset;
     self.landscapeOffset = landscapeOffset;
     
-    BJAlertViewController * visibleAlert = BJAlertManager.visibleAlert;
-    BJAlertViewController * topMostAlert = BJAlertManager.topMostAlert;
+    TKAlertViewController * visibleAlert = TKAlertManager.visibleAlert;
+    TKAlertViewController * topMostAlert = TKAlertManager.topMostAlert;
     if (visibleAlert && topMostAlert) {
-        [BJAlertManager hideTopMostAlertAnimated:YES];
-        [BJAlertManager addToStack:self dontDimBackground:YES];
+        [TKAlertManager hideTopMostAlertAnimated:YES];
+        [TKAlertManager addToStack:self dontDimBackground:YES];
         return;
     }
         
-    [BJAlertManager addToStack:self dontDimBackground:YES];
+    [TKAlertManager addToStack:self dontDimBackground:YES];
     [self popupAlertAnimated:YES animationType:animationType atOffset:offset];
 }
 
@@ -310,7 +311,7 @@ static UIFont *buttonFont = nil;
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    UIWindow *previousKeyWindow = [BJAlertOverlayWindow defaultWindow].previousKeyWindow;
+    UIWindow *previousKeyWindow = [TKAlertOverlayWindow defaultWindow].previousKeyWindow;
     
     UIViewController *viewController = [previousKeyWindow currentViewController];
     if (viewController) {
@@ -321,7 +322,7 @@ static UIFont *buttonFont = nil;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
-    UIWindow *previousKeyWindow = [BJAlertOverlayWindow defaultWindow].previousKeyWindow;
+    UIWindow *previousKeyWindow = [TKAlertOverlayWindow defaultWindow].previousKeyWindow;
 
     UIViewController *viewController = [previousKeyWindow currentViewController];
     if (viewController) {
@@ -332,7 +333,7 @@ static UIFont *buttonFont = nil;
 
 - (BOOL)shouldAutorotate
 {
-    UIWindow *previousKeyWindow = [BJAlertOverlayWindow defaultWindow].previousKeyWindow;
+    UIWindow *previousKeyWindow = [TKAlertOverlayWindow defaultWindow].previousKeyWindow;
 
     UIViewController *viewController = [previousKeyWindow currentViewController];
     if (viewController) {
@@ -343,7 +344,7 @@ static UIFont *buttonFont = nil;
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    UIWindow *previousKeyWindow = [BJAlertOverlayWindow defaultWindow].previousKeyWindow;
+    UIWindow *previousKeyWindow = [TKAlertOverlayWindow defaultWindow].previousKeyWindow;
     if (!previousKeyWindow) {
         previousKeyWindow = [UIApplication sharedApplication].windows[0];
     }
@@ -352,7 +353,7 @@ static UIFont *buttonFont = nil;
 
 - (BOOL)prefersStatusBarHidden
 {
-    UIWindow *previousKeyWindow = [BJAlertOverlayWindow defaultWindow].previousKeyWindow;
+    UIWindow *previousKeyWindow = [TKAlertOverlayWindow defaultWindow].previousKeyWindow;
     if (!previousKeyWindow) {
         previousKeyWindow = [UIApplication sharedApplication].windows[0];
     }

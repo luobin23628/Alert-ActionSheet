@@ -1,6 +1,6 @@
 //
 //  UIWin.m
-//  BJEducation_student
+//
 //
 //  Created by binluo on 15/6/15.
 //  Copyright (c) 2015年 Baijiahulian. All rights reserved.

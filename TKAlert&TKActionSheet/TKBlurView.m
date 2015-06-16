@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Arctic Minds Inc. All rights reserved.
 //
 
-#import "BJBlurView.h"
+#import "TKBlurView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "NSObject+Invocation.h"
 
-@interface BJBlurView ()
+@interface TKBlurView ()
 
 @property (nonatomic, strong) UIToolbar *toolbar;
 
 @end
 
-@implementation BJBlurView
+@implementation TKBlurView
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];

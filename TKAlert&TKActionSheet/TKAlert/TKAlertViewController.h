@@ -1,5 +1,5 @@
 //
-//  BJAlertViewController.h
+//  TKAlertViewController.h
 //  
 //
 //  Created by luobin on 13-3-16.
@@ -8,22 +8,24 @@
 
 
 #import <UIKit/UIKit.h>
-#import "BJAlertViewAction.h"
+#import "TKAlertViewAction.h"
 //#import <MZAppearance/MZAppearance.h>
 
 //Will support more animation in future
 typedef enum {
-    BJAlertViewAnimationPop,    //default
-    BJAlertViewAnimationBack,
-    BJAlertViewAnimationPath NS_ENUM_AVAILABLE_IOS(7_0),
+    TKAlertViewAnimationBounce,    //default
+    TKAlertViewAnimationFromTop,
+    TKAlertViewAnimationFromBottom,
+    TKAlertViewAnimationFade,
+    TKAlertViewAnimationDropDown,
+    TKAlertViewAnimationPathStyle,   //模仿path效果
 } TKAlertViewAnimation;
 
-@protocol BJAlertViewControllerDelegate;
+@protocol TKAlertViewControllerDelegate;
 
-@interface BJAlertViewController : UIViewController
+@interface TKAlertViewController : UIViewController
 
 @property (nonatomic, readonly, strong) UIView *customView;
-@property (nonatomic, readonly, assign) UIInterfaceOrientation orientation;
 
 //默认为毛玻璃效果, 优先使用backgroundView作为背景，其次为backgroundColor，都不设置默认为毛玻璃， 必须在show之前设置。
 @property (nonatomic, strong) UIColor *backgroundColor;
@@ -44,10 +46,8 @@ typedef enum {
 @property (nonatomic, readwrite) BOOL dismissWhenTapWindow;
 - (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)()) handler;
 
-@property (nonatomic, readwrite) BOOL dismissBySwipe;
-
-- (void)setTitleColor:(UIColor *)color forButton:(BJAlertViewButtonType)type UI_APPEARANCE_SELECTOR;
-- (UIColor *)titleColorForButton:(BJAlertViewButtonType)type;
+- (void)setTitleColor:(UIColor *)color forButton:(TKAlertViewButtonType)type UI_APPEARANCE_SELECTOR;
+- (UIColor *)titleColorForButton:(TKAlertViewButtonType)type;
 
 
 - (void)addDestructiveButtonWithTitle:(NSString *)title handler:(void (^)())handler;
@@ -61,22 +61,22 @@ typedef enum {
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated completion:(void (^)(void))completion;
 
-@property (nonatomic, assign) id<BJAlertViewControllerDelegate>delegate;
+@property (nonatomic, assign) id<TKAlertViewControllerDelegate>delegate;
 @property (nonatomic, readwrite, getter=isVisible) BOOL visible;
 
 @end
 
 
-@protocol BJAlertViewControllerDelegate <NSObject>
+@protocol TKAlertViewControllerDelegate <NSObject>
 
 @optional
-- (void)alertView:(BJAlertViewController *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)alertView:(TKAlertViewController *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 
-- (void)willPresentAlertView:(BJAlertViewController *)alertView;  // before animation and showing view
-- (void)didPresentAlertView:(BJAlertViewController *)alertView;  // after animation
+- (void)willPresentAlertView:(TKAlertViewController *)alertView;  // before animation and showing view
+- (void)didPresentAlertView:(TKAlertViewController *)alertView;  // after animation
 
-- (void)alertView:(BJAlertViewController *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex; // before animation and hiding view
-- (void)alertView:(BJAlertViewController *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;  // after animation
+- (void)alertView:(TKAlertViewController *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex; // before animation and hiding view
+- (void)alertView:(TKAlertViewController *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;  // after animation
 
 @end
 

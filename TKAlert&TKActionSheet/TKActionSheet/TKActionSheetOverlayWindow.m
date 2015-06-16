@@ -1,16 +1,16 @@
 //
-//  BJActionSheetOverlayWindow.m
+//  TKActionSheetOverlayWindow.m
 //  
 //
 //  Created by luobin on 13-3-16.
 //  Copyright (c) 2013年 luobin. All rights reserved.
 //
 
-#import "BJActionSheetOverlayWindow.h"
+#import "TKActionSheetOverlayWindow.h"
 
 const UIWindowLevel TKWindowLevelActionSheet = 2001;
 
-@implementation BJActionSheetOverlayWindow
+@implementation TKActionSheetOverlayWindow
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

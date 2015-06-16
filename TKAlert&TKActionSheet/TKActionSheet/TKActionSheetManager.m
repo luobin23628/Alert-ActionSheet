@@ -1,17 +1,17 @@
 //
-//  BJAlertManager.m
+//  TKAlertManager.m
 //  
 //
 //  Created by luobin on 13-3-16.
 //  Copyright (c) 2013年 luobin. All rights reserved.
 //
 
-#import "BJActionSheetManager.h"
-#import "BJActionSheetController.h"
+#import "TKActionSheetManager.h"
+#import "TKActionSheetController.h"
 
 static NSMutableArray *actionSheetStack = nil;
 
-@implementation BJActionSheetManager
+@implementation TKActionSheetManager
 
 + (void)initialize {
     
@@ -22,24 +22,24 @@ static NSMutableArray *actionSheetStack = nil;
     return actionSheetStack;
 }
 
-+ (BOOL)stackContainsAlert:(BJActionSheetController *)actionSheet {
++ (BOOL)stackContainsAlert:(TKActionSheetController *)actionSheet {
     return [actionSheetStack indexOfObject:actionSheet] != NSNotFound;
 }
 
-+ (void)addToStack:(BJActionSheetController *)actionSheet {
++ (void)addToStack:(TKActionSheetController *)actionSheet {
     [actionSheetStack addObject:actionSheet];
 }
 
-+ (void)removeFromStack:(BJActionSheetController *)actionSheet {
++ (void)removeFromStack:(TKActionSheetController *)actionSheet {
     [actionSheetStack removeObject:actionSheet];
 }
 
-+ (BJActionSheetController *)topMostActionSheet {
++ (TKActionSheetController *)topMostActionSheet {
     return actionSheetStack.lastObject;
 }
 
 + (BOOL)cancelAlertsAnimated:(BOOL)animated {
-    BJActionSheetController *topMostActionSheet = self.topMostActionSheet;
+    TKActionSheetController *topMostActionSheet = self.topMostActionSheet;
     if (topMostActionSheet) {
         return [self canceltopMostActionSheetAnimated:animated completion:^(BOOL success) {
             if (success) {

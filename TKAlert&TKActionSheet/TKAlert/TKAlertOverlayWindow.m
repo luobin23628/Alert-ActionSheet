@@ -1,22 +1,22 @@
 //
-//  BJAlertOverlayWindow.m
+//  TKAlertOverlayWindow.m
 //  
 //
 //  Created by luobin on 13-3-16.
 //  Copyright (c) 2013年 luobin. All rights reserved.
 //
 
-#import "BJAlertOverlayWindow.h"
+#import "TKAlertOverlayWindow.h"
 
-const UIWindowLevel BJWindowLevelAlertView = 1996;
+const UIWindowLevel TKWindowLevelAlertView = 1996;
 
-@implementation BJAlertOverlayWindow
+@implementation TKAlertOverlayWindow
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.windowLevel = BJWindowLevelAlertView;
+        self.windowLevel = TKWindowLevelAlertView;
     }
     return self;
 }
@@ -29,15 +29,15 @@ const UIWindowLevel BJWindowLevelAlertView = 1996;
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     self = [super initWithFrame:CGRectMake(0, 0, MIN(screenSize.width, screenSize.height), MAX(screenSize.width, screenSize.height))];
     if (self) {
-        self.windowLevel = BJWindowLevelAlertView;
+        self.windowLevel = TKWindowLevelAlertView;
     }
     return self;
 }
 
-+(BJAlertOverlayWindow *)defaultWindow {
-    static BJAlertOverlayWindow *backgroundWindow = nil;
++(TKAlertOverlayWindow *)defaultWindow {
+    static TKAlertOverlayWindow *backgroundWindow = nil;
     if (backgroundWindow == nil) {
-        backgroundWindow = [[BJAlertOverlayWindow alloc] init];
+        backgroundWindow = [[TKAlertOverlayWindow alloc] init];
     }
     return backgroundWindow;
 }

@@ -1,5 +1,5 @@
 //
-//  BJActionSheetController.h
+//  TKActionSheetController.h
 //
 //
 //  Created by luobin on 13-3-16.
@@ -9,22 +9,22 @@
 #import <UIKit/UIKit.h>
 
 
-typedef NS_ENUM(NSInteger, BJActionSheetButtonType) {
-    BJActionSheetButtonTypeDefault = 0,
-    BJActionSheetButtonTypeCancel,
-    BJActionSheetButtonTypeDestructive
+typedef NS_ENUM(NSInteger, TKActionSheetButtonType) {
+    TKActionSheetButtonTypeDefault = 0,
+    TKActionSheetButtonTypeCancel,
+    TKActionSheetButtonTypeDestructive
 };
 
 
-@class BJActionSheetController;
-@protocol BJActionSheetControllerDelegate <NSObject>
+@class TKActionSheetController;
+@protocol TKActionSheetControllerDelegate <NSObject>
 
-- (void)actionSheet:(BJActionSheetController *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)actionSheet:(TKActionSheetController *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 @end
 
 
-@interface BJActionSheetController : UIViewController {
+@interface TKActionSheetController : UIViewController {
 
 }
 
@@ -36,11 +36,11 @@ typedef NS_ENUM(NSInteger, BJActionSheetButtonType) {
 - (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)()) handler;
 
 @property (nonatomic, readwrite) BOOL vignetteBackground;
-@property (nonatomic, assign) id<BJActionSheetControllerDelegate>delegate;
+@property (nonatomic, assign) id<TKActionSheetControllerDelegate>delegate;
 @property (nonatomic, readonly) NSInteger cancelButtonIndex;
 
-- (void)setTitleColor:(UIColor *)color forButton:(BJActionSheetButtonType)type UI_APPEARANCE_SELECTOR;
-- (UIColor *)titleColorForButton:(BJActionSheetButtonType)type;
+- (void)setTitleColor:(UIColor *)color forButton:(TKActionSheetButtonType)type UI_APPEARANCE_SELECTOR;
+- (UIColor *)titleColorForButton:(TKActionSheetButtonType)type;
 
 - (instancetype)initWithTitle:(NSString *)title;
 + (instancetype)sheetWithTitle:(NSString *)title;

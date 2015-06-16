@@ -1,20 +1,20 @@
 //
-//  BJAlertManager.m
+//  TKAlertManager.m
 //  
 //
 //  Created by luobin on 13-3-16.
 //  Copyright (c) 2013年 luobin. All rights reserved.
 //
 
-#import "BJAlertManager.h"
-#import "BJAlertViewController.h"
-#import "BJAlertOverlayWindow.h"
-#import "BJAlertViewController+Private.h"
+#import "TKAlertManager.h"
+#import "TKAlertViewController.h"
+#import "TKAlertOverlayWindow.h"
+#import "TKAlertViewController+Private.h"
 
 static NSMutableArray *alertViewStack = nil;
 static NSUInteger visibleAlertIndex = NSNotFound;
 
-@implementation BJAlertManager
+@implementation TKAlertManager
 
 + (void)initialize {
     
@@ -26,20 +26,20 @@ static NSUInteger visibleAlertIndex = NSNotFound;
     return alertViewStack;
 }
 
-+ (BOOL)stackContainsAlert:(BJAlertViewController *)alertView {
++ (BOOL)stackContainsAlert:(TKAlertViewController *)alertView {
     return [alertViewStack indexOfObject:alertView] != NSNotFound;
 }
 
-+ (void)removeFromStack:(BJAlertViewController *)alertView {
++ (void)removeFromStack:(TKAlertViewController *)alertView {
     [alertViewStack removeObject:alertView];
 }
 
-+ (void)addToStack:(BJAlertViewController *)alertView dontDimBackground:(BOOL)flag {
++ (void)addToStack:(TKAlertViewController *)alertView dontDimBackground:(BOOL)flag {
     [alertViewStack addObject:alertView];
 }
 
-+ (BJAlertViewController *)visibleAlert {
-    for (BJAlertViewController *alertView in alertViewStack) {
++ (TKAlertViewController *)visibleAlert {
+    for (TKAlertViewController *alertView in alertViewStack) {
         if (alertView.isVisible) {
             return alertView;
         }
@@ -47,7 +47,7 @@ static NSUInteger visibleAlertIndex = NSNotFound;
     return nil;
 }
 
-+ (BJAlertViewController *)topMostAlert {
++ (TKAlertViewController *)topMostAlert {
     return alertViewStack.lastObject;
 }
 
@@ -76,11 +76,11 @@ static NSUInteger visibleAlertIndex = NSNotFound;
 //    }
 //    return YES;
     
-    BJAlertViewController *topMostAlert = self.topMostAlert;
+    TKAlertViewController *topMostAlert = self.topMostAlert;
     if (topMostAlert) {
         return [self cancelTopMostAlertAnimated:animated completion:^(BOOL success) {
             if (success) {
-                [BJAlertManager cancelAlertsAnimated:animated];
+                [TKAlertManager cancelAlertsAnimated:animated];
             }
         }];
     } else {
@@ -93,13 +93,14 @@ static NSUInteger visibleAlertIndex = NSNotFound;
 }
 
 + (BOOL)cancelTopMostAlertAnimated:(BOOL)animated completion:(void(^)(BOOL success))completion{
-    BJAlertViewController *topMostAlert = self.topMostAlert;
+    TKAlertViewController *topMostAlert = self.topMostAlert;
     if (topMostAlert) {
         if (animated) {
             void (^hiddenAlertCompletion)(BOOL) = ^(BOOL finished) {
-                [[BJAlertOverlayWindow defaultWindow] removeOverlay:topMostAlert.view];
+                [[TKAlertOverlayWindow defaultWindow] revertKeyWindowAndHidden];
+                [TKAlertOverlayWindow defaultWindow].rootViewController = nil;
                 topMostAlert.visible = NO;
-                [BJAlertManager removeFromStack:topMostAlert];
+                [TKAlertManager removeFromStack:topMostAlert];
                 
                 if (completion) {
                     completion(YES);
@@ -107,9 +108,10 @@ static NSUInteger visibleAlertIndex = NSNotFound;
             };
             [topMostAlert hiddenAlertAnimatedWithCompletion:hiddenAlertCompletion];
         } else {
-            [[BJAlertOverlayWindow defaultWindow] removeOverlay:topMostAlert.view];
+            [[TKAlertOverlayWindow defaultWindow] revertKeyWindowAndHidden];
+            [TKAlertOverlayWindow defaultWindow].rootViewController = nil;
             topMostAlert.visible = NO;
-            [BJAlertManager removeFromStack:topMostAlert];
+            [TKAlertManager removeFromStack:topMostAlert];
             
             if (completion) {
                 completion(YES);
@@ -124,7 +126,7 @@ static NSUInteger visibleAlertIndex = NSNotFound;
 }
 
 + (BOOL)hideTopMostAlertAnimated:(BOOL)animated {
-    BJAlertViewController *topMostAlert = self.topMostAlert;
+    TKAlertViewController *topMostAlert = self.topMostAlert;
     if (topMostAlert) {
         [topMostAlert temporarilyHideAnimated:animated];
         return YES;

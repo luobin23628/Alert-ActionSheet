@@ -1,14 +1,14 @@
 //
-//  BJFullScreenWindowBackground.m
-//  BJEducation_student
+//  TKFullScreenWindowBackground.m
+//  
 //
 //  Created by binluo on 15/5/26.
 //  Copyright (c) 2015年 Baijiahulian. All rights reserved.
 //
 
-#import "BJFullScreenWindowBackground.h"
+#import "TKFullScreenWindowBackground.h"
 
-@implementation BJFullScreenWindowBackground
+@implementation TKFullScreenWindowBackground
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

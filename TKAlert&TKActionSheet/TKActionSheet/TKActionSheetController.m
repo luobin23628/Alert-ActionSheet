@@ -1,14 +1,14 @@
 //
-//  BJActionSheetController.m
+//  TKActionSheetController.m
 //  
 //
 //  Created by luobin on 15-5-14.
 //  Copyright (c) 2015年 luobin. All rights reserved.
 //
 
-#import "BJActionSheetController.h"
-#import "BJActionSheetOverlayWindow.h"
-#import "BJActionSheetManager.h"
+#import "TKActionSheetController.h"
+#import "TKActionSheetOverlayWindow.h"
+#import "TKActionSheetManager.h"
 #import "UIWindow+Alert.h"
 #import "UIScreen+Size.h"
 #import "UIViewAdditions.h"
@@ -36,28 +36,28 @@
 
 #define kActionSheetBackgroundCapHeight     30
 
-@interface BJActionSheetAction : NSObject
+@interface TKActionSheetAction : NSObject
 
-+ (instancetype)actionWithTitle:(NSString *)title type:(BJActionSheetButtonType)type handler:(void (^)(BJActionSheetAction *action))handler;
++ (instancetype)actionWithTitle:(NSString *)title type:(TKActionSheetButtonType)type handler:(void (^)(TKActionSheetAction *action))handler;
 
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) BJActionSheetButtonType type;
+@property (nonatomic, readonly) TKActionSheetButtonType type;
 @property (nonatomic, getter=isEnabled, assign) BOOL enabled;
 
 @end
 
-@interface BJActionSheetAction()
+@interface TKActionSheetAction()
 
 @property (nonatomic, readwrite) NSString *title;
-@property (nonatomic, readwrite) BJActionSheetButtonType type;
-@property (nonatomic, copy) void (^handler)(BJActionSheetAction *action);
+@property (nonatomic, readwrite) TKActionSheetButtonType type;
+@property (nonatomic, copy) void (^handler)(TKActionSheetAction *action);
 
 @end
 
-@implementation BJActionSheetAction
+@implementation TKActionSheetAction
 
-+ (instancetype)actionWithTitle:(NSString *)title type:(BJActionSheetButtonType)type handler:(void (^)(BJActionSheetAction *))handler {
-    BJActionSheetAction *action = [[BJActionSheetAction alloc] init];
++ (instancetype)actionWithTitle:(NSString *)title type:(TKActionSheetButtonType)type handler:(void (^)(TKActionSheetAction *))handler {
+    TKActionSheetAction *action = [[TKActionSheetAction alloc] init];
     action.title = title;
     action.type = type;
     action.handler = handler;
@@ -66,11 +66,11 @@
 
 @end
 
-@interface _BJActionSheetLine : UIView
+@interface _TKActionSheetLine : UIView
 
 @end
 
-@implementation _BJActionSheetLine
+@implementation _TKActionSheetLine
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -95,13 +95,13 @@
 @end
 
 
-@interface BJActionSheetController()<UIGestureRecognizerDelegate>
+@interface TKActionSheetController()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, readwrite, strong) UIView *customView;
 @property (nonatomic, strong) UIView *warpperView;
 @property (nonatomic, strong) UIView *containerView;
 
-@property (nonatomic, strong) BJActionSheetOverlayWindow *backgroundWindow;
+@property (nonatomic, strong) TKActionSheetOverlayWindow *backgroundWindow;
 @property (nonatomic, strong) NSMutableDictionary *titleColorDic;
 @property (nonatomic, strong) NSMutableArray *actions;
 @property (nonatomic, assign) CGFloat height;
@@ -112,7 +112,7 @@
 
 @end
 
-@implementation BJActionSheetController
+@implementation TKActionSheetController
 
 static UIFont *titleFont = nil;
 static UIFont *buttonFont = nil;
@@ -120,7 +120,7 @@ static UIFont *buttonFont = nil;
 #pragma mark - init
 
 + (void)initialize {
-    if (self == [BJActionSheetController class]){
+    if (self == [TKActionSheetController class]){
         titleFont = kActionSheetTitleFont;
         buttonFont = kActionSheetButtonFont;
     }
@@ -131,7 +131,7 @@ static UIFont *buttonFont = nil;
 }
 
 + (instancetype)sheetWithTitle:(NSString *)title {
-    return [[BJActionSheetController alloc] initWithTitle:title];
+    return [[TKActionSheetController alloc] initWithTitle:title];
 }
 
 - (instancetype)initWithTitle:(NSString *)title {
@@ -169,9 +169,9 @@ static UIFont *buttonFont = nil;
     if ((self = [super init])) {
         
         self.titleColorDic = [[NSMutableDictionary alloc] init];
-        [self setTitleColor:kActionSheetCancelButtonTextColor forButton:BJActionSheetButtonTypeCancel];
-        [self setTitleColor:kActionSheetButtonTextColor forButton:BJActionSheetButtonTypeDefault];
-        [self setTitleColor:kActionSheetDestructiveButtonTextColor forButton:BJActionSheetButtonTypeDestructive];
+        [self setTitleColor:kActionSheetCancelButtonTextColor forButton:TKActionSheetButtonTypeCancel];
+        [self setTitleColor:kActionSheetButtonTextColor forButton:TKActionSheetButtonTypeDefault];
+        [self setTitleColor:kActionSheetDestructiveButtonTextColor forButton:TKActionSheetButtonTypeDestructive];
         
         self.actions = [[NSMutableArray alloc] init];
         self.height = kActionSheetTopMargin;
@@ -180,13 +180,13 @@ static UIFont *buttonFont = nil;
         self.customView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         
         self.vignetteBackground = NO;
-        self.dismissWhenTapWindow = NO;
+        self.dismissWhenTapWindow = YES;
     }
     return self;
 }
 
 + (instancetype)sheetWithCustomView:(UIView *)customView {
-    return [[BJActionSheetController alloc] initWithCustomView:customView];
+    return [[TKActionSheetController alloc] initWithCustomView:customView];
 }
 
 - (instancetype)initWithViewController:(UIViewController *)viewController {
@@ -198,7 +198,7 @@ static UIFont *buttonFont = nil;
 }
 
 + (instancetype)sheetWithViewController:(UIViewController *)viewController {
-    return [[BJActionSheetController alloc] initWithViewController:viewController];
+    return [[TKActionSheetController alloc] initWithViewController:viewController];
 }
 
 - (void) dealloc {
@@ -242,32 +242,32 @@ static UIFont *buttonFont = nil;
     return self.actions.count;
 }
 
-- (void)setTitleColor:(UIColor *)color forButton:(BJActionSheetButtonType)type UI_APPEARANCE_SELECTOR {
+- (void)setTitleColor:(UIColor *)color forButton:(TKActionSheetButtonType)type UI_APPEARANCE_SELECTOR {
     [self.titleColorDic setObject:color forKey:@(type)];
 }
 
-- (UIColor *)titleColorForButton:(BJActionSheetButtonType)type {
+- (UIColor *)titleColorForButton:(TKActionSheetButtonType)type {
     return [self.titleColorDic objectForKey:@(type)];
 }
 
 - (void)setDestructiveButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addButtonWithTitle:title type:BJActionSheetButtonTypeDestructive handler:handler atIndex:-1];
+    [self addButtonWithTitle:title type:TKActionSheetButtonTypeDestructive handler:handler atIndex:-1];
 }
 
 - (void)setCancelButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addButtonWithTitle:title type:BJActionSheetButtonTypeCancel handler:handler atIndex:-1];
+    [self addButtonWithTitle:title type:TKActionSheetButtonTypeCancel handler:handler atIndex:-1];
 }
 
 - (void)addButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addButtonWithTitle:title type:BJActionSheetButtonTypeDefault handler:handler atIndex:-1];
+    [self addButtonWithTitle:title type:TKActionSheetButtonTypeDefault handler:handler atIndex:-1];
 }
 
 - (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
-    [self addButtonWithTitle:title type:BJActionSheetButtonTypeDestructive handler:handler atIndex:index];
+    [self addButtonWithTitle:title type:TKActionSheetButtonTypeDestructive handler:handler atIndex:index];
 }
 
 - (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
-    [self addButtonWithTitle:title type:BJActionSheetButtonTypeDefault handler:handler atIndex:index];
+    [self addButtonWithTitle:title type:TKActionSheetButtonTypeDefault handler:handler atIndex:index];
 }
 
 - (void)showInViewController:(UIViewController *)parentController animated: (BOOL)flag completion:(void (^)(void))completion {
@@ -278,14 +278,14 @@ static UIFont *buttonFont = nil;
     
     NSParameterAssert([self.actions count] || self.customView || self.title);
     
-    self.backgroundWindow = [[BJActionSheetOverlayWindow alloc] init];
+    self.backgroundWindow = [[TKActionSheetOverlayWindow alloc] init];
     self.backgroundWindow.frame = [[UIScreen mainScreen] bounds];
     self.backgroundWindow.backgroundView.vignetteBackground = _vignetteBackground;
-    [self.backgroundWindow addOverlayToMainWindow:self.view];
+    [self.backgroundWindow makeKeyAndVisible];
     self.backgroundWindow.rootViewController = self;
     self.backgroundWindow.frame = [[UIScreen mainScreen] bounds];
     
-    [BJActionSheetManager addToStack:self];
+    [TKActionSheetManager addToStack:self];
     
     [self updateFrameForDisplay];
     
@@ -329,7 +329,7 @@ static UIFont *buttonFont = nil;
     }
     
     if (buttonIndex >= 0 && buttonIndex < [self.actions count]) {
-        BJActionSheetAction *action = [self.actions objectAtIndex: buttonIndex];
+        TKActionSheetAction *action = [self.actions objectAtIndex: buttonIndex];
         if (action.handler)
         {
             ((void (^)())action.handler)();
@@ -349,10 +349,11 @@ static UIFont *buttonFont = nil;
                              [self.backgroundWindow reduceAlphaIfEmpty];
                          } completion:^(BOOL finished) {
                             
-                             [self.backgroundWindow removeOverlay:self.view];
+                             [self.backgroundWindow revertKeyWindowAndHidden];
+                             self.backgroundWindow.rootViewController = nil;
                              self.view = nil;
                              [self removeFromParentViewController];
-                             [BJActionSheetManager removeFromStack:self];
+                             [TKActionSheetManager removeFromStack:self];
                              self.backgroundWindow =  nil;
                              
                              if (completion) {
@@ -360,11 +361,12 @@ static UIFont *buttonFont = nil;
                              }
                          }];
     } else {
-        [self.backgroundWindow removeOverlay:self.view];
+        [self.backgroundWindow revertKeyWindowAndHidden];
+        self.backgroundWindow.rootViewController = nil;
         [self.view removeFromSuperview];
         self.view = nil;
         [self removeFromParentViewController];
-        [BJActionSheetManager removeFromStack:self];
+        [TKActionSheetManager removeFromStack:self];
 
         self.backgroundWindow = nil;
         
@@ -375,8 +377,8 @@ static UIFont *buttonFont = nil;
 }
 
 - (NSInteger)cancelButtonIndex {
-    BJActionSheetAction *lastAction = [self.actions lastObject];
-    if (lastAction.type == BJActionSheetButtonTypeCancel) {
+    TKActionSheetAction *lastAction = [self.actions lastObject];
+    if (lastAction.type == TKActionSheetButtonTypeCancel) {
         return [self.actions count] - 1;
     }
     return -1;
@@ -409,18 +411,18 @@ static UIFont *buttonFont = nil;
 
 #pragma mark - Private
 
-- (void)addButtonWithTitle:(NSString *)title type:(BJActionSheetButtonType)type handler:(void (^)())handler atIndex:(NSInteger)index {
-    BJActionSheetAction *action = [BJActionSheetAction actionWithTitle:title type:type handler:handler];
-    BJActionSheetAction *lastAction = [self.actions lastObject];
+- (void)addButtonWithTitle:(NSString *)title type:(TKActionSheetButtonType)type handler:(void (^)())handler atIndex:(NSInteger)index {
+    TKActionSheetAction *action = [TKActionSheetAction actionWithTitle:title type:type handler:handler];
+    TKActionSheetAction *lastAction = [self.actions lastObject];
     
-    if (type == BJActionSheetButtonTypeCancel) {
-        if (lastAction.type == BJActionSheetButtonTypeCancel) {
+    if (type == TKActionSheetButtonTypeCancel) {
+        if (lastAction.type == TKActionSheetButtonTypeCancel) {
             [self.actions removeLastObject];
         }
         [self.actions addObject:action];
     } else {
         
-        if (lastAction.type == BJActionSheetButtonTypeCancel) {
+        if (lastAction.type == TKActionSheetButtonTypeCancel) {
             [self.actions removeLastObject];
         }
         if (index  >= 0) {
@@ -429,7 +431,7 @@ static UIFont *buttonFont = nil;
         } else {
             [self.actions addObject:action];
         }
-        if (lastAction.type == BJActionSheetButtonTypeCancel) {
+        if (lastAction.type == TKActionSheetButtonTypeCancel) {
             [self.actions addObject:lastAction];
         }
     }
@@ -445,17 +447,17 @@ static UIFont *buttonFont = nil;
     self.height += height;
     
     NSUInteger i = 1;
-    for (BJActionSheetAction *action in self.actions) {
-        if ((i == 1 && self.title) || (i != 1 && action.type != BJActionSheetButtonTypeCancel)) {
+    for (TKActionSheetAction *action in self.actions) {
+        if ((i == 1 && self.title) || (i != 1 && action.type != TKActionSheetButtonTypeCancel)) {
             CGRect frame = CGRectMake(kActionSheetBorder, self.height, width, 1);
-            _BJActionSheetLine *line = [[_BJActionSheetLine alloc] initWithFrame:frame];
+            _TKActionSheetLine *line = [[_TKActionSheetLine alloc] initWithFrame:frame];
             self.height += 1;
             [self.containerView addSubview:line];
         }
         UIButton *button = [self buttonWithAction:action];
         CGRect frame = CGRectMake(kActionSheetBorder, self.height, width, kActionSheetButtonHeight);
         frame.size.height = kActionSheetButtonHeight;
-        if (action.type == BJActionSheetButtonTypeCancel && [self.actions count] > 1) {
+        if (action.type == TKActionSheetButtonTypeCancel && [self.actions count] > 1) {
             frame.origin.y += kActionSheetCancelButtonTopMargin;
             self.height += kActionSheetCancelButtonTopMargin;
         }
@@ -469,9 +471,9 @@ static UIFont *buttonFont = nil;
 }
 
 
-- (UIButton *)buttonWithAction:(BJActionSheetAction *)action {
+- (UIButton *)buttonWithAction:(TKActionSheetAction *)action {
     NSString *title = action.title;
-    BJActionSheetButtonType type = action.type;
+    TKActionSheetButtonType type = action.type;
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.titleLabel.font = buttonFont;

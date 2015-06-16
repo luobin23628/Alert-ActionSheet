@@ -1,6 +1,6 @@
 //
 //  UIScreen+Size.h
-//  BJEducation_student
+//  
 //
 //  Created by binluo on 15/5/26.
 //  Copyright (c) 2015年 Baijiahulian. All rights reserved.

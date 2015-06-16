@@ -1,15 +1,15 @@
 //
-//  BJAlertViewController+Private.h
-//  BJEducation_student
+//  TKAlertViewController+Private.h
+//  
 //
 //  Created by binluo on 15/5/28.
 //  Copyright (c) 2015年 Baijiahulian. All rights reserved.
 //
 
-#import "BJAlertViewController.h"
+#import "TKAlertViewController.h"
 
 #define kAlertViewBorder         15
-#define kAlertViewBounce         30
+#define kAlertViewBounce         20
 #define kAlertButtonHeight       44
 #define kAlertButtonLineWidth       (1.0/[UIScreen mainScreen].scale)
 
@@ -32,7 +32,7 @@
 
 
 
-@interface BJAlertViewController ()<UIGestureRecognizerDelegate>
+@interface TKAlertViewController ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) BOOL isAnimating;
 @property (nonatomic, assign) BOOL cancelWhenDoneAnimating;
@@ -42,16 +42,16 @@
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, copy)  void (^dismissWhenTapWindowHandler)() ;
+@property (nonatomic, readwrite) BOOL dismissBySwipe;
 
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 
 @property (nonatomic, strong) NSMutableArray *actions;
 
 @property (nonatomic, strong) NSMutableDictionary *titleColorDic;
-
 @property (nonatomic, strong) UIColor *windowBackgroundColor;
 
-@property (nonatomic, strong) UIView *warpperView;
+@property (nonatomic, strong) UIView *wapperView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UILabel *titleView;
@@ -59,11 +59,12 @@
 @property (nonatomic, strong) UIView *buttonContainerView;
 
 @property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, assign) BOOL enabledParallaxEffect;
 
 @end
 
 
-@interface BJAlertViewController(Private)
+@interface TKAlertViewController(Private)
 
 - (void)updateFrameForDisplay;
 
@@ -79,5 +80,9 @@
 - (void)temporarilyHideAnimated:(BOOL)animated;
 
 - (void)showOverlayWindowAniamted;
+
+
+- (void)addParallaxEffect;
+- (void)removeParallaxEffect;
 
 @end
