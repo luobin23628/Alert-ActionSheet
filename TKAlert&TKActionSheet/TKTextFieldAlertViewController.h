@@ -19,7 +19,7 @@
 
 @interface TKTextFieldAlertViewController : TKAlertViewController
 
-@property (nonatomic, readonly, retain) UITextField *textField;
+@property (nonatomic, readonly, strong) UITextField *textField;
 @property (nonatomic, assign) id<TKTextFieldAlertViewDelegate>delegate;
 
 - (id)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder;
