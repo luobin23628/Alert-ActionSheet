@@ -38,7 +38,7 @@
     self.customView.frame = frame;
     height += frame.size.height + 10;
     
-    self.scrollView.contentSize = CGSizeMake(self.wapperView.bounds.size.width, height);
+    self.scrollView.contentSize = CGSizeMake(self.containerView.bounds.size.width, height);
     
     CGFloat y = height;
     CGFloat buttonContainerViewHeight = 0;
@@ -779,7 +779,7 @@
 }
 
 - (void)panWindow:(UIPanGestureRecognizer *)gestureRecognizer {
-    if (self.dismissBySwipe) {
+    if (self.dismissBySwipe && self.animationType == TKAlertViewAnimationPathStyle) {
         CGFloat alpha = 0;
         [self.windowBackgroundColor getWhite:nil alpha:&alpha];
         

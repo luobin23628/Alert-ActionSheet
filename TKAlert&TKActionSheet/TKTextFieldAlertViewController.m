@@ -53,6 +53,8 @@
         textFiled.layer.borderWidth = 0.5f;
         textFiled.layer.borderColor = [UIColor lightGrayColor].CGColor;
     }
+    textFiled.returnKeyType = UIReturnKeyDone;
+    textFiled.keyboardType = UIKeyboardTypeDefault;
     textFiled.placeholder = placeholder;
     textFiled.font = [UIFont systemFontOfSize:14];
     textFiled.textAlignment = 0;//NSTextAlignmentLeft;
@@ -122,12 +124,12 @@
         self.keyboardBoundHeight = keyboardBounds.size.width;
     }
     
-    center.y = self.wapperView.height - (self.keyboardBoundHeight + self.containerView.height/2+ 2);
+    center.y = (self.wapperView.height - self.keyboardBoundHeight) * 4/7;
     
 	// animations settings
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:[duration doubleValue]];
+    [UIView setAnimationDuration:[duration doubleValue]?:0.1];
     [UIView setAnimationCurve:[curve intValue]];
     [UIView setAnimationDelegate:self];
 	
@@ -145,7 +147,7 @@
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         if ([self.textField isFirstResponder]) {
             CGPoint center = self.containerView.center;
-            center.y = self.wapperView.height - (self.keyboardBoundHeight + self.containerView.height/2+ 2);
+            center.y = (self.wapperView.height - self.keyboardBoundHeight) * 4/7;
             self.containerView.center = center;
         }
     } completion:nil];
@@ -157,7 +159,7 @@
 
     if ([self.textField isFirstResponder]) {
         CGPoint center = self.containerView.center;
-        center.y = self.wapperView.height - (self.keyboardBoundHeight + self.containerView.height/2+ 2);
+        center.y = (self.wapperView.height - self.keyboardBoundHeight) * 4/7;
         self.containerView.center = center;
     }
 }
