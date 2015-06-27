@@ -55,29 +55,22 @@
 }
 
 - (void)makeKeyAndVisible {
-    if (self.hidden) {
+    [super makeKeyAndVisible];
+}
+
+- (void)makeKeyWindow {
+    if (!self.isKeyWindow) {
+        self.alpha = 1.0f;
+        self.backgroundView.alpha = 1;
+        self.hidden = NO;
+        self.userInteractionEnabled = YES;
+        
         _previousKeyWindow = [[UIApplication sharedApplication] keyWindow];
         if ([_previousKeyWindow respondsToSelector:@selector(setTintAdjustmentMode:)]) { // for iOS 7
             self.oldTintAdjustmentMode = _previousKeyWindow.tintAdjustmentMode;
             _previousKeyWindow.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
         }
-        self.alpha = 1.0f;
-        self.backgroundView.alpha = 1;
-        self.hidden = NO;
-        self.userInteractionEnabled = YES;
-        [super makeKeyAndVisible];
     }
-}
-
-- (void)makeKeyWindow {
-    _previousKeyWindow = [[UIApplication sharedApplication] keyWindow];
-    if ([_previousKeyWindow respondsToSelector:@selector(setTintAdjustmentMode:)]) { // for iOS 7
-        self.oldTintAdjustmentMode = _previousKeyWindow.tintAdjustmentMode;
-        _previousKeyWindow.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
-    }
-    self.alpha = 1.0f;
-    self.backgroundView.alpha = 1;
-    self.userInteractionEnabled = YES;
     [super makeKeyWindow];
 }
 
@@ -90,12 +83,15 @@
 }
 
 - (void)revertKeyWindowAndHidden {
-    self.hidden = YES;
-    if ([_previousKeyWindow respondsToSelector:@selector(setTintAdjustmentMode:)]) {
-        _previousKeyWindow.tintAdjustmentMode = self.oldTintAdjustmentMode;
+    if (self.isKeyWindow) {
+        self.hidden = YES;
+        
+        if ([_previousKeyWindow respondsToSelector:@selector(setTintAdjustmentMode:)]) {
+            _previousKeyWindow.tintAdjustmentMode = self.oldTintAdjustmentMode;
+        }
+        [_previousKeyWindow makeKeyWindow];
+        _previousKeyWindow = nil;
     }
-    [_previousKeyWindow makeKeyWindow];
-    _previousKeyWindow = nil;
 }
 
 @end

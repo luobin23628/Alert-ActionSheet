@@ -17,6 +17,29 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+
+@interface TKAlertView : UIView
+
+@property (nonatomic, strong) NSMutableDictionary *titleColorDic;
+
+- (void)setTitleColor:(UIColor *)color forButton:(TKAlertViewButtonType)type UI_APPEARANCE_SELECTOR;
+- (UIColor *)titleColorForButton:(TKAlertViewButtonType)type;
+
+@end
+
+@implementation TKAlertView
+
+- (void)setTitleColor:(UIColor *)color forButton:(TKAlertViewButtonType)type {
+    [self.titleColorDic setObject:color forKey:@(type)];
+}
+
+- (UIColor *)titleColorForButton:(TKAlertViewButtonType)type {
+    return [self.titleColorDic objectForKey:@(type)]?:kAlertViewButtonTextColor;
+}
+
+@end
+
+
 typedef void (^FinishedCallback)(BOOL finished);
 
 @implementation TKAlertViewController
@@ -83,9 +106,6 @@ static UIFont *buttonFont = nil;
     if ((self = [super init])) {
         
         self.titleColorDic = [[NSMutableDictionary alloc] init];
-        [self setTitleColor:kAlertViewButtonTextColor forButton:TKAlertViewButtonTypeCancel];
-        [self setTitleColor:kAlertViewButtonTextColor forButton:TKAlertViewButtonTypeDefault];
-        [self setTitleColor:[UIColor redColor] forButton:TKAlertViewButtonTypeDestructive];
         
         self.windowBackgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
         self.actions = [NSMutableArray array];
@@ -93,8 +113,6 @@ static UIFont *buttonFont = nil;
         self.customView = customView;
         self.animationType = TKAlertViewAnimationBounce;
         self.enabledParallaxEffect = YES;
-        
-//        [[self.class appearance] applyInvocationTo:self];
     }
     return self;
 }
@@ -123,6 +141,10 @@ static UIFont *buttonFont = nil;
 
 + (CGFloat)widthForCustomView {
     return kAlertViewWidth - 2*kAlertViewBorder;
+}
+
+- (void)loadView {
+    self.view = [[TKAlertView alloc] init];
 }
 
 - (void)viewDidLoad {
@@ -194,7 +216,18 @@ static UIFont *buttonFont = nil;
 }
 
 - (UIColor *)titleColorForButton:(TKAlertViewButtonType)type {
-    return [self.titleColorDic objectForKey:@(type)]?:kAlertViewButtonTextColor;
+    UIColor *color = [self.titleColorDic objectForKey:@(type)];
+    if (!color) {
+        color = [[self.class appearance] titleColorForButton:type];
+    }
+    if (!color) {
+        if (type == TKAlertViewButtonTypeDestructive) {
+            color = [UIColor redColor];
+        } else {
+            color = kAlertViewButtonTextColor;
+        }
+    }
+    return color;
 }
 
 - (void)addButtonWithTitle:(NSString *)title type:(TKAlertViewButtonType)type handler:(void (^)())handler atIndex:(NSInteger)index {
@@ -283,11 +316,6 @@ static UIFont *buttonFont = nil;
         _backgroundColor = nil;
     }
 }
-//
-//+ (instancetype)appearance {
-//    return [MZAppearance appearanceForClass:self];
-//}
-
 
 #pragma mark -  Autorotate
 
@@ -312,8 +340,9 @@ static UIFont *buttonFont = nil;
 - (NSUInteger)supportedInterfaceOrientations
 {
     UIWindow *previousKeyWindow = [TKAlertOverlayWindow defaultWindow].previousKeyWindow;
-    
+    NSLog(@"%@", previousKeyWindow);
     UIViewController *viewController = [previousKeyWindow currentViewController];
+    NSLog(@"%@", viewController);
     if (viewController) {
         return [viewController supportedInterfaceOrientations];
     }
@@ -358,6 +387,24 @@ static UIFont *buttonFont = nil;
         previousKeyWindow = [UIApplication sharedApplication].windows[0];
     }
     return [[previousKeyWindow viewControllerForStatusBarHidden] prefersStatusBarHidden];
+}
+
+#pragma mark - UIAppearance
+
++ (instancetype)appearance {
+    return (id)[TKAlertView appearance];
+}
+
++ (instancetype)appearanceWhenContainedIn:(Class <UIAppearanceContainer>)ContainerClass, ... NS_REQUIRES_NIL_TERMINATION {
+    return [self appearance];
+}
+
++ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait {
+    return [self appearance];
+}
+
++ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait whenContainedIn:(Class <UIAppearanceContainer>)ContainerClass, ... NS_REQUIRES_NIL_TERMINATION {
+    return [self appearance];
 }
 
 @end

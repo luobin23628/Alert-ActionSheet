@@ -23,7 +23,7 @@ typedef enum {
 
 @protocol TKAlertViewControllerDelegate;
 
-@interface TKAlertViewController : UIViewController
+@interface TKAlertViewController : UIViewController<UIAppearance>
 
 @property (nonatomic, readonly, strong) UIView *customView;
 

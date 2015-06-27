@@ -16,16 +16,16 @@
 #define kAlertViewWidth          280
 #define kAlertViewMinHeigh       120
 
-#define kAlertViewTitleFont             [UIFont boldSystemFontOfSize:18]
-#define kAlertViewTitleTextColor        [UIColor colorWithWhite:50.0/255.0 alpha:1.0]
+#define kAlertViewTitleFont             [UIFont boldSystemFontOfSize:15]
+#define kAlertViewTitleTextColor        [UIColor colorWithWhite:60.0/255.0 alpha:1.0]
 
-#define kAlertViewMessageFont           [UIFont systemFontOfSize:16]
-#define kAlertViewMessageTextColor      [UIColor colorWithWhite:50.0/255.0 alpha:1.0]
+#define kAlertViewMessageFont           [UIFont systemFontOfSize:14]
+#define kAlertViewMessageTextColor      [UIColor colorWithWhite:60.0/255.0 alpha:1.0]
 
-#define kAlertViewLineColor             [UIColor colorWithWhite:179/255.0 alpha:1]
+#define kAlertViewLineColor             [UIColor colorWithWhite:200.0/255.0 alpha:1]
 
 #define kAlertViewButtonFont            [UIFont systemFontOfSize:16]
-#define kAlertViewButtonTextColor       [UIColor colorWithRed:0 green:126/255.0 blue:245/255.0 alpha:1]
+#define kAlertViewButtonTextColor       [UIColor colorWithRed:109/255.0 green:109/255.0 blue:110/255.0 alpha:1]
 #define kAlertViewBackgroundColor       [UIColor colorWithWhite:244/255.0 alpha:1]
 
 #define kAnimationCompletionKey         @"AnimationCompletionKey"

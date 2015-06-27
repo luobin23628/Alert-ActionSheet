@@ -34,7 +34,8 @@
 		EC2EE93B1B304ED5004A6E84 /* TKBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9251B304ED5004A6E84 /* TKBlurView.m */; };
 		EC2EE93C1B304ED5004A6E84 /* TKFullScreenWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9271B304ED5004A6E84 /* TKFullScreenWindow.m */; };
 		EC2EE93D1B304ED5004A6E84 /* TKFullScreenWindowBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9291B304ED5004A6E84 /* TKFullScreenWindowBackground.m */; };
-		EC2EE93E1B304ED5004A6E84 /* TKTextFieldAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE92B1B304ED5004A6E84 /* TKTextFieldAlertViewController.m */; };
+		EC9BEC771B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9BEC741B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m */; };
+		EC9BEC781B3EC571009AA4B4 /* TKTextFieldAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9BEC761B3EC571009AA4B4 /* TKTextFieldAlertViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,8 +87,10 @@
 		EC2EE9271B304ED5004A6E84 /* TKFullScreenWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFullScreenWindow.m; sourceTree = "<group>"; };
 		EC2EE9281B304ED5004A6E84 /* TKFullScreenWindowBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFullScreenWindowBackground.h; sourceTree = "<group>"; };
 		EC2EE9291B304ED5004A6E84 /* TKFullScreenWindowBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFullScreenWindowBackground.m; sourceTree = "<group>"; };
-		EC2EE92A1B304ED5004A6E84 /* TKTextFieldAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTextFieldAlertViewController.h; sourceTree = "<group>"; };
-		EC2EE92B1B304ED5004A6E84 /* TKTextFieldAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTextFieldAlertViewController.m; sourceTree = "<group>"; };
+		EC9BEC731B3EC571009AA4B4 /* TKFirstResponseAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFirstResponseAlertViewController.h; sourceTree = "<group>"; };
+		EC9BEC741B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFirstResponseAlertViewController.m; sourceTree = "<group>"; };
+		EC9BEC751B3EC571009AA4B4 /* TKTextFieldAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTextFieldAlertViewController.h; sourceTree = "<group>"; };
+		EC9BEC761B3EC571009AA4B4 /* TKTextFieldAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTextFieldAlertViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +161,6 @@
 				EC2EE9271B304ED5004A6E84 /* TKFullScreenWindow.m */,
 				EC2EE9281B304ED5004A6E84 /* TKFullScreenWindowBackground.h */,
 				EC2EE9291B304ED5004A6E84 /* TKFullScreenWindowBackground.m */,
-				EC2EE92A1B304ED5004A6E84 /* TKTextFieldAlertViewController.h */,
-				EC2EE92B1B304ED5004A6E84 /* TKTextFieldAlertViewController.m */,
 			);
 			name = "TKAlert&TKActionSheet";
 			path = "../TKAlert&TKActionSheet";
@@ -210,6 +211,10 @@
 				EC2EE9211B304ED5004A6E84 /* TKAlertViewController+Private.m */,
 				EC2EE9221B304ED5004A6E84 /* TKAlertViewController.h */,
 				EC2EE9231B304ED5004A6E84 /* TKAlertViewController.m */,
+				EC9BEC731B3EC571009AA4B4 /* TKFirstResponseAlertViewController.h */,
+				EC9BEC741B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m */,
+				EC9BEC751B3EC571009AA4B4 /* TKTextFieldAlertViewController.h */,
+				EC9BEC761B3EC571009AA4B4 /* TKTextFieldAlertViewController.m */,
 			);
 			path = TKAlert;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			files = (
 				EC2EE93B1B304ED5004A6E84 /* TKBlurView.m in Sources */,
 				EC2EE9311B304ED5004A6E84 /* UIWindow+Alert.m in Sources */,
+				EC9BEC771B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m in Sources */,
 				EC2EE9341B304ED5004A6E84 /* TKActionSheetManager.m in Sources */,
 				EC2EE93D1B304ED5004A6E84 /* TKFullScreenWindowBackground.m in Sources */,
 				EC2EE8A41B300A59004A6E84 /* ViewController.m in Sources */,
@@ -299,9 +305,9 @@
 				EC2EE9391B304ED5004A6E84 /* TKAlertViewController+Private.m in Sources */,
 				EC2EE92C1B304ED5004A6E84 /* NSObject+Invocation.m in Sources */,
 				EC2EE9371B304ED5004A6E84 /* TKAlertOverlayWindow.m in Sources */,
+				EC9BEC781B3EC571009AA4B4 /* TKTextFieldAlertViewController.m in Sources */,
 				EC2EE8A11B300A59004A6E84 /* AppDelegate.m in Sources */,
 				EC2EE93A1B304ED5004A6E84 /* TKAlertViewController.m in Sources */,
-				EC2EE93E1B304ED5004A6E84 /* TKTextFieldAlertViewController.m in Sources */,
 				EC2EE9301B304ED5004A6E84 /* UIViewAdditions.m in Sources */,
 				EC2EE9331B304ED5004A6E84 /* TKActionSheetController.m in Sources */,
 				EC2EE93C1B304ED5004A6E84 /* TKFullScreenWindow.m in Sources */,
@@ -455,6 +461,7 @@
 				EC2EE8BD1B300A59004A6E84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

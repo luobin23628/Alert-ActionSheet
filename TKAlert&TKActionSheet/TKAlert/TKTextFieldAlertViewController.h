@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 luobin. All rights reserved.
 //
 
-#import "TKAlertViewController.h"
+#import "TKFirstResponseAlertViewController.h"
 
 @class TKTextFieldAlertViewController;
 @protocol TKTextFieldAlertViewDelegate <TKAlertViewControllerDelegate>
@@ -17,7 +17,7 @@
 
 @end
 
-@interface TKTextFieldAlertViewController : TKAlertViewController
+@interface TKTextFieldAlertViewController : TKFirstResponseAlertViewController
 
 //@property (nonatomic, readonly, strong) UITextField *textField;
 @property (nonatomic, assign) id<TKTextFieldAlertViewDelegate>delegate;
