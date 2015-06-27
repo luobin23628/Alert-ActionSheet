@@ -17,6 +17,6 @@
 + (void)removeFromStack:(TKActionSheetController *)actionSheet;
 + (TKActionSheetController *)topMostActionSheet;
 + (BOOL)canceltopMostActionSheetAnimated:(BOOL)animated;
-+ (BOOL)cancelAlertsAnimated:(BOOL)animated;
++ (BOOL)cancelAllAlertsAnimated:(BOOL)animated;
 
 @end

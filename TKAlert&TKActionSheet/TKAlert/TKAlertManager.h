@@ -18,6 +18,6 @@
 + (TKAlertViewController *)visibleAlert;
 + (TKAlertViewController *)topMostAlert;
 + (BOOL)cancelTopMostAlertAnimated:(BOOL)animated;
-+ (BOOL)cancelAlertsAnimated:(BOOL)animated;
++ (BOOL)cancelAllAlertsAnimated:(BOOL)animated;
 + (BOOL)hideTopMostAlertAnimated:(BOOL)animated;
 @end

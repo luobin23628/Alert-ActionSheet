@@ -38,12 +38,12 @@ static NSMutableArray *actionSheetStack = nil;
     return actionSheetStack.lastObject;
 }
 
-+ (BOOL)cancelAlertsAnimated:(BOOL)animated {
++ (BOOL)cancelAllAlertsAnimated:(BOOL)animated {
     TKActionSheetController *topMostActionSheet = self.topMostActionSheet;
     if (topMostActionSheet) {
         return [self canceltopMostActionSheetAnimated:animated completion:^(BOOL success) {
             if (success) {
-                [self cancelAlertsAnimated:animated];
+                [self cancelAllAlertsAnimated:animated];
             }
         }];
     } else {

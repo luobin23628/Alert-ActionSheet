@@ -274,8 +274,10 @@
 }
 
 - (void)hiddenAlertAnimatedWithCompletion:(void (^)(BOOL finished))completion1 {
-    
+    self.isAnimating = YES;
     void (^completion)(BOOL) = ^(BOOL finished) {
+        self.isAnimating = NO;
+        
         if (completion1) {
             completion1(finished);
         }
@@ -339,9 +341,8 @@
 }
 
 - (void)dismissAnimated:(BOOL)animated {
-    [self dismissWithClickedButtonIndex:0 animated:animated completion:nil noteDelegate:NO];
+    [self dismissWithClickedButtonIndex:-1 animated:animated completion:nil noteDelegate:NO];
 }
-
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated completion:(void (^)(void))comp noteDelegate:(BOOL)noteDelegate{
     if (!self.isVisible) {
@@ -357,7 +358,6 @@
     
     [self.view removeGestureRecognizer:self.panGestureRecognizer];
     self.panGestureRecognizer = nil;
-    
     
     if (animated){
         __block TKAlertViewController *selfObj = self;

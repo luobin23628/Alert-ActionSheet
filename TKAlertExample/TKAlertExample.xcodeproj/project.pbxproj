@@ -22,7 +22,6 @@
 		EC2EE92F1B304ED5004A6E84 /* UIScreen+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE90C1B304ED5004A6E84 /* UIScreen+Size.m */; };
 		EC2EE9301B304ED5004A6E84 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE90E1B304ED5004A6E84 /* UIViewAdditions.m */; };
 		EC2EE9311B304ED5004A6E84 /* UIWindow+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9101B304ED5004A6E84 /* UIWindow+Alert.m */; };
-		EC2EE9321B304ED5004A6E84 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE9111B304ED5004A6E84 /* LICENSE */; };
 		EC2EE9331B304ED5004A6E84 /* TKActionSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9141B304ED5004A6E84 /* TKActionSheetController.m */; };
 		EC2EE9341B304ED5004A6E84 /* TKActionSheetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9161B304ED5004A6E84 /* TKActionSheetManager.m */; };
 		EC2EE9351B304ED5004A6E84 /* TKActionSheetOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9181B304ED5004A6E84 /* TKActionSheetOverlayWindow.m */; };
@@ -64,7 +63,6 @@
 		EC2EE90E1B304ED5004A6E84 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		EC2EE90F1B304ED5004A6E84 /* UIWindow+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Alert.h"; sourceTree = "<group>"; };
 		EC2EE9101B304ED5004A6E84 /* UIWindow+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Alert.m"; sourceTree = "<group>"; };
-		EC2EE9111B304ED5004A6E84 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		EC2EE9131B304ED5004A6E84 /* TKActionSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKActionSheetController.h; sourceTree = "<group>"; };
 		EC2EE9141B304ED5004A6E84 /* TKActionSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKActionSheetController.m; sourceTree = "<group>"; };
 		EC2EE9151B304ED5004A6E84 /* TKActionSheetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKActionSheetManager.h; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				EC2EE9041B304ED5004A6E84 /* Category */,
-				EC2EE9111B304ED5004A6E84 /* LICENSE */,
 				EC2EE9121B304ED5004A6E84 /* TKActionSheet */,
 				EC2EE9191B304ED5004A6E84 /* TKAlert */,
 				EC2EE9241B304ED5004A6E84 /* TKBlurView.h */,
@@ -279,7 +276,6 @@
 				EC2EE8A71B300A59004A6E84 /* Main.storyboard in Resources */,
 				EC2EE9011B301AE3004A6E84 /* Default.png in Resources */,
 				EC2EE8AC1B300A59004A6E84 /* LaunchScreen.xib in Resources */,
-				EC2EE9321B304ED5004A6E84 /* LICENSE in Resources */,
 				EC2EE9001B301AE3004A6E84 /* Default-568h@2x.png in Resources */,
 				EC2EE9021B301AE3004A6E84 /* Default@2x.png in Resources */,
 				EC2EE8A91B300A59004A6E84 /* Images.xcassets in Resources */,

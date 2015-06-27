@@ -22,7 +22,7 @@
 #define kAlertViewMessageFont           [UIFont systemFontOfSize:14]
 #define kAlertViewMessageTextColor      [UIColor colorWithWhite:60.0/255.0 alpha:1.0]
 
-#define kAlertViewLineColor             [UIColor colorWithWhite:200.0/255.0 alpha:1]
+#define kAlertViewLineColor             [UIColor colorWithWhite:200/255.0 alpha:1]
 
 #define kAlertViewButtonFont            [UIFont systemFontOfSize:16]
 #define kAlertViewButtonTextColor       [UIColor colorWithRed:109/255.0 green:109/255.0 blue:110/255.0 alpha:1]

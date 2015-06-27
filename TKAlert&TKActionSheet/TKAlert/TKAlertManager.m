@@ -51,7 +51,7 @@ static NSUInteger visibleAlertIndex = NSNotFound;
     return alertViewStack.lastObject;
 }
 
-+ (BOOL)cancelAlertsAnimated:(BOOL)animated {
++ (BOOL)cancelAllAlertsAnimated:(BOOL)animated {
 //    if (animated) {
 //        void (^completion)(BOOL) = ^(BOOL finished) {
 //            TKAlertView *alertView = TKAlertManager.topMostAlert;

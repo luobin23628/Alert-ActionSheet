@@ -90,7 +90,12 @@
         alert2 = [TKAlertViewController alertWithTitle:@"test2" message:nil];
     }
     
-    [alert2 addButtonWithTitle:@"ok2" handler:nil];
+    __block TKAlertViewController *alert = alert2;
+    [alert2 addButtonWithTitle:@"ok2" handler:^{
+        [alert dismissWithClickedButtonIndex:-1 animated:YES];
+        
+        [self testTextFieldAlertView];
+    }];
     [alert2 addButtonWithTitle:@"ok2" handler:nil];
     [alert2 addButtonWithTitle:@"ok2" handler:nil];
     
@@ -100,6 +105,7 @@
     [alert2 addButtonWithTitle:@"ok2" handler:nil];
     [alert2 showWithAnimationType:TKAlertViewAnimationDropDown];
     alert2.dismissWhenTapWindow = YES;
+    
 //    [self performSelector:@selector(cancelAllAlerts) withObject:nil afterDelay:5];
 }
 
@@ -127,7 +133,7 @@
 }
 
 - (void)cancelAllAlerts {
-    [TKAlertManager cancelAlertsAnimated:YES];
+    [TKAlertManager cancelAllAlertsAnimated:YES];
 }
 
 
