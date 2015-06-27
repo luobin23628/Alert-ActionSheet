@@ -80,7 +80,7 @@ static NSUInteger visibleAlertIndex = NSNotFound;
     if (topMostAlert) {
         return [self cancelTopMostAlertAnimated:animated completion:^(BOOL success) {
             if (success) {
-                [TKAlertManager cancelAlertsAnimated:animated];
+                [TKAlertManager cancelAllAlertsAnimated:animated];
             }
         }];
     } else {
