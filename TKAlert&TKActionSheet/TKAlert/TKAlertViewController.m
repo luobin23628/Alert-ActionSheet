@@ -111,6 +111,7 @@ static UIFont *buttonFont = nil;
         self.actions = [NSMutableArray array];
         self.title = title;
         self.customView = customView;
+        self.customView.autoresizingMask = UIViewAutoresizingNone;
         self.animationType = TKAlertViewAnimationBounce;
         self.enabledParallaxEffect = YES;
     }

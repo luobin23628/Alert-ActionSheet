@@ -95,7 +95,20 @@
     if (height < kAlertViewMinHeigh) {
         CGFloat offset = kAlertViewMinHeigh - height;
         height = kAlertViewMinHeigh;
-        CGRect frame = self.buttonContainerView.frame;
+        
+        CGRect frame = self.scrollView.frame;
+        frame.size.height += offset;
+        self.scrollView.frame = frame;
+        
+        CGSize contentSize = self.scrollView.contentSize;
+        contentSize.height += offset;
+        self.scrollView.contentSize = contentSize;
+        
+        frame = self.customView.frame;
+        frame.origin.y += offset/2;
+        self.customView.frame = frame;
+        
+        frame = self.buttonContainerView.frame;
         frame.origin.y += offset;
         self.buttonContainerView.frame = frame;
     }
@@ -120,7 +133,7 @@
     
     CGFloat x = floorf((self.wapperView.bounds.size.width - kAlertViewWidth) * 0.5) - (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.vertical:self.offset.horizontal);
     y = floorf((self.wapperView.bounds.size.height - height) * 0.5) + (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.horizontal:self.offset.vertical);
-    NSLog(@"%@", NSStringFromCGRect(self.wapperView.bounds));
+
     frame = CGRectMake(x, y, kAlertViewWidth, height);
     self.containerView.frame = frame;
 }
