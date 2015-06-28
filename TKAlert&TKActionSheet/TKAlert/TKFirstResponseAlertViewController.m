@@ -73,7 +73,7 @@
         self.keyboardBoundHeight = keyboardBounds.size.width;
     }
     
-    center.y = (self.wapperView.height - self.keyboardBoundHeight) * 4/7;
+    center.y = floorf((self.wapperView.height - self.keyboardBoundHeight) * 4/7);
     
 	// animations settings
 	[UIView beginAnimations:nil context:NULL];
@@ -96,7 +96,7 @@
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         if ([self.customView findFirstResponder]) {
             CGPoint center = self.containerView.center;
-            center.y = (self.wapperView.height - self.keyboardBoundHeight) * 4/7;
+            center.y = floorf((self.wapperView.height - self.keyboardBoundHeight) * 4/7);
             self.containerView.center = center;
         }
     } completion:nil];
@@ -108,7 +108,7 @@
 
     if ([self.customView findFirstResponder]) {
         CGPoint center = self.containerView.center;
-        center.y = (self.wapperView.height - self.keyboardBoundHeight) * 4/7;
+        center.y = floorf((self.wapperView.height - self.keyboardBoundHeight) * 4/7);
         self.containerView.center = center;
     }
 }
