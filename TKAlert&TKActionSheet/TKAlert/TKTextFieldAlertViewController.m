@@ -1,6 +1,6 @@
 //
 //  TKTextFieldAlertViewController.m
-//  
+//
 //
 //  Created by luobin on 14-8-9.
 //  Copyright (c) 2014年 luobin. All rights reserved.
@@ -41,23 +41,18 @@
 @dynamic delegate;
 
 - (id)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder {
-    UITextField *textFiled;
-    if ([[UIDevice currentDevice] isIOS7]) {
-        textFiled = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 1, 30)];
-        textFiled.borderStyle = UITextBorderStyleRoundedRect;
-    } else {
-        textFiled = [[_TKTextFieldAlertView_TextFiled alloc] initWithFrame:CGRectMake(0, 0, 1, 30)];
-        textFiled.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        textFiled.borderStyle = UITextBorderStyleNone;
-        textFiled.layer.cornerRadius = 4.f;
-        textFiled.layer.borderWidth = 0.5f;
-        textFiled.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    }
+    UITextField *textFiled = [[_TKTextFieldAlertView_TextFiled alloc] initWithFrame:CGRectMake(0, 0, 1, 30)];
+    textFiled.backgroundColor = [UIColor colorWithWhite:240.0/255 alpha:1];
+    textFiled.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    textFiled.borderStyle = UITextBorderStyleNone;
+    textFiled.layer.cornerRadius = 4.f;
+    textFiled.layer.borderWidth = 0.5f;
+    textFiled.layer.borderColor = [UIColor colorWithWhite:180.0/255 alpha:1].CGColor;
     textFiled.returnKeyType = UIReturnKeyDone;
     textFiled.keyboardType = UIKeyboardTypeDefault;
     textFiled.placeholder = placeholder;
     textFiled.font = [UIFont systemFontOfSize:14];
-    textFiled.textAlignment = 0;//NSTextAlignmentLeft;
+    textFiled.textAlignment = NSTextAlignmentLeft;;
     textFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     [textFiled addTarget:self action:@selector(textFiledDidChange:) forControlEvents:UIControlEventEditingChanged];
     self.textField = textFiled;

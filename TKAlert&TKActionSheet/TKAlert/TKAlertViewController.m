@@ -342,7 +342,6 @@ static UIFont *buttonFont = nil;
 {
     UIWindow *previousKeyWindow = [TKAlertOverlayWindow defaultWindow].previousKeyWindow;
     UIViewController *viewController = [previousKeyWindow currentViewController];
-    NSLog(@"userInteractionEnabled:%d", [TKAlertOverlayWindow defaultWindow].userInteractionEnabled);
     if (viewController) {
         return [viewController supportedInterfaceOrientations];
     }
