@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TKAlert&TKActionSheet"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "A custom TKAlert and TKActionSheet."
 
   s.description  = <<-DESC
@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/luobin23628/Alert-ActionSheet.git", :tag => "1.0.5" }
+  s.source       = { :git => "https://github.com/luobin23628/Alert-ActionSheet.git", :tag => "1.0.6" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

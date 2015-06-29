@@ -82,10 +82,10 @@ static UIFont *buttonFont = nil;
     if (message) {
         customView = [[UIView alloc] init];
         CGSize size = [message sizeWithFont:messageFont
-                          constrainedToSize:CGSizeMake(kAlertViewWidth - kAlertViewBorder*2, NSIntegerMax)
+                          constrainedToSize:CGSizeMake([self.class widthForCustomView], NSIntegerMax)
                               lineBreakMode:NSLineBreakByWordWrapping];
         
-        UILabel *messageView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kAlertViewWidth-kAlertViewBorder*2, size.height)];
+        UILabel *messageView = [[UILabel alloc] initWithFrame:CGRectMake(([self.class widthForCustomView] - size.width)/2, 0, size.width,  size.height)];
         messageView.font = messageFont;
         messageView.numberOfLines = 0;
         messageView.lineBreakMode = NSLineBreakByWordWrapping;
@@ -94,7 +94,7 @@ static UIFont *buttonFont = nil;
         messageView.textAlignment = alignment;
         messageView.text = message;
         [customView addSubview:messageView];
-        customView.frame = CGRectMake(0, 0, kAlertViewWidth, size.height);
+        customView.frame = CGRectMake(0, 0, [self.class widthForCustomView], size.height);
     }
     
     if ((self = [self initWithTitle:title customView:customView])) {
