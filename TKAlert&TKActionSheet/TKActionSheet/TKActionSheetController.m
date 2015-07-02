@@ -13,6 +13,7 @@
 #import "UIScreen+Size.h"
 #import "UIViewAdditions.h"
 #import "UIImageExtend.h"
+#import "UIDeviceAdditions.h"
 
 // Action Sheet constants
 
@@ -139,9 +140,15 @@ static UIFont *buttonFont = nil;
     UILabel *labelView = nil;
     if (title) {
         CGRect frame = [[UIScreen mainScreen] fixedBounds];
-        CGSize size = [title sizeWithFont:titleFont
-                        constrainedToSize:CGSizeMake(frame.size.width-kActionSheetBorder*2, 1000)
-                            lineBreakMode:NSLineBreakByWordWrapping];
+        CGSize size = CGSizeZero;
+        
+        if ([[UIDevice currentDevice] isIOS7]) {
+            size = [title boundingRectWithSize:CGSizeMake(frame.size.width-kActionSheetBorder*2, 1000) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:[NSDictionary dictionaryWithObjectsAndKeys:titleFont,NSFontAttributeName, nil] context:nil].size;
+        } else {
+            size = [title sizeWithFont:titleFont
+                     constrainedToSize:CGSizeMake(frame.size.width-kActionSheetBorder*2, 1000)
+                         lineBreakMode:NSLineBreakByWordWrapping];
+        }
         
         CGFloat height = size.height + 20;
         if (height < kActionSheetButtonHeight) {

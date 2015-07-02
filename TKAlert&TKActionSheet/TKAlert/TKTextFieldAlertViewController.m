@@ -18,6 +18,9 @@
 
 @implementation _TKTextFieldAlertView_TextFiled
 
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+}
 
 - (CGRect)placeholderRectForBounds:(CGRect)bounds {
     return UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0, 6, 0, 0));
@@ -41,7 +44,7 @@
 @dynamic delegate;
 
 - (id)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder {
-    UITextField *textFiled = [[_TKTextFieldAlertView_TextFiled alloc] initWithFrame:CGRectMake(0, 0, 1, 30)];
+    UITextField *textFiled = [[_TKTextFieldAlertView_TextFiled alloc] initWithFrame:CGRectMake(0, 0, 0, 30)];
     textFiled.backgroundColor = [UIColor colorWithWhite:240.0/255 alpha:1];
     textFiled.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     textFiled.borderStyle = UITextBorderStyleNone;

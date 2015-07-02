@@ -14,6 +14,7 @@
 #import "UIImageExtend.h"
 #import "UIWindow+Alert.h"
 #import "UIScreen+Size.h"
+#import "UIDeviceAdditions.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -80,12 +81,19 @@ static UIFont *buttonFont = nil;
 {
     UIView *customView = nil;
     if (message) {
-        customView = [[UIView alloc] init];
-        CGSize size = [message sizeWithFont:messageFont
-                          constrainedToSize:CGSizeMake([self.class widthForCustomView], NSIntegerMax)
-                              lineBreakMode:NSLineBreakByWordWrapping];
+        customView = [[UIView alloc] init];        
         
-        UILabel *messageView = [[UILabel alloc] initWithFrame:CGRectMake(([self.class widthForCustomView] - size.width)/2, 0, size.width,  size.height)];
+        CGSize size = CGSizeZero;
+        size.height = MAXFLOAT;
+        if ([[UIDevice currentDevice] isIOS7]) {
+            size = [message boundingRectWithSize:CGSizeMake([self.class defaultWidthForCustomView], NSIntegerMax) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:[NSDictionary dictionaryWithObjectsAndKeys:messageFont,NSFontAttributeName, nil] context:nil].size;
+        } else {
+            size = [message sizeWithFont:messageFont
+                       constrainedToSize:CGSizeMake([self.class defaultWidthForCustomView], NSIntegerMax)
+                           lineBreakMode:NSLineBreakByWordWrapping];
+        }
+        
+        UILabel *messageView = [[UILabel alloc] initWithFrame:CGRectMake(([self.class defaultWidthForCustomView] - size.width)/2, 0, size.width,  size.height)];
         messageView.font = messageFont;
         messageView.numberOfLines = 0;
         messageView.lineBreakMode = NSLineBreakByWordWrapping;
@@ -94,7 +102,7 @@ static UIFont *buttonFont = nil;
         messageView.textAlignment = alignment;
         messageView.text = message;
         [customView addSubview:messageView];
-        customView.frame = CGRectMake(0, 0, [self.class widthForCustomView], size.height);
+        customView.frame = CGRectMake(0, 0, [self.class defaultWidthForCustomView], size.height);
     }
     
     if ((self = [self initWithTitle:title customView:customView])) {
@@ -140,8 +148,8 @@ static UIFont *buttonFont = nil;
     self.backgroundView = nil;
 }
 
-+ (CGFloat)widthForCustomView {
-    return kAlertViewWidth - 2*kAlertViewBorder;
++ (CGFloat)defaultWidthForCustomView {
+    return kAlertViewDefaultWidth - 2*kAlertViewBorder;
 }
 
 - (void)loadView {
@@ -158,7 +166,7 @@ static UIFont *buttonFont = nil;
     self.wapperView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.wapperView];
     
-    self.containerView = [[UIView alloc] initWithFrame:CGRectMake(([TKAlertOverlayWindow defaultWindow].bounds.size.width - kAlertViewWidth)/2, 0, kAlertViewWidth, kAlertViewMinHeigh)];
+    self.containerView = [[UIView alloc] initWithFrame:CGRectMake(([TKAlertOverlayWindow defaultWindow].bounds.size.width - kAlertViewDefaultWidth)/2, 0, kAlertViewDefaultWidth, kAlertViewMinHeigh)];
     self.containerView.backgroundColor = [UIColor clearColor];
     self.containerView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     self.containerView.layer.cornerRadius = 6.f;
@@ -167,8 +175,8 @@ static UIFont *buttonFont = nil;
     
     UIWindow *parentView = [TKAlertOverlayWindow defaultWindow];
     CGRect frame = parentView.bounds;
-    frame.origin.x = floorf((frame.size.width - kAlertViewWidth) * 0.5);
-    frame.size.width = kAlertViewWidth;
+    frame.origin.x = floorf((frame.size.width - kAlertViewDefaultWidth) * 0.5);
+    frame.size.width = kAlertViewDefaultWidth;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 0)];
     scrollView.alwaysBounceHorizontal = NO;

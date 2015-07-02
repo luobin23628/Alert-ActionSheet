@@ -13,8 +13,10 @@
 #define kAlertButtonHeight       44
 #define kAlertButtonLineWidth       (1.0/[UIScreen mainScreen].scale)
 
-#define kAlertViewWidth          280
+#define kAlertViewDefaultWidth          280
 #define kAlertViewMinHeigh       110
+#define kAlertViewMinWidth          110
+#define kAlertViewMaxWidth          320
 
 #define kAlertViewTitleFont             [UIFont boldSystemFontOfSize:15]
 #define kAlertViewTitleTextColor        [UIColor colorWithWhite:60.0/255.0 alpha:1.0]

@@ -12,10 +12,6 @@
 		EC2EE8A41B300A59004A6E84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE8A31B300A59004A6E84 /* ViewController.m */; };
 		EC2EE8A71B300A59004A6E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8A51B300A59004A6E84 /* Main.storyboard */; };
 		EC2EE8A91B300A59004A6E84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8A81B300A59004A6E84 /* Images.xcassets */; };
-		EC2EE8AC1B300A59004A6E84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8AA1B300A59004A6E84 /* LaunchScreen.xib */; };
-		EC2EE9001B301AE3004A6E84 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8FD1B301AE3004A6E84 /* Default-568h@2x.png */; };
-		EC2EE9011B301AE3004A6E84 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8FE1B301AE3004A6E84 /* Default.png */; };
-		EC2EE9021B301AE3004A6E84 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8FF1B301AE3004A6E84 /* Default@2x.png */; };
 		EC2EE92C1B304ED5004A6E84 /* NSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9061B304ED5004A6E84 /* NSObject+Invocation.m */; };
 		EC2EE92D1B304ED5004A6E84 /* UIDeviceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9081B304ED5004A6E84 /* UIDeviceAdditions.m */; };
 		EC2EE92E1B304ED5004A6E84 /* UIImageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE90A1B304ED5004A6E84 /* UIImageExtend.m */; };
@@ -35,6 +31,7 @@
 		EC2EE93D1B304ED5004A6E84 /* TKFullScreenWindowBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9291B304ED5004A6E84 /* TKFullScreenWindowBackground.m */; };
 		EC9BEC771B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9BEC741B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m */; };
 		EC9BEC781B3EC571009AA4B4 /* TKTextFieldAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9BEC761B3EC571009AA4B4 /* TKTextFieldAlertViewController.m */; };
+		EC9BECF71B453612009AA4B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9BECF51B453612009AA4B4 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +44,6 @@
 		EC2EE8A31B300A59004A6E84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EC2EE8A61B300A59004A6E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC2EE8A81B300A59004A6E84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EC2EE8AB1B300A59004A6E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		EC2EE8FD1B301AE3004A6E84 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		EC2EE8FE1B301AE3004A6E84 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		EC2EE8FF1B301AE3004A6E84 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		EC2EE9051B304ED5004A6E84 /* NSObject+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Invocation.h"; sourceTree = "<group>"; };
 		EC2EE9061B304ED5004A6E84 /* NSObject+Invocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Invocation.m"; sourceTree = "<group>"; };
 		EC2EE9071B304ED5004A6E84 /* UIDeviceAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceAdditions.h; sourceTree = "<group>"; };
@@ -89,6 +82,7 @@
 		EC9BEC741B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFirstResponseAlertViewController.m; sourceTree = "<group>"; };
 		EC9BEC751B3EC571009AA4B4 /* TKTextFieldAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTextFieldAlertViewController.h; sourceTree = "<group>"; };
 		EC9BEC761B3EC571009AA4B4 /* TKTextFieldAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTextFieldAlertViewController.m; sourceTree = "<group>"; };
+		EC9BECF61B453612009AA4B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +121,8 @@
 				EC2EE8A21B300A59004A6E84 /* ViewController.h */,
 				EC2EE8A31B300A59004A6E84 /* ViewController.m */,
 				EC2EE8A51B300A59004A6E84 /* Main.storyboard */,
-				EC2EE8FD1B301AE3004A6E84 /* Default-568h@2x.png */,
-				EC2EE8FE1B301AE3004A6E84 /* Default.png */,
-				EC2EE8FF1B301AE3004A6E84 /* Default@2x.png */,
+				EC9BECF51B453612009AA4B4 /* LaunchScreen.xib */,
 				EC2EE8A81B300A59004A6E84 /* Images.xcassets */,
-				EC2EE8AA1B300A59004A6E84 /* LaunchScreen.xib */,
 				EC2EE89B1B300A59004A6E84 /* Supporting Files */,
 			);
 			path = TKAlertExample;
@@ -204,10 +195,10 @@
 				EC2EE91D1B304ED5004A6E84 /* TKAlertOverlayWindow.m */,
 				EC2EE91E1B304ED5004A6E84 /* TKAlertViewAction.h */,
 				EC2EE91F1B304ED5004A6E84 /* TKAlertViewAction.m */,
-				EC2EE9201B304ED5004A6E84 /* TKAlertViewController+Private.h */,
-				EC2EE9211B304ED5004A6E84 /* TKAlertViewController+Private.m */,
 				EC2EE9221B304ED5004A6E84 /* TKAlertViewController.h */,
 				EC2EE9231B304ED5004A6E84 /* TKAlertViewController.m */,
+				EC2EE9201B304ED5004A6E84 /* TKAlertViewController+Private.h */,
+				EC2EE9211B304ED5004A6E84 /* TKAlertViewController+Private.m */,
 				EC9BEC731B3EC571009AA4B4 /* TKFirstResponseAlertViewController.h */,
 				EC9BEC741B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m */,
 				EC9BEC751B3EC571009AA4B4 /* TKTextFieldAlertViewController.h */,
@@ -274,10 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC2EE8A71B300A59004A6E84 /* Main.storyboard in Resources */,
-				EC2EE9011B301AE3004A6E84 /* Default.png in Resources */,
-				EC2EE8AC1B300A59004A6E84 /* LaunchScreen.xib in Resources */,
-				EC2EE9001B301AE3004A6E84 /* Default-568h@2x.png in Resources */,
-				EC2EE9021B301AE3004A6E84 /* Default@2x.png in Resources */,
+				EC9BECF71B453612009AA4B4 /* LaunchScreen.xib in Resources */,
 				EC2EE8A91B300A59004A6E84 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,10 +313,10 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		EC2EE8AA1B300A59004A6E84 /* LaunchScreen.xib */ = {
+		EC9BECF51B453612009AA4B4 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EC2EE8AB1B300A59004A6E84 /* Base */,
+				EC9BECF61B453612009AA4B4 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

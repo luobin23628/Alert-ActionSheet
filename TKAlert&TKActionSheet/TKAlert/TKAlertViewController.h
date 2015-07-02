@@ -35,13 +35,16 @@ typedef enum {
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message;
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message textAlignment:(NSTextAlignment) alignment;
 
+/*
+ *  customView的宽度在90－290之间， 设置0为默认，默认为250。
+ */
 + (instancetype)alertWithTitle:(NSString *)title customView:(UIView *)customView;
 - (instancetype)initWithTitle:(NSString *)title customView:(UIView *)customView;
 
 - (instancetype)initWithTitle:(NSString *)title viewController:(UIViewController *)viewController;
 + (instancetype)alertWithTitle:(NSString *)title viewController:(UIViewController *)viewController;
 
-+ (CGFloat)widthForCustomView;
++ (CGFloat)defaultWidthForCustomView;
 
 @property (nonatomic, readwrite) BOOL dismissWhenTapWindow;
 - (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)()) handler;

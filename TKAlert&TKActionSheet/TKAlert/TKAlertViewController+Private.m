@@ -17,6 +17,17 @@
 @implementation TKAlertViewController (Private)
 
 - (void)updateFrameForDisplay {
+    CGFloat alertViewWidth = kAlertViewDefaultWidth;
+    if (self.customView && self.customView.width > 0) {
+        alertViewWidth = self.customView.width + 2*kAlertViewBorder;
+        if (alertViewWidth < kAlertViewMinWidth) {
+            alertViewWidth = kAlertViewMinWidth;
+        }
+        if (alertViewWidth > kAlertViewMaxWidth) {
+            alertViewWidth = kAlertViewMaxWidth;
+        }
+    }
+    
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     CGFloat alertViewMaxHeigh = ((UIInterfaceOrientationIsLandscape(orientation)? [TKAlertOverlayWindow defaultWindow].width : [TKAlertOverlayWindow defaultWindow].height) - 2*3);
     CGFloat height = 15;
@@ -24,15 +35,15 @@
     if ([self.titleView.text length]) {
         CGRect frame = self.titleView.frame;
         frame.origin.y = height;
-        frame.size.width = (kAlertViewWidth - 2*kAlertViewBorder);
+        frame.size.width = (alertViewWidth - 2*kAlertViewBorder);
         self.titleView.frame = frame;
         height += frame.size.height + 10;
     }
     
     CGRect frame = self.customView.bounds;
-    frame.size.width = (kAlertViewWidth - 2*kAlertViewBorder);
+    frame.size.width = (alertViewWidth - 2*kAlertViewBorder);
     
-    frame.origin.x = (kAlertViewWidth - frame.size.width)/2;
+    frame.origin.x = (alertViewWidth - frame.size.width)/2;
     frame.origin.y = height;
     
     self.customView.frame = frame;
@@ -47,13 +58,13 @@
     
     if (self.actions.count == 2) {
         
-        UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, buttonContainerViewHeight, kAlertViewWidth, kAlertButtonLineWidth)];
+        UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, buttonContainerViewHeight, alertViewWidth, kAlertButtonLineWidth)];
         topLine.backgroundColor = kAlertViewLineColor;
         [self.buttonContainerView addSubview:topLine];
         
         buttonContainerViewHeight += kAlertButtonLineWidth;
-        CGFloat width = kAlertViewWidth;
-        CGFloat maxHalfWidth = floorf(kAlertViewWidth*0.5);
+        CGFloat width = alertViewWidth;
+        CGFloat maxHalfWidth = floorf(alertViewWidth*0.5);
         UIButton *button = [self buttonWithAction:[self.actions firstObject]];
         button.tag = 1;
         [self.buttonContainerView addSubview:button];
@@ -70,10 +81,10 @@
         
         buttonContainerViewHeight += kAlertButtonHeight;
     } else if (self.actions.count != 0)  {
-        CGFloat width = kAlertViewWidth;
+        CGFloat width = alertViewWidth;
         for (NSUInteger i = 0; i < self.actions.count; i++) {
             
-            UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, buttonContainerViewHeight, kAlertViewWidth, kAlertButtonLineWidth)];
+            UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, buttonContainerViewHeight, alertViewWidth, kAlertButtonLineWidth)];
             topLine.backgroundColor = kAlertViewLineColor;
             [self.buttonContainerView addSubview:topLine];
             
@@ -89,7 +100,7 @@
         }
     }
     
-    self.buttonContainerView.frame = CGRectMake(0, y, kAlertViewWidth, buttonContainerViewHeight);
+    self.buttonContainerView.frame = CGRectMake(0, y, alertViewWidth, buttonContainerViewHeight);
     height += buttonContainerViewHeight;
     
     if (height < kAlertViewMinHeigh) {
@@ -131,10 +142,10 @@
     
     self.buttonContainerView.hidden = !buttonContainerViewHeight;
     
-    CGFloat x = floorf((self.wapperView.bounds.size.width - kAlertViewWidth) * 0.5) - (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.vertical:self.offset.horizontal);
+    CGFloat x = floorf((self.wapperView.bounds.size.width - alertViewWidth) * 0.5) - (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.vertical:self.offset.horizontal);
     y = floorf((self.wapperView.bounds.size.height - height) * 0.5) + (UIInterfaceOrientationIsLandscape(orientation)?self.landscapeOffset.horizontal:self.offset.vertical);
 
-    frame = CGRectMake(x, y, kAlertViewWidth, height);
+    frame = CGRectMake(x, y, alertViewWidth, height);
     self.containerView.frame = frame;
 }
 
