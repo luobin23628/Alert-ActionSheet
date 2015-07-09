@@ -4,8 +4,11 @@
 
 This library provides an alternative to the native iOS keyboard, support customize the look and feel of the keyboard.
 
-<img width="320" height="568" src="https://raw.githubusercontent.com/luobin23628/TKKeyBoard/gh-pages/images/Screenshot%202014.08.06%2015.28.37.png" alt="alt text" title="Title" /> _ 
-<img style="margin-left:20px" width="320" height="568" src="https://raw.githubusercontent.com/luobin23628/TKKeyBoard/gh-pages/images/Screenshot%202014.08.06%2015.28.44.png" alt="alt text" title="Title" />
+<img width="320" height="568" src="https://raw.githubusercontent.com/luobin23628/Alert-ActionSheet/gh-pages/images/IMG_0100.PNG" alt="alt text" title="Title" /> _ 
+<img style="margin-left:20px" width="320" height="568" src="https://raw.githubusercontent.com/luobin23628/Alert-ActionSheet/gh-pages/images/IMG_0104.PNG" alt="alt text" title="Title" />
+
+<img width="320" height="568" src="https://raw.githubusercontent.com/luobin23628/Alert-ActionSheet/gh-pages/images/IMG_0097.PNG" alt="alt text" title="Title" /> _ 
+<img style="margin-left:20px" width="320" height="568" src="https://raw.githubusercontent.com/luobin23628/Alert-ActionSheet/gh-pages/images/IMG_0098.PNG" alt="alt text" title="Title" />
 
 Features
 ========
