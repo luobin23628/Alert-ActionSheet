@@ -21,6 +21,10 @@ typedef enum {
     TKAlertViewAnimationPathStyle,   //模仿path效果
 } TKAlertViewAnimation;
 
+void TKAlert1(NSString *title);
+void TKAlert2(NSString *title, NSString *message);
+void TKAlert3(NSString *title, NSString *message, NSString *buttonTitle);
+
 @protocol TKAlertViewControllerDelegate;
 
 @interface TKAlertViewController : UIViewController<UIAppearance>
