@@ -85,14 +85,14 @@
 }
 
 - (void)test2 {
-    TKAlertViewController *alert2 = [TKAlertViewController alertWithTitle:@"test" message:@"自定义AlertView和ActionSheet. cocoapads 使用 pod 'TKAlert&TKActionSheet', '~>1.0.1'"];
+    TKAlertViewController *alert = [TKAlertViewController alertWithTitle:@"test" message:@"自定义AlertView和ActionSheet. cocoapads 使用 pod 'TKAlert&TKActionSheet', '~>1.0.1'"];
     
-    [alert2 addButtonWithTitle:@"ok" handler:^{
+    [alert addButtonWithTitle:@"ok" handler:^{
         [self testTextFieldAlertView];
     }];
-    [alert2 addButtonWithTitle:@"cancel" handler:nil];
-    [alert2 showWithAnimationType:TKAlertViewAnimationPathStyle];
-    alert2.dismissWhenTapWindow = YES;
+    [alert addButtonWithTitle:@"cancel" handler:nil];
+    alert.dismissWhenTapWindow = YES;
+    [alert showWithAnimationType:TKAlertViewAnimationPathStyle];
     
 //    [self performSelector:@selector(cancelAllAlerts) withObject:nil afterDelay:5];
 }
