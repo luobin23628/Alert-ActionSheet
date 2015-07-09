@@ -85,25 +85,13 @@
 }
 
 - (void)test2 {
-    TKAlertViewController *alert2 = nil;
-    if (!alert2) {
-        alert2 = [TKAlertViewController alertWithTitle:@"test2" message:nil];
-    }
+    TKAlertViewController *alert2 = [TKAlertViewController alertWithTitle:@"test" message:@"自定义AlertView和ActionSheet. cocoapads 使用 pod 'TKAlert&TKActionSheet', '~>1.0.1'"];
     
-    __block TKAlertViewController *alert = alert2;
-    [alert2 addButtonWithTitle:@"ok2" handler:^{
-        [alert dismissWithClickedButtonIndex:-1 animated:YES];
-        
+    [alert2 addButtonWithTitle:@"ok" handler:^{
         [self testTextFieldAlertView];
     }];
-    [alert2 addButtonWithTitle:@"ok2" handler:nil];
-    [alert2 addButtonWithTitle:@"ok2" handler:nil];
-    
-    [alert2 addButtonWithTitle:@"ok2" handler:nil];
-    [alert2 addButtonWithTitle:@"ok2" handler:nil];
-    [alert2 addButtonWithTitle:@"ok2" handler:nil];
-    [alert2 addButtonWithTitle:@"ok2" handler:nil];
-    [alert2 showWithAnimationType:TKAlertViewAnimationDropDown];
+    [alert2 addButtonWithTitle:@"cancel" handler:nil];
+    [alert2 showWithAnimationType:TKAlertViewAnimationPathStyle];
     alert2.dismissWhenTapWindow = YES;
     
 //    [self performSelector:@selector(cancelAllAlerts) withObject:nil afterDelay:5];
@@ -126,7 +114,7 @@
 }
 
 - (void)test4 {
-    TKActionSheetController *uActionSheet = [TKActionSheetController sheetWithTitle:@"test"];
+    TKActionSheetController *uActionSheet = [TKActionSheetController sheetWithTitle:@"自定义AlertView和ActionSheet. cocoapads 使用 pod 'TKAlert&TKActionSheet', '~>1.0.1'"];
     [uActionSheet addButtonWithTitle:@"test" handler:nil];
     [uActionSheet setCancelButtonWithTitle:@"取消" handler:nil];
     [uActionSheet showInViewController:self animated:YES completion:nil];

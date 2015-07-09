@@ -703,7 +703,7 @@
         
         [self createAnimatorIfNeed];
         [self.animator removeAllBehaviors];
-        CGFloat showMagnitude = 200.0f;
+        CGFloat showMagnitude = 70.0f;
         
         UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.containerView] mode:UIPushBehaviorModeInstantaneous];
         [push setTargetOffsetFromCenter:UIOffsetMake(-1.0, 0) forItem:self.containerView];
@@ -728,7 +728,7 @@
         [self createAnimatorIfNeed];
         [self.animator removeAllBehaviors];
         
-        CGFloat closeMagnitude = 150.0f;;
+        CGFloat closeMagnitude = 70.0f;;
         
         UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.containerView] mode:UIPushBehaviorModeInstantaneous];
         [push setTargetOffsetFromCenter:UIOffsetMake(-2.0, 0) forItem:self.containerView];
