@@ -29,7 +29,7 @@
     }
     
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    CGFloat alertViewMaxHeigh = ((UIInterfaceOrientationIsLandscape(orientation)? [TKAlertOverlayWindow defaultWindow].width : [TKAlertOverlayWindow defaultWindow].height) - 2*3);
+    CGFloat alertViewMaxHeigh = ([UIScreen mainScreen].flexibleBounds.size.height - 2*3);
     CGFloat height = 15;
     
     if ([self.titleView.text length]) {
@@ -55,6 +55,8 @@
     CGFloat buttonContainerViewHeight = 0;
     
     [self.buttonContainerView removeAllSubviews];
+    
+    [UIView setAnimationsEnabled:NO];
     
     if (self.actions.count == 2) {
         
@@ -99,6 +101,8 @@
             }
         }
     }
+    
+    [UIView setAnimationsEnabled:YES];
     
     self.buttonContainerView.frame = CGRectMake(0, y, alertViewWidth, buttonContainerViewHeight);
     height += buttonContainerViewHeight;
@@ -703,7 +707,7 @@
         
         [self createAnimatorIfNeed];
         [self.animator removeAllBehaviors];
-        CGFloat showMagnitude = 70.0f;
+        CGFloat showMagnitude = (self.containerView.height)*70/150;
         
         UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.containerView] mode:UIPushBehaviorModeInstantaneous];
         [push setTargetOffsetFromCenter:UIOffsetMake(-1.0, 0) forItem:self.containerView];
@@ -728,7 +732,7 @@
         [self createAnimatorIfNeed];
         [self.animator removeAllBehaviors];
         
-        CGFloat closeMagnitude = 70.0f;;
+        CGFloat closeMagnitude = (self.containerView.height)*70/150;;
         
         UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.containerView] mode:UIPushBehaviorModeInstantaneous];
         [push setTargetOffsetFromCenter:UIOffsetMake(-2.0, 0) forItem:self.containerView];

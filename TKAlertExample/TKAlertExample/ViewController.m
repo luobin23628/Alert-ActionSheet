@@ -69,7 +69,7 @@
 
 
 - (void)test {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"test1" message:@"test2sajdifhdsaiofhdsiaofhdsaiuohfdsiuahfbhisdauohfiousdahfiudsaohdfiuadshfipusdjafioashjdiosahjfoidsahfoidsfoiadfdiaosjfioasdjfijaidsojfdsoiajfdsoiajfdisoajoifjdoasdjfoidsajfdosiajfdisoahfjoisajfoidsihaf" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"a",@"a",@"a", @"a",@"a",@"a", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"test1" message:@"系统alertview" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"a",@"a",@"a", @"a",@"a",@"a", nil];
     [alert show];
     //     alert = [[AlertView alloc] initWithTitle:@"test2" message:@"确定要删除吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil];
     //    alert.tag = 2;
