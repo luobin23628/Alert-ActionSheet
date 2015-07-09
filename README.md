@@ -10,9 +10,16 @@ This library provides an alternative to the native iOS alertView & actionSheet, 
 <img width="320" height="568" src="https://raw.githubusercontent.com/luobin23628/Alert-ActionSheet/gh-pages/images/IMG_0097.PNG" alt="alt text" title="Title" /> _ 
 <img width="568" height="320" src="https://raw.githubusercontent.com/luobin23628/Alert-ActionSheet/gh-pages/images/IMG_0098.PNG" alt="alt text" title="Title" />
 
-Features
-========
 
+##Installation
+
+### CocoaPods
+Add pod 'TKAlert&TKActionSheet' to your Podfile or pod 'TKAlert&TKActionSheet', :head if you're feeling adventurous.
+
+### Manually
+* Drag the `TKAlert&TKActionSheet` folder into your project.
+
+##Features
 * Compatible with ios 5+
 * Works like system alert.
 * Runs on both iPhone and iPad.
