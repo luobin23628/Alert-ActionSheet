@@ -359,7 +359,7 @@ static UIFont *buttonFont = nil;
     }
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     UIWindow *previousKeyWindow = [TKAlertOverlayWindow defaultWindow].previousKeyWindow;
     UIViewController *viewController = [previousKeyWindow currentViewController];

@@ -532,7 +532,7 @@ static UIFont *buttonFont = nil;
     }
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     UIWindow *previousKeyWindow = self.backgroundWindow.previousKeyWindow;
     

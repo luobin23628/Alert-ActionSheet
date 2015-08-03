@@ -13,7 +13,7 @@
 - (NSInteger)majorVersion {
     static NSInteger result = -1;
     if (result == -1) {
-        NSNumber *majorVersion = [[self.systemVersion componentsSeparatedByString:@"."] objectAtIndex:0];
+        NSNumber *majorVersion = (NSNumber *)[[self.systemVersion componentsSeparatedByString:@"."] objectAtIndex:0];
         result = majorVersion.integerValue;
     }
     return result;

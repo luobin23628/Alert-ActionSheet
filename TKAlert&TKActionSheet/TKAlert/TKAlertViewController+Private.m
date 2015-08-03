@@ -455,11 +455,16 @@
 - (void)buttonClicked:(UIButton *)sender {
     long buttonIndex = [sender tag] - 1;
     
-    if ([self.delegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)]) {
-        [self.delegate alertView:self clickedButtonAtIndex:buttonIndex];
+    BOOL shouldDismiss = YES;
+    if ([self.delegate respondsToSelector:@selector(alertView:shouldDismissWithButtonIndex:)]) {
+        shouldDismiss = [self.delegate alertView:self shouldDismissWithButtonIndex:buttonIndex];
     }
-    
-    [self dismissWithClickedButtonIndex:buttonIndex animated:YES completion:nil noteDelegate:YES];
+    if (shouldDismiss) {
+        if ([self.delegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)]) {
+            [self.delegate alertView:self clickedButtonAtIndex:buttonIndex];
+        }
+        [self dismissWithClickedButtonIndex:buttonIndex animated:YES completion:nil noteDelegate:YES];
+    }
 }
 
 

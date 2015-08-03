@@ -10,7 +10,6 @@
 		EC2EE89E1B300A59004A6E84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE89D1B300A59004A6E84 /* main.m */; };
 		EC2EE8A11B300A59004A6E84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE8A01B300A59004A6E84 /* AppDelegate.m */; };
 		EC2EE8A41B300A59004A6E84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE8A31B300A59004A6E84 /* ViewController.m */; };
-		EC2EE8A71B300A59004A6E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8A51B300A59004A6E84 /* Main.storyboard */; };
 		EC2EE8A91B300A59004A6E84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC2EE8A81B300A59004A6E84 /* Images.xcassets */; };
 		EC2EE92C1B304ED5004A6E84 /* NSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9061B304ED5004A6E84 /* NSObject+Invocation.m */; };
 		EC2EE92D1B304ED5004A6E84 /* UIDeviceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9081B304ED5004A6E84 /* UIDeviceAdditions.m */; };
@@ -31,7 +30,6 @@
 		EC2EE93D1B304ED5004A6E84 /* TKFullScreenWindowBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2EE9291B304ED5004A6E84 /* TKFullScreenWindowBackground.m */; };
 		EC9BEC771B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9BEC741B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m */; };
 		EC9BEC781B3EC571009AA4B4 /* TKTextFieldAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9BEC761B3EC571009AA4B4 /* TKTextFieldAlertViewController.m */; };
-		EC9BECF71B453612009AA4B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9BECF51B453612009AA4B4 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +40,6 @@
 		EC2EE8A01B300A59004A6E84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EC2EE8A21B300A59004A6E84 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EC2EE8A31B300A59004A6E84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		EC2EE8A61B300A59004A6E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC2EE8A81B300A59004A6E84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC2EE9051B304ED5004A6E84 /* NSObject+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Invocation.h"; sourceTree = "<group>"; };
 		EC2EE9061B304ED5004A6E84 /* NSObject+Invocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Invocation.m"; sourceTree = "<group>"; };
@@ -82,7 +79,6 @@
 		EC9BEC741B3EC571009AA4B4 /* TKFirstResponseAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFirstResponseAlertViewController.m; sourceTree = "<group>"; };
 		EC9BEC751B3EC571009AA4B4 /* TKTextFieldAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTextFieldAlertViewController.h; sourceTree = "<group>"; };
 		EC9BEC761B3EC571009AA4B4 /* TKTextFieldAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTextFieldAlertViewController.m; sourceTree = "<group>"; };
-		EC9BECF61B453612009AA4B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +116,6 @@
 				EC2EE8A01B300A59004A6E84 /* AppDelegate.m */,
 				EC2EE8A21B300A59004A6E84 /* ViewController.h */,
 				EC2EE8A31B300A59004A6E84 /* ViewController.m */,
-				EC2EE8A51B300A59004A6E84 /* Main.storyboard */,
-				EC9BECF51B453612009AA4B4 /* LaunchScreen.xib */,
 				EC2EE8A81B300A59004A6E84 /* Images.xcassets */,
 				EC2EE89B1B300A59004A6E84 /* Supporting Files */,
 			);
@@ -264,8 +258,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC2EE8A71B300A59004A6E84 /* Main.storyboard in Resources */,
-				EC9BECF71B453612009AA4B4 /* LaunchScreen.xib in Resources */,
 				EC2EE8A91B300A59004A6E84 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,25 +295,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		EC2EE8A51B300A59004A6E84 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC2EE8A61B300A59004A6E84 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EC9BECF51B453612009AA4B4 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC9BECF61B453612009AA4B4 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EC2EE8B91B300A59004A6E84 /* Debug */ = {
@@ -410,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = TKAlertExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = TKAlertExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

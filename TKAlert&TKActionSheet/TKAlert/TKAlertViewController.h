@@ -77,6 +77,8 @@ void TKAlert3(NSString *title, NSString *message, NSString *buttonTitle);
 @protocol TKAlertViewControllerDelegate <NSObject>
 
 @optional
+//点击按钮dismiss才会回调
+- (BOOL)alertView:(TKAlertViewController *)alertView shouldDismissWithButtonIndex:(NSInteger)buttonIndex;
 - (void)alertView:(TKAlertViewController *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 - (void)willPresentAlertView:(TKAlertViewController *)alertView;  // before animation and showing view
