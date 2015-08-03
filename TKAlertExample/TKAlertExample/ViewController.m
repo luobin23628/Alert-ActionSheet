@@ -12,7 +12,7 @@
 #import "TKTextFieldAlertViewController.h"
 #import "TKAlertManager.h"
 
-@interface ViewController ()
+@interface ViewController ()<TKAlertViewControllerDelegate>
 
 @end
 
@@ -76,10 +76,6 @@
     //    [alert show];
 }
 
-- (void)didPresentAlertView:(UIAlertView *)alertView {
-    NSLog(@"%@ bounds == %@", alertView, NSStringFromCGRect(alertView.bounds));
-}
-
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
 }
@@ -93,7 +89,7 @@
     [alert addButtonWithTitle:@"cancel" handler:nil];
     alert.dismissWhenTapWindow = YES;
     [alert showWithAnimationType:TKAlertViewAnimationPathStyle];
-    
+    alert.delegate = self;
 //    [self performSelector:@selector(cancelAllAlerts) withObject:nil afterDelay:5];
 }
 
@@ -124,5 +120,8 @@
     [TKAlertManager cancelAllAlertsAnimated:YES];
 }
 
+- (BOOL)alertView:(TKAlertViewController *)alertView shouldDismissWithButtonIndex:(NSInteger)buttonIndex {
+    return NO;
+}
 
 @end

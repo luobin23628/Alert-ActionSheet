@@ -459,6 +459,7 @@
     if ([self.delegate respondsToSelector:@selector(alertView:shouldDismissWithButtonIndex:)]) {
         shouldDismiss = [self.delegate alertView:self shouldDismissWithButtonIndex:buttonIndex];
     }
+
     if (shouldDismiss) {
         if ([self.delegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)]) {
             [self.delegate alertView:self clickedButtonAtIndex:buttonIndex];

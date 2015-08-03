@@ -68,7 +68,7 @@ void TKAlert3(NSString *title, NSString *message, NSString *buttonTitle);
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated completion:(void (^)(void))completion;
 
-@property (nonatomic, assign) id<TKAlertViewControllerDelegate>delegate;
+@property (nonatomic, weak) id<TKAlertViewControllerDelegate>delegate;
 @property (nonatomic, readwrite, getter=isVisible) BOOL visible;
 
 @end
