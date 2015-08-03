@@ -120,8 +120,4 @@
     [TKAlertManager cancelAllAlertsAnimated:YES];
 }
 
-- (BOOL)alertView:(TKAlertViewController *)alertView shouldDismissWithButtonIndex:(NSInteger)buttonIndex {
-    return NO;
-}
-
 @end
