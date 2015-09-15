@@ -83,15 +83,15 @@
 }
 
 - (void)revertKeyWindowAndHidden {
-    if (self.isKeyWindow) {
-        self.hidden = YES;
-        
-        if ([_previousKeyWindow respondsToSelector:@selector(setTintAdjustmentMode:)]) {
-            _previousKeyWindow.tintAdjustmentMode = self.oldTintAdjustmentMode;
-        }
-        [_previousKeyWindow makeKeyWindow];
-        _previousKeyWindow = nil;
+    self.hidden = YES;
+    
+    if ([_previousKeyWindow respondsToSelector:@selector(setTintAdjustmentMode:)]) {
+        _previousKeyWindow.tintAdjustmentMode = self.oldTintAdjustmentMode;
     }
+    if (self.isKeyWindow) {
+        [_previousKeyWindow makeKeyWindow];
+    }
+    _previousKeyWindow = nil;
 }
 
 @end

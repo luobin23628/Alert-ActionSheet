@@ -190,6 +190,7 @@ static UIFont *buttonFont = nil;
     frame.size.width = kAlertViewDefaultWidth;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 0)];
+    scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     scrollView.alwaysBounceHorizontal = NO;
     scrollView.alwaysBounceVertical = NO;
     scrollView.backgroundColor = [UIColor clearColor];
