@@ -8,7 +8,7 @@
 
 #import "TKActionSheetOverlayWindow.h"
 
-const UIWindowLevel TKWindowLevelActionSheet = 2001;
+const UIWindowLevel TKWindowLevelActionSheet = 2000;
 
 @implementation TKActionSheetOverlayWindow
 

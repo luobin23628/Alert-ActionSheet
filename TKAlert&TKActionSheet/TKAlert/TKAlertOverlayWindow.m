@@ -8,7 +8,7 @@
 
 #import "TKAlertOverlayWindow.h"
 
-const UIWindowLevel TKWindowLevelAlertView = 1996;
+const UIWindowLevel TKWindowLevelAlertView = 2000;
 
 @implementation TKAlertOverlayWindow
 
