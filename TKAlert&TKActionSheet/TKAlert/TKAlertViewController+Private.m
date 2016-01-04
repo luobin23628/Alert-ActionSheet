@@ -19,7 +19,7 @@
 - (void)updateFrameForDisplay {
     CGFloat alertViewWidth = kAlertViewDefaultWidth;
     if (self.customView && self.customView.width > 0) {
-        alertViewWidth = self.customView.width + 2*kAlertViewBorder;
+        alertViewWidth = self.customView.width + self.customeViewInset.left + self.customeViewInset.right;
         if (alertViewWidth < kAlertViewMinWidth) {
             alertViewWidth = kAlertViewMinWidth;
         }
@@ -30,7 +30,7 @@
     
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     CGFloat alertViewMaxHeigh = ([UIScreen mainScreen].flexibleBounds.size.height - 2*3);
-    CGFloat height = 15;
+    CGFloat height = self.customeViewInset.top;
     
     if ([self.titleView.text length]) {
         CGRect frame = self.titleView.frame;
@@ -41,15 +41,15 @@
     }
     
     CGRect frame = self.customView.bounds;
-    frame.size.width = (alertViewWidth - 2*kAlertViewBorder);
+    frame.size.width = (alertViewWidth - self.customeViewInset.left - self.customeViewInset.right);
     
-    frame.origin.x = (alertViewWidth - frame.size.width)/2;
+    frame.origin.x = self.customeViewInset.left;
     frame.origin.y = height;
     
     self.customView.frame = frame;
-    height += frame.size.height + 10;
+    height += frame.size.height + self.customeViewInset.bottom;
     
-    self.scrollView.contentSize = CGSizeMake(self.containerView.bounds.size.width, height);
+    self.scrollView.contentSize = CGSizeMake(alertViewWidth, height);
     
     CGFloat y = height;
     CGFloat buttonContainerViewHeight = 0;

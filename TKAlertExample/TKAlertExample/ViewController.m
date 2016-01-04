@@ -82,7 +82,7 @@
 
 - (void)test2 {
     TKAlertViewController *alert = [TKAlertViewController alertWithTitle:@"test" message:@"自定义AlertView和ActionSheet. cocoapads 使用 pod 'TKAlert&TKActionSheet', '~>1.0.1'"];
-    
+//    alert.customeViewInset = UIEdgeInsetsMake(100, 0, 100, 0);
     [alert addButtonWithTitle:@"ok" handler:^{
         [self testTextFieldAlertView];
     }];

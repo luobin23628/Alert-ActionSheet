@@ -45,6 +45,13 @@ void TKAlert3(NSString *title, NSString *message, NSString *buttonTitle);
 + (instancetype)alertWithTitle:(NSString *)title customView:(UIView *)customView;
 - (instancetype)initWithTitle:(NSString *)title customView:(UIView *)customView;
 
+/**
+ * 设置customeView间距， 默认为［15, 15, 15, 15］
+ *
+ */
+@property (nonatomic, readwrite) UIEdgeInsets customeViewInset;
+
+
 - (instancetype)initWithTitle:(NSString *)title viewController:(UIViewController *)viewController;
 + (instancetype)alertWithTitle:(NSString *)title viewController:(UIViewController *)viewController;
 

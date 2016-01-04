@@ -133,6 +133,7 @@ static UIFont *buttonFont = nil;
         self.customView.autoresizingMask = UIViewAutoresizingNone;
         self.animationType = TKAlertViewAnimationBounce;
         self.enabledParallaxEffect = YES;
+        self.customeViewInset = UIEdgeInsetsMake(kAlertViewBorder, kAlertViewBorder, kAlertViewBorder, kAlertViewBorder);
     }
     return self;
 }
