@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TKAlert&TKActionSheet"
-  s.version      = "1.0.16"
+  s.version      = "1.0.17"
   s.summary      = "A custom TKAlert and TKActionSheet."
 
   s.description  = <<-DESC
