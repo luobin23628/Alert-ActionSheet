@@ -51,12 +51,12 @@ typedef NS_ENUM(NSInteger, TKActionSheetButtonType) {
 - (instancetype)initWithViewController:(UIViewController *)viewController;
 + (instancetype)sheetWithViewController:(UIViewController *)viewController;
 
-- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)(NSInteger index)) handler;
-- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)(NSInteger index)) handler;
-- (void)addButtonWithTitle:(NSString *)title block:(void (^)(NSInteger index)) handler;
+- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)(NSUInteger index)) handler;
+- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)(NSUInteger index)) handler;
+- (void)addButtonWithTitle:(NSString *)title block:(void (^)(NSUInteger index)) handler;
 
-- (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSInteger)index block:(void (^)(NSInteger index)) handler;
-- (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index block:(void (^)(NSInteger index)) handler;
+- (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSUInteger)index block:(void (^)(NSUInteger index)) handler;
+- (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index block:(void (^)(NSUInteger index)) handler;
 
 - (void)showInViewController:(UIViewController *)parentController animated: (BOOL)flag completion:(void (^)(void))completion;
 

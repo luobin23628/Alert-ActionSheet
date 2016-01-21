@@ -39,7 +39,7 @@
 
 @interface TKActionSheetAction : NSObject
 
-+ (instancetype)actionWithTitle:(NSString *)title type:(TKActionSheetButtonType)type handler:(void (^)(NSInteger index))handler;
++ (instancetype)actionWithTitle:(NSString *)title type:(TKActionSheetButtonType)type handler:(void (^)(NSUInteger index))handler;
 
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) TKActionSheetButtonType type;
@@ -51,13 +51,13 @@
 
 @property (nonatomic, readwrite) NSString *title;
 @property (nonatomic, readwrite) TKActionSheetButtonType type;
-@property (nonatomic, copy) void (^handler)(NSInteger index);
+@property (nonatomic, copy) void (^handler)(NSUInteger index);
 
 @end
 
 @implementation TKActionSheetAction
 
-+ (instancetype)actionWithTitle:(NSString *)title type:(TKActionSheetButtonType)type handler:(void (^)(NSInteger index))handler {
++ (instancetype)actionWithTitle:(NSString *)title type:(TKActionSheetButtonType)type handler:(void (^)(NSUInteger index))handler {
     TKActionSheetAction *action = [[TKActionSheetAction alloc] init];
     action.title = title;
     action.type = type;
@@ -257,7 +257,7 @@ static UIFont *buttonFont = nil;
 }
 
 - (void)setDestructiveButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self setDestructiveButtonWithTitle:title block:^(NSInteger index) {
+    [self setDestructiveButtonWithTitle:title block:^(NSUInteger index) {
         if (handler) {
             handler();
         }
@@ -265,7 +265,7 @@ static UIFont *buttonFont = nil;
 }
 
 - (void)setCancelButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self setCancelButtonWithTitle:title block:^(NSInteger index) {
+    [self setCancelButtonWithTitle:title block:^(NSUInteger index) {
         if (handler) {
             handler();
         }
@@ -273,7 +273,7 @@ static UIFont *buttonFont = nil;
 }
 
 - (void)addButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addButtonWithTitle:title block:^(NSInteger index) {
+    [self addButtonWithTitle:title block:^(NSUInteger index) {
         if (handler) {
             handler();
         }
@@ -281,7 +281,7 @@ static UIFont *buttonFont = nil;
 }
 
 - (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
-    [self setDestructiveButtonWithTitle:title atIndex:index block:^(NSInteger index) {
+    [self setDestructiveButtonWithTitle:title atIndex:index block:^(NSUInteger index) {
         if (handler) {
             handler();
         }
@@ -289,7 +289,7 @@ static UIFont *buttonFont = nil;
 }
 
 - (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
-    [self addButtonWithTitle:title atIndex:index block:^(NSInteger index) {
+    [self addButtonWithTitle:title atIndex:index block:^(NSUInteger index) {
         if (handler) {
             handler();
         }
@@ -297,23 +297,23 @@ static UIFont *buttonFont = nil;
 }
 
 
-- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)(NSInteger index))handler {
+- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)(NSUInteger index))handler {
     [self addButtonWithTitle:title type:TKActionSheetButtonTypeDestructive handler:handler atIndex:-1];
 }
 
-- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)(NSInteger index))handler {
+- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)(NSUInteger index))handler {
     [self addButtonWithTitle:title type:TKActionSheetButtonTypeCancel handler:handler atIndex:-1];
 }
 
-- (void)addButtonWithTitle:(NSString *)title block:(void (^)(NSInteger index))handler {
+- (void)addButtonWithTitle:(NSString *)title block:(void (^)(NSUInteger index))handler {
     [self addButtonWithTitle:title type:TKActionSheetButtonTypeDefault handler:handler atIndex:-1];
 }
 
-- (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSInteger)index block:(void (^)(NSInteger index))handler {
+- (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSUInteger)index block:(void (^)(NSUInteger NSUInteger))handler {
     [self addButtonWithTitle:title type:TKActionSheetButtonTypeDestructive handler:handler atIndex:index];
 }
 
-- (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index block:(void (^)(NSInteger index))handler {
+- (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index block:(void (^)(NSUInteger index))handler {
     [self addButtonWithTitle:title type:TKActionSheetButtonTypeDefault handler:handler atIndex:index];
 }
 
@@ -459,7 +459,7 @@ static UIFont *buttonFont = nil;
 
 #pragma mark - Private
 
-- (void)addButtonWithTitle:(NSString *)title type:(TKActionSheetButtonType)type handler:(void (^)(NSInteger index))handler atIndex:(NSInteger)index {
+- (void)addButtonWithTitle:(NSString *)title type:(TKActionSheetButtonType)type handler:(void (^)(NSUInteger index))handler atIndex:(NSInteger)index {
     TKActionSheetAction *action = [TKActionSheetAction actionWithTitle:title type:type handler:handler];
     TKActionSheetAction *lastAction = [self.actions lastObject];
     

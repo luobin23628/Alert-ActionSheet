@@ -109,10 +109,10 @@
 
 - (void)testCustomActionSheet {
     TKActionSheetController *uActionSheet = [TKActionSheetController sheetWithTitle:@"自定义AlertView和ActionSheet. cocoapads 使用 pod 'TKAlert&TKActionSheet', '~>1.0.1'"];
-    [uActionSheet addButtonWithTitle:@"test" block:^(NSInteger index) {
+    [uActionSheet addButtonWithTitle:@"test" block:^(NSUInteger index) {
         NSLog(@"test");
     }];
-    [uActionSheet setCancelButtonWithTitle:@"取消" block:^(NSInteger index) {
+    [uActionSheet setCancelButtonWithTitle:@"取消" block:^(NSUInteger index) {
         NSLog(@"cancel");
     }];
     [uActionSheet showInViewController:self animated:YES completion:nil];
