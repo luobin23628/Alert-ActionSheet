@@ -43,7 +43,7 @@ typedef NS_ENUM(NSInteger, TKActionSheetButtonType) {
 - (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)()) handler;
 
 @property (nonatomic, readwrite) BOOL vignetteBackground;
-@property (nonatomic, assign) id<TKActionSheetControllerDelegate>delegate;
+@property (nonatomic, weak) id<TKActionSheetControllerDelegate>delegate;
 @property (nonatomic, readonly) NSInteger cancelButtonIndex;
 
 - (void)setTitleColor:(UIColor *)color forButton:(TKActionSheetButtonType)type UI_APPEARANCE_SELECTOR;
