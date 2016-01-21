@@ -242,7 +242,6 @@ static UIFont *buttonFont = nil;
     self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapWindow:)];
     self.tapGestureRecognizer.delegate = self;
     [self.backgroundWindow addGestureRecognizer:self.tapGestureRecognizer];
-
 }
 
 - (NSUInteger)buttonCount {
@@ -257,29 +256,46 @@ static UIFont *buttonFont = nil;
     return [self.titleColorDic objectForKey:@(type)];
 }
 
-//- (void)setDestructiveButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-//    [self addButtonWithTitle:title type:TKActionSheetButtonTypeDestructive handler:handler atIndex:-1];
-//}
-//
-//- (void)setCancelButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-//    [self addButtonWithTitle:title type:TKActionSheetButtonTypeCancel handler:handler atIndex:-1];
-//}
-//
-//- (void)addButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-//    [self addButtonWithTitle:title type:TKActionSheetButtonTypeDefault handler:handler atIndex:-1];
-//}
-//
-//- (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
-//    [self addButtonWithTitle:title type:TKActionSheetButtonTypeDestructive handler:handler atIndex:index];
-//}
-//
-//- (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
-//    [self addButtonWithTitle:title type:TKActionSheetButtonTypeDefault handler:handler atIndex:index];
-//}
-//
-//- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)(NSInteger index)) handler {
-//    
-//}
+- (void)setDestructiveButtonWithTitle:(NSString *)title handler:(void (^)())handler {
+    [self setDestructiveButtonWithTitle:title block:^(NSInteger index) {
+        if (handler) {
+            handler();
+        }
+    }];
+}
+
+- (void)setCancelButtonWithTitle:(NSString *)title handler:(void (^)())handler {
+    [self setCancelButtonWithTitle:title block:^(NSInteger index) {
+        if (handler) {
+            handler();
+        }
+    } ];
+}
+
+- (void)addButtonWithTitle:(NSString *)title handler:(void (^)())handler {
+    [self addButtonWithTitle:title block:^(NSInteger index) {
+        if (handler) {
+            handler();
+        }
+    }];
+}
+
+- (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
+    [self setDestructiveButtonWithTitle:title atIndex:index block:^(NSInteger index) {
+        if (handler) {
+            handler();
+        }
+    }];
+}
+
+- (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
+    [self addButtonWithTitle:title atIndex:index block:^(NSInteger index) {
+        if (handler) {
+            handler();
+        }
+    }];
+}
+
 
 - (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)(NSInteger index))handler {
     [self addButtonWithTitle:title type:TKActionSheetButtonTypeDestructive handler:handler atIndex:-1];
