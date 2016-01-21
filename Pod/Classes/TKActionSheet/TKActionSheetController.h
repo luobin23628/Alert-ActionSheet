@@ -19,7 +19,14 @@ typedef NS_ENUM(NSInteger, TKActionSheetButtonType) {
 @class TKActionSheetController;
 @protocol TKActionSheetControllerDelegate <NSObject>
 
+// Called when click button.
 - (void)actionSheet:(TKActionSheetController *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
+
+- (void)willPresentActionSheet:(TKActionSheetController *)actionSheet; // before animation and showing view
+- (void)didPresentActionSheet:(TKActionSheetController *)actionSheet;  // after animation
+
+- (void)actionSheet:(TKActionSheetController *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex; // before animation and hiding view
+- (void)actionSheet:(TKActionSheetController *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex;  // after animation
 
 @end
 

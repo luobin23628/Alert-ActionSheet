@@ -341,6 +341,10 @@ static UIFont *buttonFont = nil;
     center.y = self.warpperView.height + self.height/2;
     self.containerView.center = center;
     
+    if ([self.delegate respondsToSelector:@selector(willPresentActionSheet:)]) {
+        [self.delegate willPresentActionSheet:self];
+    }
+    
     if (flag) {
         self.backgroundWindow.backgroundView.alpha = 0.f;
         [UIView animateWithDuration:0.3
@@ -354,6 +358,10 @@ static UIFont *buttonFont = nil;
                              if (completion) {
                                  completion();
                              }
+                             
+                             if ([self.delegate respondsToSelector:@selector(didPresentActionSheet:)]) {
+                                 [self.delegate didPresentActionSheet:self];
+                             }
                          }];
     } else {
         self.backgroundWindow.backgroundView.alpha = 1.0f;
@@ -362,6 +370,10 @@ static UIFont *buttonFont = nil;
         
         if (completion) {
             completion();
+        }
+        
+        if ([self.delegate respondsToSelector:@selector(didPresentActionSheet:)]) {
+            [self.delegate didPresentActionSheet:self];
         }
     }
 }
@@ -382,6 +394,10 @@ static UIFont *buttonFont = nil;
         {
             ((void (^)())action.handler)(buttonIndex);
         }
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(actionSheet:willDismissWithButtonIndex:)]) {
+        [self.delegate actionSheet:self willDismissWithButtonIndex:buttonIndex];
     }
     
     [self.backgroundWindow removeGestureRecognizer:self.tapGestureRecognizer];
@@ -407,6 +423,10 @@ static UIFont *buttonFont = nil;
                              if (completion) {
                                  completion();
                              }
+                             
+                             if ([self.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
+                                 [self.delegate actionSheet:self didDismissWithButtonIndex:buttonIndex];
+                             }
                          }];
     } else {
         [self.backgroundWindow revertKeyWindowAndHidden];
@@ -420,6 +440,10 @@ static UIFont *buttonFont = nil;
         
         if (completion) {
             completion();
+        }
+        
+        if ([self.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
+            [self.delegate actionSheet:self didDismissWithButtonIndex:buttonIndex];
         }
     }
 }
