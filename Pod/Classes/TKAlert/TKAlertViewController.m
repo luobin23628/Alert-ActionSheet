@@ -326,9 +326,9 @@ static UIFont *buttonFont = nil;
         [TKAlertManager addToStack:self dontDimBackground:YES];
         return;
     }
-        
+    
     [TKAlertManager addToStack:self dontDimBackground:YES];
-    [self popupAlertAnimated:YES animationType:animationType atOffset:offset];
+    [self popupAlertAnimated:YES animationType:animationType atOffset:offset noteDelegate:YES];
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated{

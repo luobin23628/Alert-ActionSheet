@@ -70,7 +70,7 @@
 
 - (void)updateFrameForDisplay;
 
-- (void)popupAlertAnimated:(BOOL)animated animationType:(TKAlertViewAnimation)animationType atOffset:(UIOffset)offset;
+- (void)popupAlertAnimated:(BOOL)animated animationType:(TKAlertViewAnimation)animationType atOffset:(UIOffset)offset noteDelegate:(BOOL)noteDelegate;
 
 - (UIButton *)buttonForIndex:(NSInteger)buttonIndex;
 - (void)hiddenAlertAnimatedWithCompletion:(void (^)(BOOL finished))completion;

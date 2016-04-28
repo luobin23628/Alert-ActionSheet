@@ -191,8 +191,8 @@
     return button;
 }
 
-- (void)popupAlertAnimated:(BOOL)animated animationType:(TKAlertViewAnimation)animationType atOffset:(UIOffset)offset{
-    if ([self.delegate respondsToSelector:@selector(willPresentAlertView:)]) {
+- (void)popupAlertAnimated:(BOOL)animated animationType:(TKAlertViewAnimation)animationType atOffset:(UIOffset)offset noteDelegate:(BOOL)noteDelegate {
+    if (noteDelegate && [self.delegate respondsToSelector:@selector(willPresentAlertView:)]) {
         [self.delegate willPresentAlertView:self];
     }
     
@@ -235,7 +235,7 @@
         
         [self addParallaxEffect];
         
-        if ([selfObj.delegate respondsToSelector:@selector(didPresentAlertView:)]) {
+        if (noteDelegate && [selfObj.delegate respondsToSelector:@selector(didPresentAlertView:)]) {
             [selfObj.delegate didPresentAlertView:selfObj];
         }
         if (selfObj.cancelWhenDoneAnimating) {
@@ -288,7 +288,7 @@
 }
 
 - (void)rePopupAnimated:(BOOL)animated {
-    [self popupAlertAnimated:animated animationType:self.animationType atOffset:self.offset];
+    [self popupAlertAnimated:animated animationType:self.animationType atOffset:self.offset noteDelegate:NO];
 }
 
 - (void)removeAlertWindowOrShowAnOldAlert {
@@ -297,7 +297,7 @@
     if (index != NSNotFound && index < alertStack.count - 1) {
         index++;
         TKAlertViewController *oldAlertView = [alertStack objectAtIndex:index];
-        [oldAlertView popupAlertAnimated:YES animationType:oldAlertView.animationType atOffset:oldAlertView.offset];
+        [oldAlertView popupAlertAnimated:YES animationType:oldAlertView.animationType atOffset:oldAlertView.offset noteDelegate:YES];
     } else {
         [[TKAlertOverlayWindow defaultWindow] reduceAlphaIfEmpty];
     }
