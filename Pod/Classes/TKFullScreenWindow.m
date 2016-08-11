@@ -13,7 +13,6 @@
 
 @property (nonatomic, strong, readwrite) TKFullScreenWindowBackground *backgroundView;
 @property (nonatomic, strong, readwrite) UIWindow *previousKeyWindow;
-@property (nonatomic, assign, readwrite) UIViewTintAdjustmentMode oldTintAdjustmentMode;
 
 @end
 
@@ -66,10 +65,6 @@
         self.userInteractionEnabled = YES;
         
         _previousKeyWindow = [[UIApplication sharedApplication] keyWindow];
-        if ([_previousKeyWindow respondsToSelector:@selector(setTintAdjustmentMode:)]) { // for iOS 7
-            self.oldTintAdjustmentMode = _previousKeyWindow.tintAdjustmentMode;
-            _previousKeyWindow.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
-        }
     }
     [super makeKeyWindow];
 }
@@ -85,9 +80,6 @@
 - (void)revertKeyWindowAndHidden {
     self.hidden = YES;
     
-    if ([_previousKeyWindow respondsToSelector:@selector(setTintAdjustmentMode:)]) {
-        _previousKeyWindow.tintAdjustmentMode = self.oldTintAdjustmentMode;
-    }
     if (self.isKeyWindow) {
         [_previousKeyWindow makeKeyWindow];
     }
