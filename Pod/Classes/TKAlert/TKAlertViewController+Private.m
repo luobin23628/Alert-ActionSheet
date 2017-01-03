@@ -218,12 +218,11 @@
     [TKAlertOverlayWindow defaultWindow].backgroundView.backgroundColor = self.windowBackgroundColor;
     
     [TKAlertOverlayWindow defaultWindow].frame = [[UIScreen mainScreen] bounds];
+    [TKAlertOverlayWindow defaultWindow].rootViewController = self;
     [[TKAlertOverlayWindow defaultWindow] makeKeyAndVisible];
     
     [self updateFrameForDisplay];
     
-    [TKAlertOverlayWindow defaultWindow].rootViewController = self;
-
     [TKAlertOverlayWindow defaultWindow].backgroundView.alpha = 1.0f;
     [TKAlertOverlayWindow defaultWindow].frame = [[UIScreen mainScreen] bounds];
 

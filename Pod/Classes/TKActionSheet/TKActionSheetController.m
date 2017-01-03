@@ -329,8 +329,8 @@ static UIFont *buttonFont = nil;
     self.backgroundWindow = [[TKActionSheetOverlayWindow alloc] init];
     self.backgroundWindow.frame = [[UIScreen mainScreen] bounds];
     self.backgroundWindow.backgroundView.vignetteBackground = _vignetteBackground;
-    [self.backgroundWindow makeKeyAndVisible];
     self.backgroundWindow.rootViewController = self;
+    [self.backgroundWindow makeKeyAndVisible];
     self.backgroundWindow.frame = [[UIScreen mainScreen] bounds];
     
     [TKActionSheetManager addToStack:self];

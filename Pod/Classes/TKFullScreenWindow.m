@@ -54,10 +54,19 @@
 }
 
 - (void)makeKeyAndVisible {
-    [super makeKeyAndVisible];
+    if (self.rootViewController) {
+        [super makeKeyAndVisible];
+    }
 }
 
 - (void)makeKeyWindow {
+    /*
+     iOS7及之前的版本，UIAlertView在dismiss之后会把之前的window重新置为keyWindow
+     通过判断rootViewController是否为空来过滤掉这种情况，不予处理。
+     */
+    if (!self.rootViewController) {
+        return;
+    }
     if (!self.isKeyWindow) {
         self.alpha = 1.0f;
         self.backgroundView.alpha = 1;
