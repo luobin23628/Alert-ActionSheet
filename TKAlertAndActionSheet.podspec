@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "TKAlert&TKActionSheet"
-  s.version          = "1.1.1"
+  s.name             = "TKAlertAndActionSheet"
+  s.version          = "1.1.2"
   s.summary          = "A custom TKAlert and TKActionSheet."
 
 # This description is used to generate tags and improve search results.
