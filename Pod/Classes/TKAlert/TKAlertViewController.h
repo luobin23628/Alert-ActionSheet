@@ -8,7 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
-#import <TKAlert&TKActionSheet/TKAlertConst.h>
+#import "TKAlertConst.h"
 
 
 void TKAlert1(NSString *title);

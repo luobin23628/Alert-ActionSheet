@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 luobin. All rights reserved.
 //
 
-#import <TKAlert&TKActionSheet/TKFirstResponseAlertViewController.h>
+#import "TKFirstResponseAlertViewController.h"
 
 @class TKTextFieldAlertViewController;
 @protocol TKTextFieldAlertViewDelegate <TKAlertViewControllerDelegate>

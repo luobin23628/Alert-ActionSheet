@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <TKAlert&TKActionSheet/TKAlertViewController.h>
+#import "TKAlertViewController.h"
 
 @interface TKAlertManager : NSObject
 

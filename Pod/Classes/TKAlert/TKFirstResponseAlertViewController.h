@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 luobin. All rights reserved.
 //
 
-#import <TKAlert&TKActionSheet/TKAlertViewController.h>
+#import "TKAlertViewController.h"
 
 @interface TKFirstResponseAlertViewController : TKAlertViewController
 

@@ -1,6 +1,6 @@
 {
-  "name": "TKAlert&TKActionSheet",
-  "version": "1.0.17",
+  "name": "TKAlertAndActionSheet",
+  "version": "1.1.2",
   "summary": "A custom TKAlert and TKActionSheet.",
   "description": "可替换系统的UIAlertView和UIActionSheet，使用灵活简单，可自定义样式和弹出动画",
   "homepage": "https://github.com/luobin23628",
@@ -10,16 +10,11 @@
   },
   "source": {
     "git": "https://github.com/luobin23628/Alert-ActionSheet.git",
-    "tag": "1.0.17"
+    "tag": "1.1.2"
   },
   "platforms": {
     "ios": "6.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "TKAlertAndTKActionSheet": [
-      "Pod/Assets/*.png"
-    ]
-  }
+  "source_files": "Pod/Classes/**/*"
 }

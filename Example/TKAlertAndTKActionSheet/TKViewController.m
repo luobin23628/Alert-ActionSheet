@@ -7,7 +7,8 @@
 //
 
 #import "TKViewController.h"
-#import <TKAlert&TKActionSheet/TKAlert&TKActionSheet.h>
+#import <TKAlertAndActionSheet/TKAlertAndActionSheet.h>
+
 
 @interface TKViewController ()
 
