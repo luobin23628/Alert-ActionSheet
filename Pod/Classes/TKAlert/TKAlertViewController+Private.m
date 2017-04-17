@@ -153,6 +153,7 @@
 
     frame = CGRectMake(x, y, alertViewWidth, height);
     self.containerView.frame = frame;
+    self.backgroundView.frame = self.containerView.bounds;
 }
 
 - (UIButton *)buttonForIndex:(NSInteger)buttonIndex {

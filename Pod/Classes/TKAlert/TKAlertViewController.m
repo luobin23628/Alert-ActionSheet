@@ -350,6 +350,7 @@ static UIFont *buttonFont = nil;
             [_backgroundView removeFromSuperview];
         }
         _backgroundView = backgroundView;
+        _backgroundView.frame = self.containerView.bounds;
     }
 }
 
@@ -360,6 +361,7 @@ static UIFont *buttonFont = nil;
             [_backgroundView removeFromSuperview];
         }
         _backgroundView = backgroundView;
+        _backgroundView.frame = self.containerView.bounds;
         _backgroundColor = nil;
     }
 }
