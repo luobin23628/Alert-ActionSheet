@@ -28,7 +28,7 @@
     
     btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btn.titleLabel.font = [UIFont systemFontOfSize:14];
-    [btn setTitle:@"custom alert" forState:UIControlStateNormal];
+    [btn setTitle:@"TKAlertView" forState:UIControlStateNormal];
     btn.frame = CGRectMake(160, 30, 120, 30);
     [btn addTarget:self action:@selector(testCustomAlert) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
@@ -39,6 +39,14 @@
     btn.frame = CGRectMake(160, 60, 120, 30);
     [btn addTarget:self action:@selector(testTextFieldAlertView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+    btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [btn setTitle:@"custom TKAlertView " forState:UIControlStateNormal];
+    btn.frame = CGRectMake(160, 90, 120, 30);
+    [btn addTarget:self action:@selector(testCustomAlertView) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+
     
     
     btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -100,6 +108,21 @@
         
     }];
     [textFieldAlertView show];
+}
+
+- (void)testCustomAlertView {
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    customView.backgroundColor = [UIColor redColor];
+    TKAlertViewController *alert = [TKAlertViewController alertWithTitle:@"test" customView:customView];
+    //    alert.customeViewInset = UIEdgeInsetsMake(100, 0, 100, 0);
+    [alert addButtonWithTitle:@"ok" block:^(NSUInteger index) {
+        [self testTextFieldAlertView];
+    }];
+    
+    [alert addButtonWithTitle:@"cancel" block:nil];
+    alert.backgroundColor = [UIColor greenColor];
+    alert.dismissWhenTapWindow = YES;
+    [alert showWithAnimationType:TKAlertViewAnimationPathStyle];
 }
 
 - (void)testSystemActionSheet {
