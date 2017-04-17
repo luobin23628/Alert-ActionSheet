@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "TKAlert&TKActionSheet"
-  s.version          = "1.1.1"
+  s.version          = "1.1.2"
   s.summary          = "A custom TKAlert and TKActionSheet."
 
 # This description is used to generate tags and improve search results.
@@ -20,7 +20,8 @@ s.description  = <<-DESC
                 可替换系统的UIAlertView和UIActionSheet，使用灵活简单，可自定义样式和弹出动画
                     DESC
 
-  s.homepage         = "https://github.com/luobin23628"
+  s.homepage         = "https://github.c
+om/luobin23628"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "luobin" => "luobin23628@163.com" }
