@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 
-target 'TKAlertAndTKActionSheet_Example', :exclusive => true do
-  pod "TKAlert&TKActionSheet", :path => "../"
+target 'TKAlertAndTKActionSheet_Example' do
+  pod "TKAlertAndActionSheet", :path => "../"
 end

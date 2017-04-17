@@ -1,14 +1,16 @@
 PODS:
-  - TKAlert&TKActionSheet (1.0.17)
+  - TKAlertAndActionSheet (1.1.2)
 
 DEPENDENCIES:
-  - TKAlert&TKActionSheet (from `../`)
+  - TKAlertAndActionSheet (from `../`)
 
 EXTERNAL SOURCES:
-  TKAlert&TKActionSheet:
+  TKAlertAndActionSheet:
     :path: ../
 
 SPEC CHECKSUMS:
-  TKAlert&TKActionSheet: 4d04c69980d4cca05b1397a175f7308731fc64f4
+  TKAlertAndActionSheet: 099d3b464544b370d1a300a012629d80a3716acc
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 7adfec8b55c4994d622bdb36767757668849db75
+
+COCOAPODS: 1.2.0

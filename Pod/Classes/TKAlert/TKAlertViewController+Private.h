@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 Baijiahulian. All rights reserved.
 //
 
-#import <TKAlert&TKActionSheet/TKAlertViewController.h>
+#import "TKAlertViewController.h"
 
 #define kAlertViewBorder                15
 #define kAlertViewBounce                20

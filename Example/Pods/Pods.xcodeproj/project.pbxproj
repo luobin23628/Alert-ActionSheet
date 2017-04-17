@@ -7,148 +7,133 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EFEE6E7997B14046B031EC3BCB3235B /* TKTextFieldAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A03840E7D853EF0B6C7DFF42CC475848 /* TKTextFieldAlertViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0FFBED2181088A01A2D2F28220961EE3 /* TKAlertViewAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 971AA25D5C040098F016B56DCB01E1A6 /* TKAlertViewAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16D75CD497837FD1606DB54E26105E04 /* TKAlertManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DFC9A98DF4CEA3381AE8EFD5EED0489 /* TKAlertManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		208DF3563C667E7B084E5A72680EB552 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C50E6D8DB36127BF25C51035950809E /* UIViewAdditions.m */; };
-		20D8BDCBF24A1E85005290DB62A32296 /* TKFullScreenWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B741D612774AF4F04338BA58CD32B /* TKFullScreenWindow.m */; };
-		22B52B5B04443CDE26227A51ECD6996D /* UIViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 495C5ECEF061F2037361E294E743501E /* UIViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		283AA2607874271E92837A4632ECF4C7 /* TKAlertConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 025026D0B925DE39E0DBA1B723790815 /* TKAlertConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A7FDFB2ABD616ACC1A1B3FB00ED3ACE /* TKAlertOverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 56330BAD39827C5B1DF8528A688ADDFE /* TKAlertOverlayWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E682A4DC0D43C8DFECE410849E62E9B /* TKBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8386CDC069055A1A0917258E6756FF2 /* TKBlurView.m */; };
-		400D21EEA0DB960E3E6795632E66FABC /* TKFullScreenWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 23B8DB57871310CF31E0E098CA334FFA /* TKFullScreenWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A1EAADBFA1383D9B34768FCD95176AA /* TKActionSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = AC4CC702ABA48FA427CCE7E18594178B /* TKActionSheetController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4D1313BC31912ADB4DBDD7CE184F364E /* TKAlertViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = A80C59B6CA915751E61029C16CF8D231 /* TKAlertViewController+Private.m */; };
-		4E911E24A32A52A1A0EBA9AD5149B324 /* UIScreen+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9499BF9F46BE193C16DAC825135DC /* UIScreen+Size.m */; };
-		4F0F438674E6615E7D49299F2E83DE0F /* TKAlert&TKActionSheet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FFC00A1E379EB9D56EC2F17567875 /* TKAlert&TKActionSheet-dummy.m */; };
-		5056055BA83D9514818AD4B69A893813 /* TKAlert&TKActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 600AE593BDBAC1476F309A4273335C11 /* TKAlert&TKActionSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		58CF02F867DA5B19FE8C1B0949E03167 /* NSObject+Invocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7649350BABD56ECE65E9F28E61A07E4D /* NSObject+Invocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C397951C6CBB1FD6D91A6AD0F489554 /* TKActionSheetOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F157BC5E183805EF5B988812625D57 /* TKActionSheetOverlayWindow.m */; };
-		64E6F309E4C423E54981935491F9FD6E /* TKAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FEA7F8E5CFA98BD1409F262DA9689C /* TKAlertViewController.m */; };
-		666C5228BC5C628D4C198E457F77D0A2 /* TKFirstResponseAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 916361B97E42504AAD944FCF9CFE76C1 /* TKFirstResponseAlertViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6B27EC7A1F52B30AA7E5C6E40C4D2EEF /* TKAlertViewAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 519EB73AE001F0390FA4D9E931D3D932 /* TKAlertViewAction.m */; };
-		6C823E7CD69A0BB1D5C9B28ED09081C1 /* TKActionSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EFE8DEF8BBA02E985CC9295E6998AF /* TKActionSheetController.m */; };
-		6E0E60DBCC28A70BA5D86372DE3E6CAA /* TKActionSheetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E916836B52B48342772244B69B8A35BD /* TKActionSheetManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F2ECB3E2C6FAF144AAFAB80543254F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		73342CD8263273A32FD8D44574CE5138 /* TKBlurView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDFD690B4D04B8D065B6A29FB98C8E4 /* TKBlurView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		737A8312900F803F1D8C6C3EC842AA8F /* TKFirstResponseAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96499B5AE71FEFA558FE33ECC69403D1 /* TKFirstResponseAlertViewController.m */; };
-		75390644FE9B5314044FDBF004241E63 /* UIImageExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 83CD6011B85FCEFDB50D093D9064CA52 /* UIImageExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		814D4E4217C3B37E1C4A461A2F7A28BA /* UIScreen+Size.h in Headers */ = {isa = PBXBuildFile; fileRef = 656E63398303D58637DFB64DB563FDBC /* UIScreen+Size.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		850DA614D149126ED7D55342D4DD32F4 /* TKAlertViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 98F188E1E6D41EAA72A756F580F74952 /* TKAlertViewController+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B0193AE2B4C4747DC99ADF4E56EFF72 /* Pods-TKAlertAndTKActionSheet_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B623CEB5598E0F7DA08703E90F6F1C9 /* Pods-TKAlertAndTKActionSheet_Example-dummy.m */; };
-		8C750DCCF1A686DD3233461BC784EAD1 /* TKFullScreenWindowBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B76576271E1C3B61E55556E71C7913A /* TKFullScreenWindowBackground.m */; };
-		929031932C73FA482C40945227CA2248 /* TKAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4534F84EF031B119DA1F5EBD0FF6E0C4 /* TKAlertManager.m */; };
-		94BA3658D63A019E7103FD4A8C8F3F4E /* TKActionSheetOverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B447D739D6A7D9ADF0E96C548640CE3 /* TKActionSheetOverlayWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9AE96CBEC056DEFB86AC4BF641162ED4 /* NSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F97DB935AA3B1D2A956717842E3A1B /* NSObject+Invocation.m */; };
-		A80FA79A91FFD1DE5CC2D06CBB6B0F0D /* TKTextFieldAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4895AC5B90431876ADD78F59977583 /* TKTextFieldAlertViewController.m */; };
-		AAB08572BF2DCDE06AD1F2B5CE5B5A41 /* TKActionSheetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EA2428FC9D5804964E89340BC62592 /* TKActionSheetManager.m */; };
-		ADF52F9760DA228A76BE2210E06A830B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		B0DB8CBEDEC90FDB8ABF227F856D3A5E /* TKAlertOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B51CF3C4A2E22BCC959BDCBF93BD4977 /* TKAlertOverlayWindow.m */; };
-		C7428B4F57C14620B1644FED1B98598E /* UIDeviceAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B4225E87F3523E0249D843FC4D62BDB4 /* UIDeviceAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C9E9BFAC7513F359F1D38CD9EC82E23E /* UIWindow+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 636F9EE6E126A0E46C54AB77257DE72D /* UIWindow+Alert.m */; };
-		D406D11D59A0B7E99A0DCE3956AB50DB /* TKAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46136F7CA4B14D134A6B67C96CBD1992 /* TKAlertViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0AB84E7A9E520E0E13CF2BE1FE1A398 /* UIWindow+Alert.h in Headers */ = {isa = PBXBuildFile; fileRef = 017D1A64291BE2880B7527B9B6F4D891 /* UIWindow+Alert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2432817AAFDBA627A1FBFB71FAF689D /* TKFullScreenWindowBackground.h in Headers */ = {isa = PBXBuildFile; fileRef = B1597FB75061E876167B271171087625 /* TKFullScreenWindowBackground.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8FDDC67BCECD9FE5A52DAA4CEC1F1B1 /* UIDeviceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5300DBAB10A42B4B180611C881E72CC3 /* UIDeviceAdditions.m */; };
-		FC1EF3B90BAE6009DE6090D38DE0A616 /* UIImageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = A26B666F697B427F807F496DCC8AB4A0 /* UIImageExtend.m */; };
+		035A0DD07D212D22623B0E34ED3A0E3F /* TKActionSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = 658456B2108E708D9AE59AF4F7501A05 /* TKActionSheetController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		036F68B12DA4B3F8B4E0E8CAE36F9D7C /* TKAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7177818CAFC8ABE25D89033F5B41B6D4 /* TKAlertViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07051AEB05237CA2BAC7931B3DCEE613 /* TKAlertAndActionSheet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF664775787F60D02BB8632A7B9B7C /* TKAlertAndActionSheet-dummy.m */; };
+		0B046534874C0CB3B0E84777DBD04688 /* TKActionSheetOverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 71A9E961D7DBAED3D0304F75C5855C7F /* TKActionSheetOverlayWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EBE005C112F93634A8BFFAAB1D1FEBE /* TKBlurView.h in Headers */ = {isa = PBXBuildFile; fileRef = F181E448F2675D710196FC56BD8BF61B /* TKBlurView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		114F8C337EF24B50EF3ABE29E10190D7 /* TKFullScreenWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = EF557F7BF642C563B67414BB38EF2D98 /* TKFullScreenWindow.m */; };
+		13EE168B31AFB695F8320246353CE850 /* TKAlertViewAction.h in Headers */ = {isa = PBXBuildFile; fileRef = C5AA5AA957683712299BFA84E958A4A4 /* TKAlertViewAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BC0F7D9008C7F19B0257C03E0A50257 /* UIDeviceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFED7AF40DB075BCEFC7E72B2F949C /* UIDeviceAdditions.m */; };
+		207A815CA19F663177CA6314C58D9F27 /* TKTextFieldAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D214F62E623F3D67EAEC0FD1433FC4 /* TKTextFieldAlertViewController.m */; };
+		266081D01F0A8D634CD1BFC7098F8346 /* TKActionSheetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA8F1DFAE9F4704A39F6AB1D70BDAC /* TKActionSheetManager.m */; };
+		3321D954F3AE0B9720442DB1F4D1D348 /* TKAlertViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 15BC0BCB5735C8F17302201A21F56084 /* TKAlertViewController+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AABDAB3BA2CD443D1C3ABC260975043 /* Pods-TKAlertAndTKActionSheet_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B623CEB5598E0F7DA08703E90F6F1C9 /* Pods-TKAlertAndTKActionSheet_Example-dummy.m */; };
+		416BE79D2AF70902FDD6554925D2930D /* TKAlertOverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 05E4CCA603A20068A278A0A88A6C9AFB /* TKAlertOverlayWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41DF5029A30A5FA798FE322568F5C0C1 /* UIWindow+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7AB2A515E5694E96BCD5CFB32AD53 /* UIWindow+Alert.m */; };
+		4D95220AE226830DAB8ED85E0FFEDD6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		4E53D0FC4A0746D919D2F1B244A2D368 /* UIWindow+Alert.h in Headers */ = {isa = PBXBuildFile; fileRef = 424E02AA2E4915E08B761CEC19B57F1F /* UIWindow+Alert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55AE45ABAD0FC863BF6449E7C21D1B77 /* TKTextFieldAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AF8C725C2B9A6A715159B6A70FEAF69C /* TKTextFieldAlertViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A08A21A774678A8282174573B7F60A2 /* TKAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E68F2C5152D519EE059CBFED2100F /* TKAlertViewController.m */; };
+		5C6C72631AA3899C8B47490A77338B52 /* UIViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D27DA15A127E40E0CA90E217EA9F6DA /* UIViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61ECE0631BAC0023F16D6E9ACF81FDDA /* TKFullScreenWindowBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F6993A1B6D8F525A403FCE708037B /* TKFullScreenWindowBackground.m */; };
+		653D4B4C2F9C819E348AFCBF72B27679 /* TKFirstResponseAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C64085A912C4A4E1CEBAD238ED7F76C8 /* TKFirstResponseAlertViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65FCBAE9C5B72AA4F0CAFFC611244D60 /* TKAlertConst.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A39C86EB5922AFAADC8A68915C2CE5 /* TKAlertConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FE1BAE4C0254B26693A27CC03F9EA35 /* UIImageExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = DB887F61E05089F2F629531E27A83BAF /* UIImageExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73864741926B068C7957869CF51B0D8C /* TKFirstResponseAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7671C75149A2EB1A195FDF9F194982 /* TKFirstResponseAlertViewController.m */; };
+		86B32A8EF64FC727A2913ADF4346F211 /* UIImageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C84A4812D95198BDAD806803C945E1B /* UIImageExtend.m */; };
+		975780850FC4BB16B44A89DF3869821F /* TKAlertManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C7F2317B93BE51DFFACFFB17F55720B0 /* TKAlertManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FA40005CBAF11876F05BFA144243437 /* UIDeviceAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D401AFEFD00145DBF47763B2EFB72C0C /* UIDeviceAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FDBC0469C3153773844507506F9CAF2 /* UIScreen+Size.h in Headers */ = {isa = PBXBuildFile; fileRef = A620F1C9D994BED1BE4862902F026EBA /* UIScreen+Size.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA6E4319515E03378412F4D2D6434266 /* TKAlertOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E2D2DD9BD84DD98B502E15A353D93 /* TKAlertOverlayWindow.m */; };
+		B0D4D5E5C84DAFF0A03CF3D14ADDA4DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		B6FE113713836A1744235CC0F5118AAA /* TKActionSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FBBAC38CB4726170DE5F3686E76292 /* TKActionSheetController.m */; };
+		CB0250ED5038AF5DF687B6D49E3DEE2A /* TKBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D299BB243A9CB9DDA8AA7EB1ACFAA3 /* TKBlurView.m */; };
+		D02BA97C73F5E40D7B0DD71BDCFF27BF /* TKAlertViewAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA4839BBD55B87865C50D43D0B3DA0 /* TKAlertViewAction.m */; };
+		D0A91B441756EE6D30BDD141DF9985E8 /* TKAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A59397915CDF90AC58779636E0118D9 /* TKAlertManager.m */; };
+		D6F6E2AF55C243A7A2C96E2570624AFA /* UIScreen+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ECFC43A17A87E2B1DA7DB89A5CCFD3 /* UIScreen+Size.m */; };
+		D8220A906A2868F42FBB650E5DA78896 /* TKFullScreenWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6B9754A96C04215EAEDB521C11C2E9 /* TKFullScreenWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB32B04085799C83C60966F7DD9090B1 /* TKAlertAndActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = E2E6A572309A265C1E83A2F3EDAC15D8 /* TKAlertAndActionSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0ABE1B566C65C273351AED7A3DBBB2C /* TKAlertViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CE1164D644A873156C18C4A4713C88 /* TKAlertViewController+Private.m */; };
+		EE96DFCFAEAE4DA6E0C31E888DD6ED48 /* TKActionSheetOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2390961477F36F69885B3D2E90F1810D /* TKActionSheetOverlayWindow.m */; };
+		F1FFFF26F541AF193B4AF29592E72C3C /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 930B39D79F365EB8C5A444EF816455CF /* UIViewAdditions.m */; };
+		F23EEA9DBB17758DC333B008316FD39A /* TKFullScreenWindowBackground.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F8E653B349D2F5F2E3277CF6E805770 /* TKFullScreenWindowBackground.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F479E6FEDD1EFE515F0017A813B4BE57 /* NSObject+Invocation.h in Headers */ = {isa = PBXBuildFile; fileRef = E59273E5F9ED1EE490BC5336F726CFAD /* NSObject+Invocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F79E470232D815ECCCCDCDB92BD901E4 /* NSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8ABEEB769E8CEE89AA90E87A1D33668 /* NSObject+Invocation.m */; };
+		F845A043771792965B6301C12847511E /* TKActionSheetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A8F8750892099293BCBD7A2DC1DE02C4 /* TKActionSheetManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8EDFF208F00ACFC092C512CBE8DD2A39 /* PBXContainerItemProxy */ = {
+		C955B8AE1E84A3BAD877131C95BC06FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3C897180C766C5ACAB3A2905A4F1104C;
-			remoteInfo = "TKAlert&TKActionSheet-TKAlertAndTKActionSheet";
-		};
-		B747E285797230FD00C30015BB0FFE57 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 938C0140E59643F593C05D1600E5F6DD;
-			remoteInfo = "TKAlert&TKActionSheet";
+			remoteGlobalIDString = 2FD54013C0D75F141DB6427C8F6400BF;
+			remoteInfo = TKAlertAndActionSheet;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		017D1A64291BE2880B7527B9B6F4D891 /* UIWindow+Alert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Alert.h"; sourceTree = "<group>"; };
-		01D9499BF9F46BE193C16DAC825135DC /* UIScreen+Size.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+Size.m"; sourceTree = "<group>"; };
-		025026D0B925DE39E0DBA1B723790815 /* TKAlertConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertConst.h; sourceTree = "<group>"; };
+		05E4CCA603A20068A278A0A88A6C9AFB /* TKAlertOverlayWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertOverlayWindow.h; sourceTree = "<group>"; };
 		0B623CEB5598E0F7DA08703E90F6F1C9 /* Pods-TKAlertAndTKActionSheet_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TKAlertAndTKActionSheet_Example-dummy.m"; sourceTree = "<group>"; };
-		0C50E6D8DB36127BF25C51035950809E /* UIViewAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
-		0DFC9A98DF4CEA3381AE8EFD5EED0489 /* TKAlertManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertManager.h; sourceTree = "<group>"; };
-		1B76576271E1C3B61E55556E71C7913A /* TKFullScreenWindowBackground.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKFullScreenWindowBackground.m; sourceTree = "<group>"; };
-		1D7A86467F6E96F61A79168031371F28 /* libTKAlert&TKActionSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libTKAlert&TKActionSheet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		21EA2428FC9D5804964E89340BC62592 /* TKActionSheetManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKActionSheetManager.m; sourceTree = "<group>"; };
-		23B8DB57871310CF31E0E098CA334FFA /* TKFullScreenWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKFullScreenWindow.h; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4534F84EF031B119DA1F5EBD0FF6E0C4 /* TKAlertManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKAlertManager.m; sourceTree = "<group>"; };
-		46136F7CA4B14D134A6B67C96CBD1992 /* TKAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertViewController.h; sourceTree = "<group>"; };
-		495C5ECEF061F2037361E294E743501E /* UIViewAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
-		501DDB28764177AACBB394A0CF7F7FDA /* TKAlert&TKActionSheet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "TKAlert&TKActionSheet.xcconfig"; sourceTree = "<group>"; };
-		519EB73AE001F0390FA4D9E931D3D932 /* TKAlertViewAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKAlertViewAction.m; sourceTree = "<group>"; };
-		5300DBAB10A42B4B180611C881E72CC3 /* UIDeviceAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UIDeviceAdditions.m; sourceTree = "<group>"; };
-		55FEA7F8E5CFA98BD1409F262DA9689C /* TKAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKAlertViewController.m; sourceTree = "<group>"; };
-		56330BAD39827C5B1DF8528A688ADDFE /* TKAlertOverlayWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertOverlayWindow.h; sourceTree = "<group>"; };
-		57F37215ED86C87F06FE8EF56112B80F /* TKAlertAndTKActionSheet.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TKAlertAndTKActionSheet.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		600AE593BDBAC1476F309A4273335C11 /* TKAlert&TKActionSheet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKAlert&TKActionSheet.h"; sourceTree = "<group>"; };
-		636F9EE6E126A0E46C54AB77257DE72D /* UIWindow+Alert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Alert.m"; sourceTree = "<group>"; };
-		656E63398303D58637DFB64DB563FDBC /* UIScreen+Size.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScreen+Size.h"; sourceTree = "<group>"; };
-		6CF22FED509B4454A05D4A7A197213C8 /* TKAlert&TKActionSheet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKAlert&TKActionSheet-prefix.pch"; sourceTree = "<group>"; };
-		7649350BABD56ECE65E9F28E61A07E4D /* NSObject+Invocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+Invocation.h"; sourceTree = "<group>"; };
-		7C1B741D612774AF4F04338BA58CD32B /* TKFullScreenWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKFullScreenWindow.m; sourceTree = "<group>"; };
-		83CD6011B85FCEFDB50D093D9064CA52 /* UIImageExtend.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UIImageExtend.h; sourceTree = "<group>"; };
+		13D299BB243A9CB9DDA8AA7EB1ACFAA3 /* TKBlurView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKBlurView.m; sourceTree = "<group>"; };
+		15BC0BCB5735C8F17302201A21F56084 /* TKAlertViewController+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKAlertViewController+Private.h"; sourceTree = "<group>"; };
+		15CE1164D644A873156C18C4A4713C88 /* TKAlertViewController+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TKAlertViewController+Private.m"; sourceTree = "<group>"; };
+		2390961477F36F69885B3D2E90F1810D /* TKActionSheetOverlayWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKActionSheetOverlayWindow.m; sourceTree = "<group>"; };
+		30CA4839BBD55B87865C50D43D0B3DA0 /* TKAlertViewAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKAlertViewAction.m; sourceTree = "<group>"; };
+		323F6993A1B6D8F525A403FCE708037B /* TKFullScreenWindowBackground.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKFullScreenWindowBackground.m; sourceTree = "<group>"; };
+		424E02AA2E4915E08B761CEC19B57F1F /* UIWindow+Alert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Alert.h"; sourceTree = "<group>"; };
+		4C84A4812D95198BDAD806803C945E1B /* UIImageExtend.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UIImageExtend.m; sourceTree = "<group>"; };
+		4D27DA15A127E40E0CA90E217EA9F6DA /* UIViewAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		4F8E653B349D2F5F2E3277CF6E805770 /* TKFullScreenWindowBackground.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKFullScreenWindowBackground.h; sourceTree = "<group>"; };
+		56D79BBF3350F5EAFFABCF870251C52E /* TKAlertAndActionSheet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TKAlertAndActionSheet.xcconfig; sourceTree = "<group>"; };
+		610939B372AA855C9E58405A15E7812D /* TKAlertAndActionSheet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKAlertAndActionSheet-prefix.pch"; sourceTree = "<group>"; };
+		627B3EA3B01D0E6E428CE7731F140C39 /* libPods-TKAlertAndTKActionSheet_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-TKAlertAndTKActionSheet_Example.a"; path = "libPods-TKAlertAndTKActionSheet_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		658456B2108E708D9AE59AF4F7501A05 /* TKActionSheetController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKActionSheetController.h; sourceTree = "<group>"; };
+		6A59397915CDF90AC58779636E0118D9 /* TKAlertManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKAlertManager.m; sourceTree = "<group>"; };
+		6AFA8F1DFAE9F4704A39F6AB1D70BDAC /* TKActionSheetManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKActionSheetManager.m; sourceTree = "<group>"; };
+		6DCFED7AF40DB075BCEFC7E72B2F949C /* UIDeviceAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UIDeviceAdditions.m; sourceTree = "<group>"; };
+		7177818CAFC8ABE25D89033F5B41B6D4 /* TKAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertViewController.h; sourceTree = "<group>"; };
+		71A9E961D7DBAED3D0304F75C5855C7F /* TKActionSheetOverlayWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKActionSheetOverlayWindow.h; sourceTree = "<group>"; };
+		73ECFC43A17A87E2B1DA7DB89A5CCFD3 /* UIScreen+Size.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+Size.m"; sourceTree = "<group>"; };
+		79D214F62E623F3D67EAEC0FD1433FC4 /* TKTextFieldAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKTextFieldAlertViewController.m; sourceTree = "<group>"; };
+		81B103AD4F1FF069A6E378290E7DAB2D /* libTKAlertAndActionSheet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libTKAlertAndActionSheet.a; path = libTKAlertAndActionSheet.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		877880DD7BFBECE95CE1B37861668AB1 /* Pods-TKAlertAndTKActionSheet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TKAlertAndTKActionSheet_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8B447D739D6A7D9ADF0E96C548640CE3 /* TKActionSheetOverlayWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKActionSheetOverlayWindow.h; sourceTree = "<group>"; };
-		916361B97E42504AAD944FCF9CFE76C1 /* TKFirstResponseAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKFirstResponseAlertViewController.h; sourceTree = "<group>"; };
-		96499B5AE71FEFA558FE33ECC69403D1 /* TKFirstResponseAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKFirstResponseAlertViewController.m; sourceTree = "<group>"; };
-		971AA25D5C040098F016B56DCB01E1A6 /* TKAlertViewAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertViewAction.h; sourceTree = "<group>"; };
-		97F97DB935AA3B1D2A956717842E3A1B /* NSObject+Invocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Invocation.m"; sourceTree = "<group>"; };
-		98F188E1E6D41EAA72A756F580F74952 /* TKAlertViewController+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKAlertViewController+Private.h"; sourceTree = "<group>"; };
-		9EDFD690B4D04B8D065B6A29FB98C8E4 /* TKBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKBlurView.h; sourceTree = "<group>"; };
-		A03840E7D853EF0B6C7DFF42CC475848 /* TKTextFieldAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKTextFieldAlertViewController.h; sourceTree = "<group>"; };
-		A18FFC00A1E379EB9D56EC2F17567875 /* TKAlert&TKActionSheet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TKAlert&TKActionSheet-dummy.m"; sourceTree = "<group>"; };
-		A26B666F697B427F807F496DCC8AB4A0 /* UIImageExtend.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UIImageExtend.m; sourceTree = "<group>"; };
-		A80C59B6CA915751E61029C16CF8D231 /* TKAlertViewController+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TKAlertViewController+Private.m"; sourceTree = "<group>"; };
-		A8EFE8DEF8BBA02E985CC9295E6998AF /* TKActionSheetController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKActionSheetController.m; sourceTree = "<group>"; };
+		8B7E68F2C5152D519EE059CBFED2100F /* TKAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKAlertViewController.m; sourceTree = "<group>"; };
+		8D3E2D2DD9BD84DD98B502E15A353D93 /* TKAlertOverlayWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKAlertOverlayWindow.m; sourceTree = "<group>"; };
+		8DD7AB2A515E5694E96BCD5CFB32AD53 /* UIWindow+Alert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Alert.m"; sourceTree = "<group>"; };
+		930B39D79F365EB8C5A444EF816455CF /* UIViewAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95FBBAC38CB4726170DE5F3686E76292 /* TKActionSheetController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKActionSheetController.m; sourceTree = "<group>"; };
+		9FBF664775787F60D02BB8632A7B9B7C /* TKAlertAndActionSheet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TKAlertAndActionSheet-dummy.m"; sourceTree = "<group>"; };
+		A620F1C9D994BED1BE4862902F026EBA /* UIScreen+Size.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScreen+Size.h"; sourceTree = "<group>"; };
+		A8F8750892099293BCBD7A2DC1DE02C4 /* TKActionSheetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKActionSheetManager.h; sourceTree = "<group>"; };
 		A97FE6CF83C175A6B9C274157DD9EFB6 /* Pods-TKAlertAndTKActionSheet_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TKAlertAndTKActionSheet_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AB8E38BB8457A98C8C613062CA2F5479 /* Pods-TKAlertAndTKActionSheet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TKAlertAndTKActionSheet_Example.release.xcconfig"; sourceTree = "<group>"; };
-		AC4CC702ABA48FA427CCE7E18594178B /* TKActionSheetController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKActionSheetController.h; sourceTree = "<group>"; };
-		B1597FB75061E876167B271171087625 /* TKFullScreenWindowBackground.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKFullScreenWindowBackground.h; sourceTree = "<group>"; };
-		B4225E87F3523E0249D843FC4D62BDB4 /* UIDeviceAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UIDeviceAdditions.h; sourceTree = "<group>"; };
-		B51CF3C4A2E22BCC959BDCBF93BD4977 /* TKAlertOverlayWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKAlertOverlayWindow.m; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C8386CDC069055A1A0917258E6756FF2 /* TKBlurView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKBlurView.m; sourceTree = "<group>"; };
+		AF8C725C2B9A6A715159B6A70FEAF69C /* TKTextFieldAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKTextFieldAlertViewController.h; sourceTree = "<group>"; };
+		BE6B9754A96C04215EAEDB521C11C2E9 /* TKFullScreenWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKFullScreenWindow.h; sourceTree = "<group>"; };
+		C5AA5AA957683712299BFA84E958A4A4 /* TKAlertViewAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertViewAction.h; sourceTree = "<group>"; };
+		C64085A912C4A4E1CEBAD238ED7F76C8 /* TKFirstResponseAlertViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKFirstResponseAlertViewController.h; sourceTree = "<group>"; };
+		C7F2317B93BE51DFFACFFB17F55720B0 /* TKAlertManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertManager.h; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D178CAF28B68CD7B2524696E5AE69808 /* Pods-TKAlertAndTKActionSheet_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TKAlertAndTKActionSheet_Example-resources.sh"; sourceTree = "<group>"; };
+		D401AFEFD00145DBF47763B2EFB72C0C /* UIDeviceAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UIDeviceAdditions.h; sourceTree = "<group>"; };
+		DB887F61E05089F2F629531E27A83BAF /* UIImageExtend.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UIImageExtend.h; sourceTree = "<group>"; };
 		DD5ABF0A867A05939101687B7F8277CA /* Pods-TKAlertAndTKActionSheet_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TKAlertAndTKActionSheet_Example-frameworks.sh"; sourceTree = "<group>"; };
-		E2F157BC5E183805EF5B988812625D57 /* TKActionSheetOverlayWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKActionSheetOverlayWindow.m; sourceTree = "<group>"; };
+		E2E6A572309A265C1E83A2F3EDAC15D8 /* TKAlertAndActionSheet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertAndActionSheet.h; sourceTree = "<group>"; };
 		E2F5A8D98F1B2AD47B73FE51C8C684D5 /* Pods-TKAlertAndTKActionSheet_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TKAlertAndTKActionSheet_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		E8E351283DA6E30FA6C835940A212382 /* libPods-TKAlertAndTKActionSheet_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TKAlertAndTKActionSheet_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E916836B52B48342772244B69B8A35BD /* TKActionSheetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKActionSheetManager.h; sourceTree = "<group>"; };
-		FF4895AC5B90431876ADD78F59977583 /* TKTextFieldAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKTextFieldAlertViewController.m; sourceTree = "<group>"; };
+		E59273E5F9ED1EE490BC5336F726CFAD /* NSObject+Invocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+Invocation.h"; sourceTree = "<group>"; };
+		E8ABEEB769E8CEE89AA90E87A1D33668 /* NSObject+Invocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Invocation.m"; sourceTree = "<group>"; };
+		ED7671C75149A2EB1A195FDF9F194982 /* TKFirstResponseAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKFirstResponseAlertViewController.m; sourceTree = "<group>"; };
+		EF557F7BF642C563B67414BB38EF2D98 /* TKFullScreenWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TKFullScreenWindow.m; sourceTree = "<group>"; };
+		F181E448F2675D710196FC56BD8BF61B /* TKBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKBlurView.h; sourceTree = "<group>"; };
+		F8A39C86EB5922AFAADC8A68915C2CE5 /* TKAlertConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TKAlertConst.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		22D3D506F34F16A36261F819D3221121 /* Frameworks */ = {
+		A1902E399F61D72D97B3A76DB65CF301 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D4D5E5C84DAFF0A03CF3D14ADDA4DB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AB9C15888C8CBB0868FF0C887F3B7DE /* Frameworks */ = {
+		D87D3E3DD9CB9C6703412186DC1DD8C2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADF52F9760DA228A76BE2210E06A830B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADB59206B060915B7F3681840C136BD7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6F2ECB3E2C6FAF144AAFAB80543254F6 /* Foundation.framework in Frameworks */,
+				4D95220AE226830DAB8ED85E0FFEDD6D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,139 +155,153 @@
 			path = "Target Support Files/Pods-TKAlertAndTKActionSheet_Example";
 			sourceTree = "<group>";
 		};
-		5E02BE3211BCBA68E000346F51CDFB09 /* TKActionSheet */ = {
+		1434339C121FA1ED977A0A9B3FBC9D7C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AC4CC702ABA48FA427CCE7E18594178B /* TKActionSheetController.h */,
-				A8EFE8DEF8BBA02E985CC9295E6998AF /* TKActionSheetController.m */,
-				E916836B52B48342772244B69B8A35BD /* TKActionSheetManager.h */,
-				21EA2428FC9D5804964E89340BC62592 /* TKActionSheetManager.m */,
-				8B447D739D6A7D9ADF0E96C548640CE3 /* TKActionSheetOverlayWindow.h */,
-				E2F157BC5E183805EF5B988812625D57 /* TKActionSheetOverlayWindow.m */,
+				E2E6A572309A265C1E83A2F3EDAC15D8 /* TKAlertAndActionSheet.h */,
+				F181E448F2675D710196FC56BD8BF61B /* TKBlurView.h */,
+				13D299BB243A9CB9DDA8AA7EB1ACFAA3 /* TKBlurView.m */,
+				BE6B9754A96C04215EAEDB521C11C2E9 /* TKFullScreenWindow.h */,
+				EF557F7BF642C563B67414BB38EF2D98 /* TKFullScreenWindow.m */,
+				4F8E653B349D2F5F2E3277CF6E805770 /* TKFullScreenWindowBackground.h */,
+				323F6993A1B6D8F525A403FCE708037B /* TKFullScreenWindowBackground.m */,
+				6D4F70984A69FF4FD2232CC1F2122D80 /* Category */,
+				3B3CD26DCAFC339C91F7827319E7F106 /* TKActionSheet */,
+				3996524B47F7B06FC99129701414D1EB /* TKAlert */,
 			);
-			path = TKActionSheet;
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		6ABD4958FD09BC58AE1C13C85650F5FA /* TKAlert */ = {
+		3996524B47F7B06FC99129701414D1EB /* TKAlert */ = {
 			isa = PBXGroup;
 			children = (
-				025026D0B925DE39E0DBA1B723790815 /* TKAlertConst.h */,
-				0DFC9A98DF4CEA3381AE8EFD5EED0489 /* TKAlertManager.h */,
-				4534F84EF031B119DA1F5EBD0FF6E0C4 /* TKAlertManager.m */,
-				56330BAD39827C5B1DF8528A688ADDFE /* TKAlertOverlayWindow.h */,
-				B51CF3C4A2E22BCC959BDCBF93BD4977 /* TKAlertOverlayWindow.m */,
-				971AA25D5C040098F016B56DCB01E1A6 /* TKAlertViewAction.h */,
-				519EB73AE001F0390FA4D9E931D3D932 /* TKAlertViewAction.m */,
-				46136F7CA4B14D134A6B67C96CBD1992 /* TKAlertViewController.h */,
-				55FEA7F8E5CFA98BD1409F262DA9689C /* TKAlertViewController.m */,
-				98F188E1E6D41EAA72A756F580F74952 /* TKAlertViewController+Private.h */,
-				A80C59B6CA915751E61029C16CF8D231 /* TKAlertViewController+Private.m */,
-				916361B97E42504AAD944FCF9CFE76C1 /* TKFirstResponseAlertViewController.h */,
-				96499B5AE71FEFA558FE33ECC69403D1 /* TKFirstResponseAlertViewController.m */,
-				A03840E7D853EF0B6C7DFF42CC475848 /* TKTextFieldAlertViewController.h */,
-				FF4895AC5B90431876ADD78F59977583 /* TKTextFieldAlertViewController.m */,
+				F8A39C86EB5922AFAADC8A68915C2CE5 /* TKAlertConst.h */,
+				C7F2317B93BE51DFFACFFB17F55720B0 /* TKAlertManager.h */,
+				6A59397915CDF90AC58779636E0118D9 /* TKAlertManager.m */,
+				05E4CCA603A20068A278A0A88A6C9AFB /* TKAlertOverlayWindow.h */,
+				8D3E2D2DD9BD84DD98B502E15A353D93 /* TKAlertOverlayWindow.m */,
+				C5AA5AA957683712299BFA84E958A4A4 /* TKAlertViewAction.h */,
+				30CA4839BBD55B87865C50D43D0B3DA0 /* TKAlertViewAction.m */,
+				7177818CAFC8ABE25D89033F5B41B6D4 /* TKAlertViewController.h */,
+				8B7E68F2C5152D519EE059CBFED2100F /* TKAlertViewController.m */,
+				15BC0BCB5735C8F17302201A21F56084 /* TKAlertViewController+Private.h */,
+				15CE1164D644A873156C18C4A4713C88 /* TKAlertViewController+Private.m */,
+				C64085A912C4A4E1CEBAD238ED7F76C8 /* TKFirstResponseAlertViewController.h */,
+				ED7671C75149A2EB1A195FDF9F194982 /* TKFirstResponseAlertViewController.m */,
+				AF8C725C2B9A6A715159B6A70FEAF69C /* TKTextFieldAlertViewController.h */,
+				79D214F62E623F3D67EAEC0FD1433FC4 /* TKTextFieldAlertViewController.m */,
 			);
+			name = TKAlert;
 			path = TKAlert;
 			sourceTree = "<group>";
 		};
-		711BFBB41C621812FD7C3C6AB1F326B6 /* TKAlert&TKActionSheet */ = {
+		3B3CD26DCAFC339C91F7827319E7F106 /* TKActionSheet */ = {
 			isa = PBXGroup;
 			children = (
-				87DEE297284A4F1235B4D547D5D08A36 /* Pod */,
-				9397869C3AB59BAF721147BD86FAA384 /* Support Files */,
+				658456B2108E708D9AE59AF4F7501A05 /* TKActionSheetController.h */,
+				95FBBAC38CB4726170DE5F3686E76292 /* TKActionSheetController.m */,
+				A8F8750892099293BCBD7A2DC1DE02C4 /* TKActionSheetManager.h */,
+				6AFA8F1DFAE9F4704A39F6AB1D70BDAC /* TKActionSheetManager.m */,
+				71A9E961D7DBAED3D0304F75C5855C7F /* TKActionSheetOverlayWindow.h */,
+				2390961477F36F69885B3D2E90F1810D /* TKActionSheetOverlayWindow.m */,
 			);
-			name = "TKAlert&TKActionSheet";
-			path = ../..;
+			name = TKActionSheet;
+			path = TKActionSheet;
 			sourceTree = "<group>";
 		};
-		75A93A24512220E7ADA1346FC91DD010 /* Classes */ = {
+		6AD7655B5122C4D816A6925F170F844D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				600AE593BDBAC1476F309A4273335C11 /* TKAlert&TKActionSheet.h */,
-				9EDFD690B4D04B8D065B6A29FB98C8E4 /* TKBlurView.h */,
-				C8386CDC069055A1A0917258E6756FF2 /* TKBlurView.m */,
-				23B8DB57871310CF31E0E098CA334FFA /* TKFullScreenWindow.h */,
-				7C1B741D612774AF4F04338BA58CD32B /* TKFullScreenWindow.m */,
-				B1597FB75061E876167B271171087625 /* TKFullScreenWindowBackground.h */,
-				1B76576271E1C3B61E55556E71C7913A /* TKFullScreenWindowBackground.m */,
-				BA01BE142CFC0EC2BC86364AB6EEE7E2 /* Category */,
-				5E02BE3211BCBA68E000346F51CDFB09 /* TKActionSheet */,
-				6ABD4958FD09BC58AE1C13C85650F5FA /* TKAlert */,
+				56D79BBF3350F5EAFFABCF870251C52E /* TKAlertAndActionSheet.xcconfig */,
+				9FBF664775787F60D02BB8632A7B9B7C /* TKAlertAndActionSheet-dummy.m */,
+				610939B372AA855C9E58405A15E7812D /* TKAlertAndActionSheet-prefix.pch */,
 			);
-			path = Classes;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TKAlertAndActionSheet";
+			sourceTree = "<group>";
+		};
+		6D4F70984A69FF4FD2232CC1F2122D80 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E59273E5F9ED1EE490BC5336F726CFAD /* NSObject+Invocation.h */,
+				E8ABEEB769E8CEE89AA90E87A1D33668 /* NSObject+Invocation.m */,
+				D401AFEFD00145DBF47763B2EFB72C0C /* UIDeviceAdditions.h */,
+				6DCFED7AF40DB075BCEFC7E72B2F949C /* UIDeviceAdditions.m */,
+				DB887F61E05089F2F629531E27A83BAF /* UIImageExtend.h */,
+				4C84A4812D95198BDAD806803C945E1B /* UIImageExtend.m */,
+				A620F1C9D994BED1BE4862902F026EBA /* UIScreen+Size.h */,
+				73ECFC43A17A87E2B1DA7DB89A5CCFD3 /* UIScreen+Size.m */,
+				4D27DA15A127E40E0CA90E217EA9F6DA /* UIViewAdditions.h */,
+				930B39D79F365EB8C5A444EF816455CF /* UIViewAdditions.m */,
+				424E02AA2E4915E08B761CEC19B57F1F /* UIWindow+Alert.h */,
+				8DD7AB2A515E5694E96BCD5CFB32AD53 /* UIWindow+Alert.m */,
+			);
+			name = Category;
+			path = Category;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7915A1B070415BB195C8DFCFFA80CD0C /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B29E5E43EA8D36D26F9E916FB41CE766 /* TKAlertAndActionSheet */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				7FE035DC50E5A7FEB885CBDBEC96AF09 /* Development Pods */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				7915A1B070415BB195C8DFCFFA80CD0C /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				DC0D443EA86C9D112A528777CF5F5A7C /* Products */,
+				B65EA97C84C06C906B1D6C9C2903E1B0 /* Products */,
 				CB3CCE3604DC186835E0E6C5FE35508C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7FE035DC50E5A7FEB885CBDBEC96AF09 /* Development Pods */ = {
+		817D3191807DAFBE998B3B26084D76A1 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				711BFBB41C621812FD7C3C6AB1F326B6 /* TKAlert&TKActionSheet */,
+				1434339C121FA1ED977A0A9B3FBC9D7C /* Classes */,
 			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		87DEE297284A4F1235B4D547D5D08A36 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				75A93A24512220E7ADA1346FC91DD010 /* Classes */,
-			);
+			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
-		9397869C3AB59BAF721147BD86FAA384 /* Support Files */ = {
+		B29E5E43EA8D36D26F9E916FB41CE766 /* TKAlertAndActionSheet */ = {
 			isa = PBXGroup;
 			children = (
-				501DDB28764177AACBB394A0CF7F7FDA /* TKAlert&TKActionSheet.xcconfig */,
-				A18FFC00A1E379EB9D56EC2F17567875 /* TKAlert&TKActionSheet-dummy.m */,
-				6CF22FED509B4454A05D4A7A197213C8 /* TKAlert&TKActionSheet-prefix.pch */,
+				817D3191807DAFBE998B3B26084D76A1 /* Pod */,
+				6AD7655B5122C4D816A6925F170F844D /* Support Files */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TKAlert&TKActionSheet";
+			name = TKAlertAndActionSheet;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		BA01BE142CFC0EC2BC86364AB6EEE7E2 /* Category */ = {
+		B65EA97C84C06C906B1D6C9C2903E1B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7649350BABD56ECE65E9F28E61A07E4D /* NSObject+Invocation.h */,
-				97F97DB935AA3B1D2A956717842E3A1B /* NSObject+Invocation.m */,
-				B4225E87F3523E0249D843FC4D62BDB4 /* UIDeviceAdditions.h */,
-				5300DBAB10A42B4B180611C881E72CC3 /* UIDeviceAdditions.m */,
-				83CD6011B85FCEFDB50D093D9064CA52 /* UIImageExtend.h */,
-				A26B666F697B427F807F496DCC8AB4A0 /* UIImageExtend.m */,
-				656E63398303D58637DFB64DB563FDBC /* UIScreen+Size.h */,
-				01D9499BF9F46BE193C16DAC825135DC /* UIScreen+Size.m */,
-				495C5ECEF061F2037361E294E743501E /* UIViewAdditions.h */,
-				0C50E6D8DB36127BF25C51035950809E /* UIViewAdditions.m */,
-				017D1A64291BE2880B7527B9B6F4D891 /* UIWindow+Alert.h */,
-				636F9EE6E126A0E46C54AB77257DE72D /* UIWindow+Alert.m */,
+				627B3EA3B01D0E6E428CE7731F140C39 /* libPods-TKAlertAndTKActionSheet_Example.a */,
+				81B103AD4F1FF069A6E378290E7DAB2D /* libTKAlertAndActionSheet.a */,
 			);
-			path = Category;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		CB3CCE3604DC186835E0E6C5FE35508C /* Targets Support Files */ = {
@@ -313,100 +312,72 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		DC0D443EA86C9D112A528777CF5F5A7C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E8E351283DA6E30FA6C835940A212382 /* libPods-TKAlertAndTKActionSheet_Example.a */,
-				1D7A86467F6E96F61A79168031371F28 /* libTKAlert&TKActionSheet.a */,
-				57F37215ED86C87F06FE8EF56112B80F /* TKAlertAndTKActionSheet.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		71F947DBF520C93FDFDF32F4D6AB9171 /* Headers */ = {
+		7F2AE965303D8613471D7F896A15E830 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58CF02F867DA5B19FE8C1B0949E03167 /* NSObject+Invocation.h in Headers */,
-				4A1EAADBFA1383D9B34768FCD95176AA /* TKActionSheetController.h in Headers */,
-				6E0E60DBCC28A70BA5D86372DE3E6CAA /* TKActionSheetManager.h in Headers */,
-				94BA3658D63A019E7103FD4A8C8F3F4E /* TKActionSheetOverlayWindow.h in Headers */,
-				5056055BA83D9514818AD4B69A893813 /* TKAlert&TKActionSheet.h in Headers */,
-				283AA2607874271E92837A4632ECF4C7 /* TKAlertConst.h in Headers */,
-				16D75CD497837FD1606DB54E26105E04 /* TKAlertManager.h in Headers */,
-				2A7FDFB2ABD616ACC1A1B3FB00ED3ACE /* TKAlertOverlayWindow.h in Headers */,
-				0FFBED2181088A01A2D2F28220961EE3 /* TKAlertViewAction.h in Headers */,
-				850DA614D149126ED7D55342D4DD32F4 /* TKAlertViewController+Private.h in Headers */,
-				D406D11D59A0B7E99A0DCE3956AB50DB /* TKAlertViewController.h in Headers */,
-				73342CD8263273A32FD8D44574CE5138 /* TKBlurView.h in Headers */,
-				666C5228BC5C628D4C198E457F77D0A2 /* TKFirstResponseAlertViewController.h in Headers */,
-				400D21EEA0DB960E3E6795632E66FABC /* TKFullScreenWindow.h in Headers */,
-				E2432817AAFDBA627A1FBFB71FAF689D /* TKFullScreenWindowBackground.h in Headers */,
-				0EFEE6E7997B14046B031EC3BCB3235B /* TKTextFieldAlertViewController.h in Headers */,
-				C7428B4F57C14620B1644FED1B98598E /* UIDeviceAdditions.h in Headers */,
-				75390644FE9B5314044FDBF004241E63 /* UIImageExtend.h in Headers */,
-				814D4E4217C3B37E1C4A461A2F7A28BA /* UIScreen+Size.h in Headers */,
-				22B52B5B04443CDE26227A51ECD6996D /* UIViewAdditions.h in Headers */,
-				E0AB84E7A9E520E0E13CF2BE1FE1A398 /* UIWindow+Alert.h in Headers */,
+				F479E6FEDD1EFE515F0017A813B4BE57 /* NSObject+Invocation.h in Headers */,
+				035A0DD07D212D22623B0E34ED3A0E3F /* TKActionSheetController.h in Headers */,
+				F845A043771792965B6301C12847511E /* TKActionSheetManager.h in Headers */,
+				0B046534874C0CB3B0E84777DBD04688 /* TKActionSheetOverlayWindow.h in Headers */,
+				DB32B04085799C83C60966F7DD9090B1 /* TKAlertAndActionSheet.h in Headers */,
+				65FCBAE9C5B72AA4F0CAFFC611244D60 /* TKAlertConst.h in Headers */,
+				975780850FC4BB16B44A89DF3869821F /* TKAlertManager.h in Headers */,
+				416BE79D2AF70902FDD6554925D2930D /* TKAlertOverlayWindow.h in Headers */,
+				13EE168B31AFB695F8320246353CE850 /* TKAlertViewAction.h in Headers */,
+				3321D954F3AE0B9720442DB1F4D1D348 /* TKAlertViewController+Private.h in Headers */,
+				036F68B12DA4B3F8B4E0E8CAE36F9D7C /* TKAlertViewController.h in Headers */,
+				0EBE005C112F93634A8BFFAAB1D1FEBE /* TKBlurView.h in Headers */,
+				653D4B4C2F9C819E348AFCBF72B27679 /* TKFirstResponseAlertViewController.h in Headers */,
+				D8220A906A2868F42FBB650E5DA78896 /* TKFullScreenWindow.h in Headers */,
+				F23EEA9DBB17758DC333B008316FD39A /* TKFullScreenWindowBackground.h in Headers */,
+				55AE45ABAD0FC863BF6449E7C21D1B77 /* TKTextFieldAlertViewController.h in Headers */,
+				9FA40005CBAF11876F05BFA144243437 /* UIDeviceAdditions.h in Headers */,
+				6FE1BAE4C0254B26693A27CC03F9EA35 /* UIImageExtend.h in Headers */,
+				9FDBC0469C3153773844507506F9CAF2 /* UIScreen+Size.h in Headers */,
+				5C6C72631AA3899C8B47490A77338B52 /* UIViewAdditions.h in Headers */,
+				4E53D0FC4A0746D919D2F1B244A2D368 /* UIWindow+Alert.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3C897180C766C5ACAB3A2905A4F1104C /* TKAlert&TKActionSheet-TKAlertAndTKActionSheet */ = {
+		2FD54013C0D75F141DB6427C8F6400BF /* TKAlertAndActionSheet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 567937141FF412E67E2EBAFEDEB95740 /* Build configuration list for PBXNativeTarget "TKAlert&TKActionSheet-TKAlertAndTKActionSheet" */;
+			buildConfigurationList = 7175D4E30DCDB7415420F9B8D93EB0A8 /* Build configuration list for PBXNativeTarget "TKAlertAndActionSheet" */;
 			buildPhases = (
-				BBCB66C1E3011CA426FC6E2ED84F5E86 /* Sources */,
-				22D3D506F34F16A36261F819D3221121 /* Frameworks */,
-				DC46B94D8314A1405C80D346215FD7A9 /* Resources */,
+				4408F9A3A9EB798C60C2236CC906BC53 /* Sources */,
+				A1902E399F61D72D97B3A76DB65CF301 /* Frameworks */,
+				7F2AE965303D8613471D7F896A15E830 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "TKAlert&TKActionSheet-TKAlertAndTKActionSheet";
-			productName = "TKAlert&TKActionSheet-TKAlertAndTKActionSheet";
-			productReference = 57F37215ED86C87F06FE8EF56112B80F /* TKAlertAndTKActionSheet.bundle */;
-			productType = "com.apple.product-type.bundle";
+			name = TKAlertAndActionSheet;
+			productName = TKAlertAndActionSheet;
+			productReference = 81B103AD4F1FF069A6E378290E7DAB2D /* libTKAlertAndActionSheet.a */;
+			productType = "com.apple.product-type.library.static";
 		};
-		71893670127305977BA4354ABB8CA09A /* Pods-TKAlertAndTKActionSheet_Example */ = {
+		8B6084FD196425E849DA37CAAE70388D /* Pods-TKAlertAndTKActionSheet_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21846E9C201CF7FF13DB9A50727D31EC /* Build configuration list for PBXNativeTarget "Pods-TKAlertAndTKActionSheet_Example" */;
+			buildConfigurationList = 6DDD34752801DB069AB7E86948E9E4B1 /* Build configuration list for PBXNativeTarget "Pods-TKAlertAndTKActionSheet_Example" */;
 			buildPhases = (
-				060043FB3C0232C6BA644AD04A61721F /* Sources */,
-				ADB59206B060915B7F3681840C136BD7 /* Frameworks */,
+				609F5FEE1282DECCFCE1A2802B59221A /* Sources */,
+				D87D3E3DD9CB9C6703412186DC1DD8C2 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C913F6C62D0EEA7A38FA0C027AC9E372 /* PBXTargetDependency */,
+				5D4A15827083D1FFE7B5CFA8E4D529A9 /* PBXTargetDependency */,
 			);
 			name = "Pods-TKAlertAndTKActionSheet_Example";
 			productName = "Pods-TKAlertAndTKActionSheet_Example";
-			productReference = E8E351283DA6E30FA6C835940A212382 /* libPods-TKAlertAndTKActionSheet_Example.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		938C0140E59643F593C05D1600E5F6DD /* TKAlert&TKActionSheet */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F05ED2E2B3DAD87D4EF54937549597B9 /* Build configuration list for PBXNativeTarget "TKAlert&TKActionSheet" */;
-			buildPhases = (
-				E81F88C25A68533D546B46C16C865B83 /* Sources */,
-				7AB9C15888C8CBB0868FF0C887F3B7DE /* Frameworks */,
-				71F947DBF520C93FDFDF32F4D6AB9171 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5BE11AD8F00EEAE5700061415741F198 /* PBXTargetDependency */,
-			);
-			name = "TKAlert&TKActionSheet";
-			productName = "TKAlert&TKActionSheet";
-			productReference = 1D7A86467F6E96F61A79168031371F28 /* libTKAlert&TKActionSheet.a */;
+			productReference = 627B3EA3B01D0E6E428CE7731F140C39 /* libPods-TKAlertAndTKActionSheet_Example.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -415,7 +386,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -426,94 +397,75 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = DC0D443EA86C9D112A528777CF5F5A7C /* Products */;
+			productRefGroup = B65EA97C84C06C906B1D6C9C2903E1B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				71893670127305977BA4354ABB8CA09A /* Pods-TKAlertAndTKActionSheet_Example */,
-				938C0140E59643F593C05D1600E5F6DD /* TKAlert&TKActionSheet */,
-				3C897180C766C5ACAB3A2905A4F1104C /* TKAlert&TKActionSheet-TKAlertAndTKActionSheet */,
+				8B6084FD196425E849DA37CAAE70388D /* Pods-TKAlertAndTKActionSheet_Example */,
+				2FD54013C0D75F141DB6427C8F6400BF /* TKAlertAndActionSheet */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		DC46B94D8314A1405C80D346215FD7A9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		060043FB3C0232C6BA644AD04A61721F /* Sources */ = {
+		4408F9A3A9EB798C60C2236CC906BC53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B0193AE2B4C4747DC99ADF4E56EFF72 /* Pods-TKAlertAndTKActionSheet_Example-dummy.m in Sources */,
+				F79E470232D815ECCCCDCDB92BD901E4 /* NSObject+Invocation.m in Sources */,
+				B6FE113713836A1744235CC0F5118AAA /* TKActionSheetController.m in Sources */,
+				266081D01F0A8D634CD1BFC7098F8346 /* TKActionSheetManager.m in Sources */,
+				EE96DFCFAEAE4DA6E0C31E888DD6ED48 /* TKActionSheetOverlayWindow.m in Sources */,
+				07051AEB05237CA2BAC7931B3DCEE613 /* TKAlertAndActionSheet-dummy.m in Sources */,
+				D0A91B441756EE6D30BDD141DF9985E8 /* TKAlertManager.m in Sources */,
+				AA6E4319515E03378412F4D2D6434266 /* TKAlertOverlayWindow.m in Sources */,
+				D02BA97C73F5E40D7B0DD71BDCFF27BF /* TKAlertViewAction.m in Sources */,
+				E0ABE1B566C65C273351AED7A3DBBB2C /* TKAlertViewController+Private.m in Sources */,
+				5A08A21A774678A8282174573B7F60A2 /* TKAlertViewController.m in Sources */,
+				CB0250ED5038AF5DF687B6D49E3DEE2A /* TKBlurView.m in Sources */,
+				73864741926B068C7957869CF51B0D8C /* TKFirstResponseAlertViewController.m in Sources */,
+				114F8C337EF24B50EF3ABE29E10190D7 /* TKFullScreenWindow.m in Sources */,
+				61ECE0631BAC0023F16D6E9ACF81FDDA /* TKFullScreenWindowBackground.m in Sources */,
+				207A815CA19F663177CA6314C58D9F27 /* TKTextFieldAlertViewController.m in Sources */,
+				1BC0F7D9008C7F19B0257C03E0A50257 /* UIDeviceAdditions.m in Sources */,
+				86B32A8EF64FC727A2913ADF4346F211 /* UIImageExtend.m in Sources */,
+				D6F6E2AF55C243A7A2C96E2570624AFA /* UIScreen+Size.m in Sources */,
+				F1FFFF26F541AF193B4AF29592E72C3C /* UIViewAdditions.m in Sources */,
+				41DF5029A30A5FA798FE322568F5C0C1 /* UIWindow+Alert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BBCB66C1E3011CA426FC6E2ED84F5E86 /* Sources */ = {
+		609F5FEE1282DECCFCE1A2802B59221A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E81F88C25A68533D546B46C16C865B83 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9AE96CBEC056DEFB86AC4BF641162ED4 /* NSObject+Invocation.m in Sources */,
-				6C823E7CD69A0BB1D5C9B28ED09081C1 /* TKActionSheetController.m in Sources */,
-				AAB08572BF2DCDE06AD1F2B5CE5B5A41 /* TKActionSheetManager.m in Sources */,
-				5C397951C6CBB1FD6D91A6AD0F489554 /* TKActionSheetOverlayWindow.m in Sources */,
-				4F0F438674E6615E7D49299F2E83DE0F /* TKAlert&TKActionSheet-dummy.m in Sources */,
-				929031932C73FA482C40945227CA2248 /* TKAlertManager.m in Sources */,
-				B0DB8CBEDEC90FDB8ABF227F856D3A5E /* TKAlertOverlayWindow.m in Sources */,
-				6B27EC7A1F52B30AA7E5C6E40C4D2EEF /* TKAlertViewAction.m in Sources */,
-				4D1313BC31912ADB4DBDD7CE184F364E /* TKAlertViewController+Private.m in Sources */,
-				64E6F309E4C423E54981935491F9FD6E /* TKAlertViewController.m in Sources */,
-				3E682A4DC0D43C8DFECE410849E62E9B /* TKBlurView.m in Sources */,
-				737A8312900F803F1D8C6C3EC842AA8F /* TKFirstResponseAlertViewController.m in Sources */,
-				20D8BDCBF24A1E85005290DB62A32296 /* TKFullScreenWindow.m in Sources */,
-				8C750DCCF1A686DD3233461BC784EAD1 /* TKFullScreenWindowBackground.m in Sources */,
-				A80FA79A91FFD1DE5CC2D06CBB6B0F0D /* TKTextFieldAlertViewController.m in Sources */,
-				E8FDDC67BCECD9FE5A52DAA4CEC1F1B1 /* UIDeviceAdditions.m in Sources */,
-				FC1EF3B90BAE6009DE6090D38DE0A616 /* UIImageExtend.m in Sources */,
-				4E911E24A32A52A1A0EBA9AD5149B324 /* UIScreen+Size.m in Sources */,
-				208DF3563C667E7B084E5A72680EB552 /* UIViewAdditions.m in Sources */,
-				C9E9BFAC7513F359F1D38CD9EC82E23E /* UIWindow+Alert.m in Sources */,
+				3AABDAB3BA2CD443D1C3ABC260975043 /* Pods-TKAlertAndTKActionSheet_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5BE11AD8F00EEAE5700061415741F198 /* PBXTargetDependency */ = {
+		5D4A15827083D1FFE7B5CFA8E4D529A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "TKAlert&TKActionSheet-TKAlertAndTKActionSheet";
-			target = 3C897180C766C5ACAB3A2905A4F1104C /* TKAlert&TKActionSheet-TKAlertAndTKActionSheet */;
-			targetProxy = 8EDFF208F00ACFC092C512CBE8DD2A39 /* PBXContainerItemProxy */;
-		};
-		C913F6C62D0EEA7A38FA0C027AC9E372 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "TKAlert&TKActionSheet";
-			target = 938C0140E59643F593C05D1600E5F6DD /* TKAlert&TKActionSheet */;
-			targetProxy = B747E285797230FD00C30015BB0FFE57 /* PBXContainerItemProxy */;
+			name = TKAlertAndActionSheet;
+			target = 2FD54013C0D75F141DB6427C8F6400BF /* TKAlertAndActionSheet */;
+			targetProxy = C955B8AE1E84A3BAD877131C95BC06FE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		170F4402A37828BB781F8AAA6C0F3DE4 /* Release */ = {
+		11A3EDD1967DC82D7A67735643A6DDFE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 501DDB28764177AACBB394A0CF7F7FDA /* TKAlert&TKActionSheet.xcconfig */;
+			baseConfigurationReference = 56D79BBF3350F5EAFFABCF870251C52E /* TKAlertAndActionSheet.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TKAlert&TKActionSheet/TKAlert&TKActionSheet-prefix.pch";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TKAlertAndActionSheet/TKAlertAndActionSheet-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -526,10 +478,80 @@
 			};
 			name = Release;
 		};
-		6569F07DC21AD8B72752685013E3D9D8 /* Debug */ = {
+		36C44466AE12AFCEEA27C3A18D61BB60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB8E38BB8457A98C8C613062CA2F5479 /* Pods-TKAlertAndTKActionSheet_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		589FBDA61D275BB816ABD37A5AC5D494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56D79BBF3350F5EAFFABCF870251C52E /* TKAlertAndActionSheet.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TKAlertAndActionSheet/TKAlertAndActionSheet-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8015EE2EFD48E51AD1B1835B17F393B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 877880DD7BFBECE95CE1B37861668AB1 /* Pods-TKAlertAndTKActionSheet_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B569ECED6DF5EC7ABDDF8C8957E26574 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -543,11 +565,54 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD5B3B1E89981BCDBC5C396B164D3C37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -560,156 +625,38 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		748707ECA4E566A4F0B05F1862A4FD95 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 501DDB28764177AACBB394A0CF7F7FDA /* TKAlert&TKActionSheet.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = TKAlertAndTKActionSheet;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		A14E2444F162A20E3776820E0ADFFB52 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B68BECE96408A378D2763D3A7CF93E40 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 501DDB28764177AACBB394A0CF7F7FDA /* TKAlert&TKActionSheet.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = TKAlertAndTKActionSheet;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		C7B136BAED76D70624E6F18B11C13E24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 501DDB28764177AACBB394A0CF7F7FDA /* TKAlert&TKActionSheet.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TKAlert&TKActionSheet/TKAlert&TKActionSheet-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		CD480A6CF91E6395F741B48F5DCC4A67 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB8E38BB8457A98C8C613062CA2F5479 /* Pods-TKAlertAndTKActionSheet_Example.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F212ED9F00C9806094531A3F62A12F79 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 877880DD7BFBECE95CE1B37861668AB1 /* Pods-TKAlertAndTKActionSheet_Example.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21846E9C201CF7FF13DB9A50727D31EC /* Build configuration list for PBXNativeTarget "Pods-TKAlertAndTKActionSheet_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F212ED9F00C9806094531A3F62A12F79 /* Debug */,
-				CD480A6CF91E6395F741B48F5DCC4A67 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6569F07DC21AD8B72752685013E3D9D8 /* Debug */,
-				A14E2444F162A20E3776820E0ADFFB52 /* Release */,
+				FD5B3B1E89981BCDBC5C396B164D3C37 /* Debug */,
+				B569ECED6DF5EC7ABDDF8C8957E26574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		567937141FF412E67E2EBAFEDEB95740 /* Build configuration list for PBXNativeTarget "TKAlert&TKActionSheet-TKAlertAndTKActionSheet" */ = {
+		6DDD34752801DB069AB7E86948E9E4B1 /* Build configuration list for PBXNativeTarget "Pods-TKAlertAndTKActionSheet_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				748707ECA4E566A4F0B05F1862A4FD95 /* Debug */,
-				B68BECE96408A378D2763D3A7CF93E40 /* Release */,
+				8015EE2EFD48E51AD1B1835B17F393B5 /* Debug */,
+				36C44466AE12AFCEEA27C3A18D61BB60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F05ED2E2B3DAD87D4EF54937549597B9 /* Build configuration list for PBXNativeTarget "TKAlert&TKActionSheet" */ = {
+		7175D4E30DCDB7415420F9B8D93EB0A8 /* Build configuration list for PBXNativeTarget "TKAlertAndActionSheet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C7B136BAED76D70624E6F18B11C13E24 /* Debug */,
-				170F4402A37828BB781F8AAA6C0F3DE4 /* Release */,
+				589FBDA61D275BB816ABD37A5AC5D494 /* Debug */,
+				11A3EDD1967DC82D7A67735643A6DDFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

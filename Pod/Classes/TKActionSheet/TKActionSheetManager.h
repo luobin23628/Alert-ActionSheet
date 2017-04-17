@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <TKAlert&TKActionSheet/TKActionSheetController.h>
+#import "TKActionSheetController.h"
 
 @interface TKActionSheetManager : NSObject
 
