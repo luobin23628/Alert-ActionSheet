@@ -370,16 +370,12 @@
     }
 }
 
-- (void)dismissAnimated:(BOOL)animated {
-    [self dismissWithClickedButtonIndex:-1 animated:animated completion:nil noteDelegate:NO];
-}
-
-- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated completion:(void (^)(void))comp noteDelegate:(BOOL)noteDelegate{
+- (void)doDismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated completion:(void (^)(void))comp{
     if (!self.isVisible) {
         return;
     }
     
-    if (noteDelegate && [self.delegate respondsToSelector:@selector(alertView:willDismissWithButtonIndex:)]) {
+    if ([self.delegate respondsToSelector:@selector(alertView:willDismissWithButtonIndex:)]) {
         [self.delegate alertView:self willDismissWithButtonIndex:buttonIndex];
     }
     
@@ -399,14 +395,14 @@
             [TKAlertManager removeFromStack:selfObj];
             [[TKAlertManager topMostAlert] rePopupAnimated:animated];
             
-            if (noteDelegate && buttonIndex >= 0 && buttonIndex < [selfObj.actions count]) {
+            if (buttonIndex >= 0 && buttonIndex < [selfObj.actions count]) {
                 TKAlertViewAction *action = [selfObj.actions objectAtIndex: buttonIndex];
                 if (action.handler) {
                     action.handler(buttonIndex);
                 }
             }
             
-            if (noteDelegate && [selfObj.delegate respondsToSelector:@selector(alertView:didDismissWithButtonIndex:)]) {
+            if ([selfObj.delegate respondsToSelector:@selector(alertView:didDismissWithButtonIndex:)]) {
                 [selfObj.delegate alertView:selfObj didDismissWithButtonIndex:buttonIndex];
             }
             
@@ -422,14 +418,14 @@
         [TKAlertManager removeFromStack:self];
         self.visible = NO;
         
-        if (noteDelegate && buttonIndex >= 0 && buttonIndex < [self.actions count]) {
+        if (buttonIndex >= 0 && buttonIndex < [self.actions count]) {
             TKAlertViewAction *action = [self.actions objectAtIndex: buttonIndex];
             if (action.handler) {
                 action.handler(buttonIndex);
             }
         }
         
-        if (noteDelegate && [self.delegate respondsToSelector:@selector(alertView:didDismissWithButtonIndex:)]) {
+        if ([self.delegate respondsToSelector:@selector(alertView:didDismissWithButtonIndex:)]) {
             [self.delegate alertView:self didDismissWithButtonIndex:buttonIndex];
         }
         
@@ -466,7 +462,7 @@
         if ([self.delegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)]) {
             [self.delegate alertView:self clickedButtonAtIndex:buttonIndex];
         }
-        [self dismissWithClickedButtonIndex:buttonIndex animated:YES completion:nil noteDelegate:YES];
+        [self doDismissWithClickedButtonIndex:buttonIndex animated:YES completion:nil];
     }
 }
 
@@ -844,7 +840,7 @@
             case UIGestureRecognizerStateEnded:
                 if (self.containerView.center.y >= CGRectGetHeight(self.wapperView.bounds)
                     || velocityY >= 500.0) {
-                    [self dismissWithClickedButtonIndex:-1 animated:YES completion:nil noteDelegate:YES];
+                    [self dismissWithClickedButtonIndex:-1 animated:YES completion:nil];
                 } else {
                     
                     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseOut animations:^{

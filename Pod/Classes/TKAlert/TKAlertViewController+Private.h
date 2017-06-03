@@ -75,8 +75,7 @@
 - (UIButton *)buttonForIndex:(NSInteger)buttonIndex;
 - (void)hiddenAlertAnimatedWithCompletion:(void (^)(BOOL finished))completion;
 - (void)showAlertWithAnimationType:(TKAlertViewAnimation)animationType completion:(void (^)(BOOL finished))completion1;
-- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated completion:(void (^)(void))completion noteDelegate:(BOOL)noteDelegate;
-- (void)dismissAnimated:(BOOL)animated;
+- (void)doDismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated completion:(void (^)(void))completion;
 - (void)rePopupAnimated:(BOOL)animated;
 - (void)removeAlertWindowOrShowAnOldAlert;
 - (void)temporarilyHideAnimated:(BOOL)animated;
