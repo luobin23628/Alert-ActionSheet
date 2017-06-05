@@ -17,7 +17,7 @@ void TKAlert3(NSString *title, NSString *message, NSString *buttonTitle);
 
 @protocol TKAlertViewControllerDelegate;
 
-@interface TKAlertViewController : UIViewController<UIAppearance>
+@interface TKAlertViewController : UIViewController<UIAppearance, CAAnimationDelegate>
 
 @property (nonatomic, readonly, strong) UIView *customView;
 

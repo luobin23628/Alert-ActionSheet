@@ -336,7 +336,7 @@ static UIFont *buttonFont = nil;
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated completion:(void (^)(void))completion {
-    [self dismissWithClickedButtonIndex:buttonIndex animated:animated completion:completion noteDelegate:NO];
+    [self doDismissWithClickedButtonIndex:buttonIndex animated:animated completion:completion];
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
