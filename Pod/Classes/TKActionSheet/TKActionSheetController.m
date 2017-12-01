@@ -119,7 +119,7 @@
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 
-@property (nonatomic, copy)  void (^dismissWhenTapWindowHandler)() ;
+@property (nonatomic, copy)  void (^dismissWhenTapWindowHandler)(void) ;
 
 @end
 
@@ -152,7 +152,7 @@ static UIFont *buttonFont = nil;
         CGRect frame = [[UIScreen mainScreen] fixedBounds];
         CGSize size = CGSizeZero;
         
-        if ([[UIDevice currentDevice] isIOS7]) {
+        if (@available(iOS 7.0, *)) {
             size = [title boundingRectWithSize:CGSizeMake(frame.size.width-kActionSheetBorder*2, 1000) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:[NSDictionary dictionaryWithObjectsAndKeys:titleFont,NSFontAttributeName, nil] context:nil].size;
         } else {
             size = [title sizeWithFont:titleFont
@@ -266,47 +266,6 @@ static UIFont *buttonFont = nil;
     return [self.titleColorDic objectForKey:@(type)];
 }
 
-- (void)setDestructiveButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self setDestructiveButtonWithTitle:title block:^(NSUInteger index) {
-        if (handler) {
-            handler();
-        }
-    }];
-}
-
-- (void)setCancelButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self setCancelButtonWithTitle:title block:^(NSUInteger index) {
-        if (handler) {
-            handler();
-        }
-    } ];
-}
-
-- (void)addButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addButtonWithTitle:title block:^(NSUInteger index) {
-        if (handler) {
-            handler();
-        }
-    }];
-}
-
-- (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
-    [self setDestructiveButtonWithTitle:title atIndex:index block:^(NSUInteger index) {
-        if (handler) {
-            handler();
-        }
-    }];
-}
-
-- (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)())handler {
-    [self addButtonWithTitle:title atIndex:index block:^(NSUInteger index) {
-        if (handler) {
-            handler();
-        }
-    }];
-}
-
-
 - (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)(NSUInteger index))handler {
     [self addButtonWithTitle:title type:TKActionSheetButtonTypeDestructive handler:handler atIndex:-1];
 }
@@ -402,7 +361,7 @@ static UIFont *buttonFont = nil;
         TKActionSheetAction *action = [self.actions objectAtIndex: buttonIndex];
         if (action.handler)
         {
-            ((void (^)())action.handler)(buttonIndex);
+            ((void (^)(NSUInteger index))action.handler)(buttonIndex);
         }
     }
     
@@ -470,7 +429,7 @@ static UIFont *buttonFont = nil;
     [self setDismissWhenTapWindow:dismissWhenTapWindow handler:nil];
 }
 
-- (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)()) handler {
+- (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)(void)) handler {
     self.dismissWhenTapWindowHandler = handler;
     _dismissWhenTapWindow = flag;
 }
@@ -602,7 +561,7 @@ static UIFont *buttonFont = nil;
 #if __IPHONE_8_0
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator {
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        if (@available(iOS 7.0, *)) {
             [self setNeedsStatusBarAppearanceUpdate];
         }
         //    兼容iOS11
@@ -617,7 +576,7 @@ static UIFont *buttonFont = nil;
 #endif
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+    if (@available(iOS 7.0, *)) {
         [self setNeedsStatusBarAppearanceUpdate];
     }
 }

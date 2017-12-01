@@ -48,7 +48,7 @@ void TKAlert3(NSString *title, NSString *message, NSString *buttonTitle);
 + (CGFloat)defaultWidthForCustomView;
 
 @property (nonatomic, readwrite) BOOL dismissWhenTapWindow;
-- (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)()) handler;
+- (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)(void)) handler;
 
 - (void)setTitleColor:(UIColor *)color forButton:(TKAlertViewButtonType)type UI_APPEARANCE_SELECTOR;
 - (UIColor *)titleColorForButton:(TKAlertViewButtonType)type;
@@ -70,13 +70,7 @@ void TKAlert3(NSString *title, NSString *message, NSString *buttonTitle);
 
 @end
 
-@interface TKAlertViewController(Deprecated)
 
-- (void)addDestructiveButtonWithTitle:(NSString *)title handler:(void (^)())handler __attribute__((deprecated("use addDestructiveButtonWithTitle:block: instead.")));
-- (void)addCancelButtonWithTitle:(NSString *)title handler:(void (^)())handler __attribute__((deprecated("use addCancelButtonWithTitle:block: instead.")));
-- (void)addButtonWithTitle:(NSString *)title handler:(void (^)())handler __attribute__((deprecated("use addButtonWithTitle:block: instead.")));
-
-@end
 
 
 @protocol TKAlertViewControllerDelegate <NSObject>

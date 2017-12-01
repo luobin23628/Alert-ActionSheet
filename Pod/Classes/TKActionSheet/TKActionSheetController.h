@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, TKActionSheetButtonType) {
 @property (nonatomic, readwrite) BOOL dismissWhenTapWindow;
 @property (nonatomic, assign)    BOOL dragable;
 
-- (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)()) handler;
+- (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)(void)) handler;
 
 @property (nonatomic, readwrite) BOOL vignetteBackground;
 @property (nonatomic, weak) id<TKActionSheetControllerDelegate>delegate;
@@ -72,18 +72,6 @@ typedef NS_ENUM(NSInteger, TKActionSheetButtonType) {
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated completion:(void (^)(void))completion;
 
 - (NSUInteger)buttonCount;
-
-@end
-
-
-@interface TKActionSheetController(Deprecated)
-
-- (void)setCancelButtonWithTitle:(NSString *)title handler:(void (^)()) handler __attribute__((deprecated("use setCancelButtonWithTitle:block: instead.")));
-- (void)setDestructiveButtonWithTitle:(NSString *)title handler:(void (^)()) handler __attribute__((deprecated("use setDestructiveButtonWithTitle:block: instead.")));
-- (void)addButtonWithTitle:(NSString *)title handler:(void (^)()) handler __attribute__((deprecated("use addButtonWithTitle:block: instead.")));
-
-- (void)setDestructiveButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)()) handler __attribute__((deprecated("use setDestructiveButtonWithTitle:atIndex:block: instead.")));
-- (void)addButtonWithTitle:(NSString *)title atIndex:(NSInteger)index handler:(void (^)()) handler __attribute__((deprecated("use addButtonWithTitle:atIndex:block: instead.")));
 
 @end
 

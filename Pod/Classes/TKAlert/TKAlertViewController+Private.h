@@ -43,7 +43,7 @@
 @property (nonatomic, assign) UIOffset  landscapeOffset;
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
-@property (nonatomic, copy)  void (^dismissWhenTapWindowHandler)() ;
+@property (nonatomic, copy)  void (^dismissWhenTapWindowHandler)(void) ;
 @property (nonatomic, readwrite) BOOL dismissBySwipe;
 
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
@@ -60,7 +60,7 @@
 @property (nonatomic, strong) UIView *customView;
 @property (nonatomic, strong) UIView *buttonContainerView;
 
-@property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, strong) id animator;
 @property (nonatomic, assign) BOOL enabledParallaxEffect;
 
 @end

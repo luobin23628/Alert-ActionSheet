@@ -97,7 +97,7 @@ static UIFont *buttonFont = nil;
         
         CGSize size = CGSizeZero;
         size.height = MAXFLOAT;
-        if ([[UIDevice currentDevice] isIOS7]) {
+        if (@available(iOS 7.0, *)) {
             size = [message boundingRectWithSize:CGSizeMake([self.class defaultWidthForCustomView], NSIntegerMax) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:[NSDictionary dictionaryWithObjectsAndKeys:messageFont,NSFontAttributeName, nil] context:nil].size;
         } else {
             size = [message sizeWithFont:messageFont
@@ -258,30 +258,6 @@ static UIFont *buttonFont = nil;
     [self.actions addObject:action];
 }
 
-- (void)addDestructiveButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addDestructiveButtonWithTitle:title block:^(NSUInteger index) {
-        if (handler) {
-            handler();
-        }
-    }];
-}
-
-- (void)addCancelButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addCancelButtonWithTitle:title block:^(NSUInteger index) {
-        if (handler) {
-            handler();
-        }
-    }];
-}
-
-- (void)addButtonWithTitle:(NSString *)title handler:(void (^)())handler {
-    [self addButtonWithTitle:title block:^(NSUInteger index) {
-        if (handler) {
-            handler();
-        }
-    }];
-}
-
 - (void)addButtonWithTitle:(NSString *)title block:(void (^)(NSUInteger index))handler {
     [self addButtonWithTitle:title type:TKAlertViewButtonTypeDefault handler:handler atIndex:-1];
 }
@@ -298,7 +274,7 @@ static UIFont *buttonFont = nil;
     [self setDismissWhenTapWindow:dismissWhenTapWindow handler:nil];
 }
 
-- (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)()) handler {
+- (void)setDismissWhenTapWindow:(BOOL)flag handler:(void (^)(void)) handler {
     self.dismissWhenTapWindowHandler = handler;
     _dismissWhenTapWindow = flag;
 }
@@ -372,7 +348,7 @@ static UIFont *buttonFont = nil;
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator {
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         [self updateFrameForDisplay];
-        if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        if (@available(iOS 7.0, *)) {
             [self setNeedsStatusBarAppearanceUpdate];
         }
     } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
@@ -383,7 +359,7 @@ static UIFont *buttonFont = nil;
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [self updateFrameForDisplay];
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+    if (@available(iOS 7.0, *)) {
         [self setNeedsStatusBarAppearanceUpdate];
     }
 }
@@ -448,11 +424,11 @@ static UIFont *buttonFont = nil;
     return [self appearance];
 }
 
-+ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait {
++ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait NS_AVAILABLE_IOS(8_0) {
     return [self appearance];
 }
 
-+ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait whenContainedIn:(Class <UIAppearanceContainer>)ContainerClass, ... NS_REQUIRES_NIL_TERMINATION {
++ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait whenContainedIn:(Class <UIAppearanceContainer>)ContainerClass, ... NS_REQUIRES_NIL_TERMINATION NS_AVAILABLE_IOS(8_0) {
     return [self appearance];
 }
 

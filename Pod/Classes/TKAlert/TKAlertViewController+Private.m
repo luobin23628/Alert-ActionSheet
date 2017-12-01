@@ -690,9 +690,11 @@
 
 #pragma mark － Path Style
 
-- (UIDynamicAnimator *)createAnimatorIfNeed {
+- (id)createAnimatorIfNeed {
     if (!self.animator) {
-        self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.wapperView];
+        if (@available(iOS 7.0, *)) {
+            self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.wapperView];
+        }
     }
     return self.animator;
 }
@@ -700,7 +702,7 @@
 - (void)showAlertWithPathStyle:(void (^)(BOOL finished))completion {
     [self showOverlayWindowAniamted];
     
-    if (NSClassFromString(@"UIPushBehavior")) {
+    if (@available(iOS 7.0, *)) {
         self.dismissBySwipe = YES;
         __block CGPoint center = self.containerView.center;
         CGFloat yPositionOutOfBounds = self.wapperView.height/2 + self.containerView.height/2;
@@ -732,7 +734,7 @@
 
 - (void)hiddenAlertWithPathStyle:(void (^)(BOOL finished))completion {
     
-    if (NSClassFromString(@"UIPushBehavior")) {
+    if (@available(iOS 7.0, *)) {
         [self createAnimatorIfNeed];
         [self.animator removeAllBehaviors];
         
@@ -871,14 +873,16 @@
 {
     if (self.enabledParallaxEffect && NSClassFromString(@"UIInterpolatingMotionEffect"))
     {
-        UIInterpolatingMotionEffect *effectHorizontal = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"position.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-        UIInterpolatingMotionEffect *effectVertical = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"position.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-        [effectHorizontal setMaximumRelativeValue:@(10.0f)];
-        [effectHorizontal setMinimumRelativeValue:@(-10.0f)];
-        [effectVertical setMaximumRelativeValue:@(15.0f)];
-        [effectVertical setMinimumRelativeValue:@(-15.0f)];
-        [self.containerView addMotionEffect:effectHorizontal];
-        [self.containerView addMotionEffect:effectVertical];
+        if (@available(iOS 7.0, *)) {
+            UIInterpolatingMotionEffect *effectHorizontal = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"position.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+            UIInterpolatingMotionEffect *effectVertical = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"position.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+            [effectHorizontal setMaximumRelativeValue:@(10.0f)];
+            [effectHorizontal setMinimumRelativeValue:@(-10.0f)];
+            [effectVertical setMaximumRelativeValue:@(15.0f)];
+            [effectVertical setMinimumRelativeValue:@(-15.0f)];
+            [self.containerView addMotionEffect:effectHorizontal];
+            [self.containerView addMotionEffect:effectVertical];
+        }
     }
 }
 
@@ -886,9 +890,11 @@
 {
     if (self.enabledParallaxEffect && NSClassFromString(@"UIInterpolatingMotionEffect"))
     {
-        [self.containerView.motionEffects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [self.containerView removeMotionEffect:obj];
-        }];
+        if (@available(iOS 7.0, *)) {
+            [self.containerView.motionEffects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [self.containerView removeMotionEffect:obj];
+            }];
+        }
     }
 }
 

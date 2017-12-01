@@ -63,7 +63,7 @@
     
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     
-    if([[UIScreen mainScreen] respondsToSelector:@selector(fixedCoordinateSpace)]) {
+    if (@available(iOS 8.0, *)) {
         keyboardBounds = [[[UIScreen mainScreen] fixedCoordinateSpace] convertRect:keyboardBounds fromCoordinateSpace:[[UIScreen mainScreen] coordinateSpace]];
     }
     
@@ -91,7 +91,9 @@
 
 #if __IPHONE_8_0
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    if (@available(iOS 8.0, *)) {
+        [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    }
     
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         if ([self.customView findFirstResponder]) {
