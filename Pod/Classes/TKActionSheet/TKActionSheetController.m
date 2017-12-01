@@ -95,6 +95,16 @@
 
 @end
 
+@interface TKActionButton : UIButton
+@end
+
+@implementation TKActionButton
+
+- (CGRect)titleRectForContentRect:(CGRect)contentRect {
+    return CGRectMake(0, 0, contentRect.size.width, kActionSheetButtonHeight);
+}
+
+@end
 
 @interface TKActionSheetController()<UIGestureRecognizerDelegate>
 
@@ -514,7 +524,6 @@ static UIFont *buttonFont = nil;
     
     CGFloat width = [[UIScreen mainScreen] fixedBounds].size.width - kActionSheetBorder*2;
     CGFloat height = self.customView.frame.size.height;
-    self.customView.frame = CGRectMake(kActionSheetBorder, kActionSheetTopMargin, width, height);
     
     self.height += height;
     
@@ -533,13 +542,24 @@ static UIFont *buttonFont = nil;
             frame.origin.y += kActionSheetCancelButtonTopMargin;
             self.height += kActionSheetCancelButtonTopMargin;
         }
+        //兼容iOS11
+        if (@available(iOS 11.0, *)) {
+            BOOL isLastOne = (i == [self.actions count]);
+            if (isLastOne) {
+                frame.size.height += self.backgroundWindow.safeAreaInsets.bottom;
+                self.height += self.backgroundWindow.safeAreaInsets.bottom;
+            }
+        }
+        self.height += kActionSheetButtonHeight;
+        
         button.frame = frame;
         button.tag = i++;
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self.containerView addSubview:button];
-        self.height += kActionSheetButtonHeight;
     }
+    
     self.containerView.frame = CGRectMake((self.warpperView.width - width)/2, self.warpperView.height - self.height, width, self.height);
+    self.customView.frame = CGRectMake(kActionSheetBorder, kActionSheetTopMargin, width, height);
 }
 
 
@@ -547,7 +567,7 @@ static UIFont *buttonFont = nil;
     NSString *title = action.title;
     TKActionSheetButtonType type = action.type;
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [TKActionButton buttonWithType:UIButtonTypeCustom];
     button.titleLabel.font = buttonFont;
     button.titleLabel.adjustsFontSizeToFitWidth = YES;
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -585,6 +605,11 @@ static UIFont *buttonFont = nil;
         if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
             [self setNeedsStatusBarAppearanceUpdate];
         }
+        //    兼容iOS11
+        if (@available(iOS 11.0, *)) {
+            [self updateFrameForDisplay];
+        }
+
     } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         
     }];
