@@ -16,8 +16,17 @@
 
 @implementation TKViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view, typically from a nib.
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -117,10 +126,10 @@
     TKAlertViewController *alert = [TKAlertViewController alertWithTitle:@"test" customView:customView];
     //    alert.customeViewInset = UIEdgeInsetsMake(100, 0, 100, 0);
     [alert addButtonWithTitle:@"ok" block:^(NSUInteger index) {
-        [self testTextFieldAlertView];
+        
     }];
     
-    [alert addButtonWithTitle:@"cancel" block:nil];
+//    [alert addButtonWithTitle:@"cancel" block:nil];
     alert.backgroundColor = [UIColor greenColor];
     alert.dismissWhenTapWindow = YES;
     [alert showWithAnimationType:TKAlertViewAnimationPathStyle];
