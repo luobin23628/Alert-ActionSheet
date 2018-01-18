@@ -55,6 +55,14 @@
 
 - (void)makeKeyAndVisible {
     if (self.rootViewController) {
+        if (!self.isKeyWindow) {
+            self.alpha = 1.0f;
+            self.backgroundView.alpha = 1;
+            self.hidden = NO;
+            self.userInteractionEnabled = YES;
+            
+            _previousKeyWindow = [[UIApplication sharedApplication] keyWindow];
+        }
         [super makeKeyAndVisible];
     }
 }
@@ -66,14 +74,6 @@
      */
     if (!self.rootViewController) {
         return;
-    }
-    if (!self.isKeyWindow) {
-        self.alpha = 1.0f;
-        self.backgroundView.alpha = 1;
-        self.hidden = NO;
-        self.userInteractionEnabled = YES;
-        
-        _previousKeyWindow = [[UIApplication sharedApplication] keyWindow];
     }
     [super makeKeyWindow];
 }
