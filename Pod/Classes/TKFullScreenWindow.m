@@ -73,7 +73,10 @@
         self.hidden = NO;
         self.userInteractionEnabled = YES;
         
-        _previousKeyWindow = [[UIApplication sharedApplication] keyWindow];
+        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+        if (window != self) {
+            _previousKeyWindow = window;
+        }
     }
     [super makeKeyWindow];
 }
