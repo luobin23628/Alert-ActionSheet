@@ -184,7 +184,7 @@ static UIFont *buttonFont = nil;
 
 - (instancetype)initWithCustomView:(UIView *)customView {
     if ((self = [super init])) {
-        
+        self.opaque = YES;
         self.titleColorDic = [[NSMutableDictionary alloc] init];
         [self setTitleColor:kActionSheetCancelButtonTextColor forButton:TKActionSheetButtonTypeCancel];
         [self setTitleColor:kActionSheetButtonTextColor forButton:TKActionSheetButtonTypeDefault];
@@ -238,17 +238,19 @@ static UIFont *buttonFont = nil;
     frame.size.height = 44;
     
     self.containerView = [[UIView alloc] initWithFrame:CGRectMake(kActionSheetBorder, 0, self.warpperView.width - kActionSheetBorder, 0)];
-    self.containerView.backgroundColor = kActionSheetBackgroundColor;
+    self.containerView.backgroundColor = self.isOpaque?kActionSheetBackgroundColor:[UIColor clearColor];
     self.containerView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     self.containerView.clipsToBounds = YES;
     [self.warpperView addSubview:self.containerView];
     
     [self.containerView addSubview:self.customView];
     
-    UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 0.5)];
-    topLine.backgroundColor = [UIColor colorWithWhite:180/255.0 alpha:1];
-    [self.containerView addSubview:topLine];
-    
+    if (self.isOpaque) {
+        UIView *topLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 0.5)];
+        topLine.backgroundColor = [UIColor colorWithWhite:180/255.0 alpha:1];
+        [self.containerView addSubview:topLine];
+    }
+
     self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapWindow:)];
     self.tapGestureRecognizer.delegate = self;
     [self.backgroundWindow addGestureRecognizer:self.tapGestureRecognizer];
