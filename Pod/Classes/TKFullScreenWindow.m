@@ -90,12 +90,11 @@
 }
 
 - (void)revertKeyWindowAndHidden {
-    self.hidden = YES;
-    
     if (self.isKeyWindow) {
         [_previousKeyWindow makeKeyWindow];
     }
     _previousKeyWindow = nil;
+    self.hidden = YES;
 }
 
 @end
